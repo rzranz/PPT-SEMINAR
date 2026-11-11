@@ -489,15 +489,21 @@ body.is-fullscreen .reveal {
     background: var(--bg-card);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 20px 24px;
+    padding: 16px 20px;
     box-shadow: var(--shadow-md);
     transition: var(--transition-smooth);
     position: relative;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.glass-card.h-full {
     height: 100%;
+}
+
+.glass-card.justify-between {
+    justify-content: space-between;
 }
 
 .glass-card:hover {
@@ -742,21 +748,30 @@ body.is-fullscreen .reveal {
 }
 
 /* Bullet List Styling */
+.reveal ul.custom-bullet-list,
+.reveal .slides ul.custom-bullet-list,
+ul.custom-bullet-list,
 .custom-bullet-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none !important;
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
+.reveal ul.custom-bullet-list li,
+.reveal .slides ul.custom-bullet-list li,
+ul.custom-bullet-list li,
 .custom-bullet-list li {
+    list-style: none !important;
+    list-style-type: none !important;
     position: relative;
     padding-left: 28px;
-    font-size: 14.5px;
+    font-size: 13.5px;
     color: var(--text-body);
-    line-height: 1.55;
+    line-height: 1.5;
 }
 
 .custom-bullet-list li::before {

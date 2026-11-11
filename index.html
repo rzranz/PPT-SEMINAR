@@ -27,6 +27,22 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
+    <!-- Tailwind CSS 3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1e3a8a',
+                        'accent': '#2563eb',
+                        'subtle': '#eff6ff'
+                    }
+                }
+            }
+        }
+    </script>
+
     <!-- Custom Presentation Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -265,56 +281,58 @@
 
                 <div class="slide-body">
                     <div class="grid-2-1">
-                        <div style="display: flex; flex-direction: column; gap: 14px; height: 100%; justify-content: space-between;">
-                            <div class="glass-card accent-bar-left">
-                                <div style="font-weight: 700; font-size: 14.5px; color: var(--text-heading); margin-bottom: 6px;">
+                        <div style="display: flex; flex-direction: column; gap: 10px; height: 100%; justify-content: space-between;">
+                            <div class="glass-card accent-bar-left" style="padding: 12px 18px;">
+                                <div style="font-weight: 700; font-size: 14px; color: var(--text-heading); margin-bottom: 4px;">
                                     <i class="fa-solid fa-brain text-blue-accent"></i> Hakekat Keterampilan Pemecahan Masalah
                                 </div>
-                                <p style="font-size: 13.5px; margin: 0;">
+                                <p style="font-size: 13px; line-height: 1.5; margin: 0;">
                                     Keterampilan pemecahan masalah bukan sekadar mencari hasil perhitungan aljabar akhir, melainkan proses kognitif terintegrasi: mengidentifikasi informasi, mendefinisikan masalah, memilih konsep fisis relevan, merancang strategi, hingga mengevaluasi keabsahan hasil secara logis (Siswanto, 2024; Ayudha, 2021; Hanifah, 2026).
                                 </p>
                             </div>
 
-                            <div class="grid-2">
-                                <div class="glass-card" style="border-left: 5px solid var(--amber-accent);">
-                                    <div style="font-size: 12px; font-weight: 700; color: var(--amber-accent); text-transform: uppercase;">Skor Baseline Siswa</div>
-                                    <div style="font-size: 32px; font-weight: 800; color: var(--text-heading);">48,00 <span style="font-size: 14px; font-weight: 600; color: var(--amber-accent);">(Sedang)</span></div>
-                                    <p style="font-size: 12px; color: var(--text-muted); margin: 4px 0 0 0;">Rata-rata keterampilan pemecahan masalah suhu & kalor masih rendah.</p>
+                            <div class="grid-2" style="gap: 10px;">
+                                <div class="glass-card" style="border-left: 5px solid var(--amber-accent); padding: 12px 16px;">
+                                    <div style="font-size: 11px; font-weight: 700; color: var(--amber-accent); text-transform: uppercase;">Skor Baseline Siswa</div>
+                                    <div style="font-size: 26px; font-weight: 800; color: var(--text-heading); margin: 2px 0;">48,00 <span style="font-size: 13px; font-weight: 600; color: var(--amber-accent);">(Sedang)</span></div>
+                                    <p style="font-size: 11.5px; color: var(--text-muted); margin: 0;">Rata-rata keterampilan awal suhu & kalor masih rendah.</p>
                                 </div>
 
-                                <div class="glass-card" style="border-left: 5px solid var(--rose-accent);">
-                                    <div style="font-size: 12px; font-weight: 700; color: var(--rose-accent); text-transform: uppercase;">Titik Terlemah Siswa</div>
-                                    <div style="font-size: 32px; font-weight: 800; color: var(--rose-accent);">46,11</div>
-                                    <p style="font-size: 12px; color: var(--text-muted); margin: 4px 0 0 0;">Indikator <em>memeriksa & mengevaluasi solusi</em> menempati skor paling kritis.</p>
+                                <div class="glass-card" style="border-left: 5px solid var(--rose-accent); padding: 12px 16px;">
+                                    <div style="font-size: 11px; font-weight: 700; color: var(--rose-accent); text-transform: uppercase;">Titik Terlemah Siswa</div>
+                                    <div style="font-size: 26px; font-weight: 800; color: var(--rose-accent); margin: 2px 0;">46,11</div>
+                                    <p style="font-size: 11.5px; color: var(--text-muted); margin: 0;">Indikator <em>evaluasi solusi</em> menempati skor paling kritis.</p>
                                 </div>
                             </div>
 
-                            <div class="callout-box">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <div style="font-size: 13px;">
+                            <div class="callout-box" style="padding: 10px 14px;">
+                                <i class="fa-solid fa-quote-left" style="font-size: 16px; margin-top: 1px;"></i>
+                                <div style="font-size: 12px; line-height: 1.45;">
                                     <strong>Hasil Angket & Wawancara Guru-Siswa:</strong> Sebanyak <strong>70% dari 30 peserta didik</strong> menyatakan kesulitan memahami materi kalor dan gagal menghubungkan formula matematis dengan fenomena termal kehidupan sehari-hari.
                                 </div>
                             </div>
                         </div>
 
-                        <div class="glass-card">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-list-check text-blue-accent"></i> 3 Kendala Pokok Kelas</span>
-                                <span class="metric-badge badge-amber">Diagnostik</span>
+                        <div class="glass-card h-full justify-between" style="padding: 16px 20px;">
+                            <div>
+                                <div class="glass-card-header" style="margin-bottom: 8px;">
+                                    <span style="font-weight: 700; font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-list-check text-blue-accent"></i> 3 Kendala Pokok Kelas</span>
+                                    <span class="metric-badge badge-amber">Diagnostik</span>
+                                </div>
+                                <ul class="custom-bullet-list">
+                                    <li class="warn">
+                                        <strong>Didominasi Ceramah:</strong> Pembelajaran pasif satu arah, guru fokus mentransfer rumus tanpa memberi porsi investigasi mandiri.
+                                    </li>
+                                    <li class="warn">
+                                        <strong>Bahan Ajar Terbatas:</strong> Bergantung penuh pada buku teks sekolah yang minim stimulasi visual dan tantangan kontekstual.
+                                    </li>
+                                    <li class="danger">
+                                        <strong>Latihan Berorientasi Jawaban:</strong> Soal latihan belum secara eksplisit melatih tahapan indikator pemecahan masalah sistematis.
+                                    </li>
+                                </ul>
                             </div>
-                            <ul class="custom-bullet-list">
-                                <li class="warn">
-                                    <strong>Didominasi Ceramah:</strong> Pembelajaran pasif satu arah, guru fokus mentransfer rumus tanpa memberi porsi investigasi mandiri.
-                                </li>
-                                <li class="warn">
-                                    <strong>Bahan Ajar Terbatas:</strong> Bergantung penuh pada buku teks sekolah yang minim stimulasi visual dan tantangan kontekstual.
-                                </li>
-                                <li class="danger">
-                                    <strong>Latihan Berorientasi Jawaban:</strong> Soal latihan belum secara eksplisit melatih tahapan indikator pemecahan masalah sistematis.
-                                </li>
-                            </ul>
-                            <div style="margin-top: 14px; padding: 12px; background: var(--blue-subtle); border-radius: var(--radius-sm); border: 1.5px dashed var(--blue-border); font-size: 12.5px; color: var(--blue-primary);">
-                                <strong>Kebutuhan Solutif:</strong> Model pembelajaran aktif terstruktur (SSCS) dipadukan dengan media stimulus ringkas (Flashcard).
+                            <div style="margin-top: 12px; padding: 10px 14px; background: var(--blue-subtle); border-radius: var(--radius-sm); border: 1.5px dashed var(--blue-border); font-size: 12px; color: var(--blue-primary); line-height: 1.45;">
+                                <i class="fa-solid fa-lightbulb"></i> <strong>Kebutuhan Solutif:</strong> Model pembelajaran aktif terstruktur (SSCS) dipadukan dengan media stimulus ringkas (Flashcard).
                             </div>
                         </div>
                     </div>

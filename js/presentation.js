@@ -29,6 +29,7 @@ Reveal.initialize({
     hash: true,
     history: true,
     center: false,
+    controls: false,
     transition: 'slide',
     backgroundTransition: 'fade',
     transitionSpeed: 'fast',
