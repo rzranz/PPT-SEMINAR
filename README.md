@@ -11,6 +11,22 @@ Slide presentasi web interaktif berbasis **Reveal.js** untuk **Seminar Nasional 
 
 ---
 
+## 🏗️ Arsitektur Proyek (Clean Code & Separation of Concerns)
+Proyek ini mengadopsi standar *clean code* dengan memisahkan struktur (*markup*), perwajahan (*styling*), dan perilaku (*behavior*):
+
+```
+PPT-SEMINAR/
+├── index.html            # Struktur semantik 17 slide presentasi
+├── css/
+│   └── style.css         # Desain sistem, tema Putih-Biru, & responsivitas
+├── js/
+│   └── presentation.js   # Kontrol navigasi, fullscreen mode, timer, & Chart.js
+├── README.md             # Dokumentasi dan panduan presentasi
+└── .gitignore            # Proteksi folder agen & dependensi lokal
+```
+
+---
+
 ## ✨ Fitur Utama Presentasi
 - **White & Blue Professional Academic Theme:** Desain bersih, modern, dan berkontras tinggi berorientasi standar seminar nasional.
 - **True Fullscreen Presentation Mode:** Tekan **`F`** untuk masuk mode presentasi layar penuh *edge-to-edge* (seperti PowerPoint / Keynote) dengan *smart floating presenter toolbar* yang otomatis memudar saat kursor diam.
