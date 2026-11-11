@@ -295,37 +295,52 @@ function fireConfetti() {
 }
 
 // =========================================================================
-// 8. LAZY & RESPONSIVE CHART.JS INITIALIZATION
+// 8. LAZY & REPLAYABLE CHART.JS ANIMATIONS (BULAK-BALIK DARI DASAR)
 // =========================================================================
+function triggerReplayAnimation(chart) {
+    if (!chart) return;
+    chart.stop();
+    chart.reset();
+    setTimeout(() => {
+        chart.update();
+    }, 50);
+}
+
 function renderChartIfNeeded(slideIndex) {
     // Slide 9 (0-indexed: 8) -> Macro Comparison
     if (slideIndex === 8) {
         if (!macroChart) {
-            initMacroChart();
+            setTimeout(initMacroChart, 80);
         } else {
             macroChart.resize();
-            macroChart.update();
+            triggerReplayAnimation(macroChart);
         }
+    } else if (macroChart) {
+        macroChart.reset();
     }
 
     // Slide 10 (0-indexed: 9) -> Submateri Horizontal Bar
     if (slideIndex === 9) {
         if (!submateriChart) {
-            initSubmateriChart();
+            setTimeout(initSubmateriChart, 80);
         } else {
             submateriChart.resize();
-            submateriChart.update();
+            triggerReplayAnimation(submateriChart);
         }
+    } else if (submateriChart) {
+        submateriChart.reset();
     }
 
     // Slide 11 (0-indexed: 10) -> Heller Radar Chart
     if (slideIndex === 10) {
         if (!hellerChart) {
-            initHellerChart();
+            setTimeout(initHellerChart, 80);
         } else {
             hellerChart.resize();
-            hellerChart.update();
+            triggerReplayAnimation(hellerChart);
         }
+    } else if (hellerChart) {
+        hellerChart.reset();
     }
 
     // Slide 17 (0-indexed: 16) -> Confetti Celebration
@@ -334,7 +349,7 @@ function renderChartIfNeeded(slideIndex) {
     }
 }
 
-// Chart 1: Macro Comparison Bar Chart (Slide 9)
+// Chart 1: Macro Comparison Bar Chart (Slide 9 - Grows Upwards from Base y=0)
 function initMacroChart() {
     const ctx = document.getElementById('macroComparisonChart');
     if (!ctx) return;
@@ -342,30 +357,44 @@ function initMacroChart() {
     macroChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Pretest (Awal)', 'Posttest (Akhir)', 'N-Gain (Tingkat Peningkatan)'],
+            labels: ['Pretest (Awal)', 'Posttest (Akhir)', 'N-Gain (Peningkatan %)'],
             datasets: [
                 {
                     label: 'SSCS + Flashcard (Eksperimen)',
                     data: [26, 91, 88], // 88 represents 0.88 normalized
                     backgroundColor: '#2563eb',
                     borderRadius: 6,
-                    barPercentage: 0.7,
-                    categoryPercentage: 0.8
+                    barPercentage: 0.65,
+                    categoryPercentage: 0.75
                 },
                 {
                     label: 'PBL + Flashcard (Kontrol)',
                     data: [21, 86, 82], // 82 represents 0.82 normalized
                     backgroundColor: '#94a3b8',
                     borderRadius: 6,
-                    barPercentage: 0.7,
-                    categoryPercentage: 0.8
+                    barPercentage: 0.65,
+                    categoryPercentage: 0.75
                 }
             ]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            animation: { duration: 900, easing: 'easeOutQuart' },
+            animation: {
+                duration: 1100,
+                easing: 'easeOutQuart'
+            },
+            animations: {
+                y: {
+                    from: (ctx) => {
+                        if (ctx.type === 'data') {
+                            return ctx.chart.scales.y.getPixelForValue(0);
+                        }
+                    },
+                    duration: 1100,
+                    easing: 'easeOutQuart'
+                }
+            },
             plugins: {
                 legend: {
                     position: 'top',
@@ -403,7 +432,7 @@ function initMacroChart() {
     });
 }
 
-// Chart 2: Submateri Horizontal Bar Chart (Slide 10)
+// Chart 2: Submateri Horizontal Bar Chart (Slide 10 - Grows Outwards from Base x=0.70)
 function initSubmateriChart() {
     const ctx = document.getElementById('submateriChart');
     if (!ctx) return;
@@ -433,7 +462,21 @@ function initSubmateriChart() {
             indexAxis: 'y', // Horizontal
             responsive: true,
             maintainAspectRatio: false,
-            animation: { duration: 900, easing: 'easeOutQuart' },
+            animation: {
+                duration: 1100,
+                easing: 'easeOutQuart'
+            },
+            animations: {
+                x: {
+                    from: (ctx) => {
+                        if (ctx.type === 'data') {
+                            return ctx.chart.scales.x.getPixelForValue(0.70);
+                        }
+                    },
+                    duration: 1100,
+                    easing: 'easeOutQuart'
+                }
+            },
             plugins: {
                 legend: {
                     position: 'top',
@@ -467,7 +510,7 @@ function initSubmateriChart() {
     });
 }
 
-// Chart 3: Heller 5 Dimensions Radar Chart (Slide 11)
+// Chart 3: Heller 5 Dimensions Radar Chart (Slide 11 - Expands Outward from Origin)
 function initHellerChart() {
     const ctx = document.getElementById('hellerRadarChart');
     if (!ctx) return;
@@ -510,7 +553,30 @@ function initHellerChart() {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            animation: { duration: 1100, easing: 'easeOutQuart' },
+            animation: {
+                duration: 1200,
+                easing: 'easeOutQuart'
+            },
+            animations: {
+                x: {
+                    from: (ctx) => {
+                        if (ctx.type === 'data' && ctx.chart.scales.r) {
+                            return ctx.chart.scales.r.xCenter;
+                        }
+                    },
+                    duration: 1200,
+                    easing: 'easeOutQuart'
+                },
+                y: {
+                    from: (ctx) => {
+                        if (ctx.type === 'data' && ctx.chart.scales.r) {
+                            return ctx.chart.scales.r.yCenter;
+                        }
+                    },
+                    duration: 1200,
+                    easing: 'easeOutQuart'
+                }
+            },
             plugins: {
                 legend: {
                     position: 'top',
