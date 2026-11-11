@@ -1,0 +1,2787 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Seminar SENTRA PENDIPA 2026 | Penerapan Model SSCS Berbantuan Flashcard</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans, Inter, & Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- KaTeX for Physics & Math Formulas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+    <!-- Reveal.js Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+
+    <!-- Chart.js 4.4 & Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <style>
+        /* ==========================================================================
+           1. DESIGN TOKENS (WHITE & BLUE PROFESSIONAL ACADEMIC THEME)
+           ========================================================================== */
+        :root {
+            --bg-canvas: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-card-subtle: #f0f7ff;
+            
+            --blue-primary: #1e40af;    /* Deep Navy */
+            --blue-accent: #2563eb;     /* Vivid Royal Blue */
+            --blue-light: #3b82f6;      /* Sky Accent */
+            --blue-subtle: #eff6ff;     /* Ice Blue */
+            --blue-border: #bfdbfe;     /* Border Blue */
+            
+            --cyan-accent: #0284c7;
+            --emerald-accent: #059669;
+            --amber-accent: #d97706;
+            --rose-accent: #e11d48;
+            
+            --text-heading: #0f172a;    /* Slate 900 */
+            --text-body: #334155;       /* Slate 700 */
+            --text-muted: #64748b;      /* Slate 500 */
+            --border-light: #e2e8f0;    /* Slate 200 */
+
+            --font-heading: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+
+            --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 6px 18px -4px rgba(37, 99, 235, 0.08), 0 3px 6px -2px rgba(15, 23, 42, 0.04);
+            --shadow-lg: 0 16px 32px -6px rgba(37, 99, 235, 0.12), 0 6px 12px -3px rgba(15, 23, 42, 0.04);
+            --shadow-hover: 0 20px 35px -8px rgba(37, 99, 235, 0.18), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-pill: 9999px;
+            
+            --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ==========================================================================
+           2. BASE STYLING & REVEAL.JS SCALING
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: var(--bg-canvas);
+            color: var(--text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .reveal {
+            font-family: var(--font-body);
+            font-size: 19px;
+            color: var(--text-body);
+        }
+
+        .reveal-viewport {
+            background: radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.04) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 90%, rgba(2, 132, 199, 0.05) 0%, transparent 40%),
+                        linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f0f7ff 100%);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+            font-family: var(--font-heading);
+            color: var(--text-heading);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-transform: none;
+            line-height: 1.25;
+            margin: 0 0 10px 0;
+        }
+
+        .reveal p, .reveal li {
+            font-family: var(--font-body);
+            color: var(--text-body);
+            line-height: 1.55;
+        }
+
+        /* 16:9 Slide Canvas (1280x720) Layout */
+        .reveal .slides {
+            text-align: left;
+        }
+
+        .reveal .slides section {
+            text-align: left;
+            padding: 24px 36px 30px 36px;
+            box-sizing: border-box;
+            height: 100%;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .reveal .slides section:not(.present) {
+            display: none !important;
+        }
+
+        /* ==========================================================================
+           3. SLIDE HEADER COMPONENT
+           ========================================================================== */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .slide-header .title-area {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .slide-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue-accent);
+            background: var(--blue-subtle);
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--blue-border);
+            width: fit-content;
+        }
+
+        .slide-title-main {
+            font-size: 25px !important;
+            font-weight: 800 !important;
+            margin: 0 !important;
+            color: var(--text-heading);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .slide-title-main i {
+            color: var(--blue-accent);
+            font-size: 21px;
+        }
+
+        .slide-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .slide-context-badge {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--blue-primary);
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ==========================================================================
+           4. LAYOUT GRIDS & FLEX CONTAINERS
+           ========================================================================== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            width: 100%;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            width: 100%;
+        }
+
+        .grid-1-2 {
+            display: grid;
+            grid-template-columns: 1.15fr 1.85fr;
+            gap: 20px;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .grid-2-1 {
+            display: grid;
+            grid-template-columns: 1.85fr 1.15fr;
+            gap: 20px;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        /* ==========================================================================
+           5. MODERN CARD COMPONENTS & MICRO-INTERACTIONS
+           ========================================================================== */
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--blue-border);
+        }
+
+        .glass-card.highlight {
+            border-color: #93c5fd;
+            background: linear-gradient(145deg, #ffffff 0%, #f0f7ff 100%);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .glass-card.accent-bar-left {
+            border-left: 4px solid var(--blue-accent);
+        }
+
+        .glass-card.accent-bar-emerald {
+            border-left: 4px solid var(--emerald-accent);
+        }
+
+        .glass-card.accent-bar-amber {
+            border-left: 4px solid var(--amber-accent);
+        }
+
+        .glass-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .card-icon-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blue-subtle);
+            color: var(--blue-accent);
+            font-size: 16px;
+            border: 1px solid var(--blue-border);
+            transition: var(--transition-smooth);
+        }
+
+        .glass-card:hover .card-icon-badge {
+            background: var(--blue-accent);
+            color: #ffffff;
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        /* Metric KPI Cards */
+        .metric-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--blue-accent);
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: 800;
+            font-family: var(--font-heading);
+            line-height: 1.1;
+            margin: 4px 0 2px 0;
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metric-value.emerald {
+            background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metric-label {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .metric-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: var(--radius-pill);
+            margin-top: 4px;
+        }
+
+        .badge-blue { background: #dbeafe; color: #1e40af; }
+        .badge-emerald { background: #d1fae5; color: #065f46; }
+        .badge-amber { background: #fef3c7; color: #92400e; }
+        .badge-purple { background: #ede9fe; color: #5b21b6; }
+
+        /* Modern Academic Tables */
+        .modern-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 13px;
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        .modern-table th {
+            background: #f1f5f9;
+            color: var(--text-heading);
+            font-weight: 700;
+            padding: 9px 12px;
+            text-align: left;
+            border-bottom: 2px solid var(--border-light);
+            font-size: 12px;
+            letter-spacing: 0.03em;
+        }
+
+        .modern-table td {
+            padding: 9px 12px;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-body);
+            transition: background 0.2s;
+        }
+
+        .modern-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .modern-table tr:hover td {
+            background: #f8fafc;
+        }
+
+        .modern-table tr.highlight-row td {
+            background: #eff6ff;
+            font-weight: 600;
+            color: var(--blue-primary);
+        }
+
+        /* 3D Interactive Flip Flashcards (Slide 5) */
+        .flashcard-container {
+            perspective: 1000px;
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .flashcard-container:hover .flashcard-inner,
+        .flashcard-container.is-flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid var(--border-light);
+        }
+
+        .flashcard-front {
+            background: #ffffff;
+            border-top: 4px solid var(--blue-accent);
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+
+        .flashcard-back {
+            background: linear-gradient(145deg, #1e40af 0%, #1e3a8a 100%);
+            color: #ffffff;
+            transform: rotateY(180deg);
+            border-color: #1e3a8a;
+            z-index: 1;
+        }
+
+        .flashcard-back p, .flashcard-back li {
+            color: #e2e8f0 !important;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .flashcard-back .card-badge-back {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: var(--radius-pill);
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .flip-hint {
+            font-size: 10px;
+            color: var(--blue-accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            opacity: 0.8;
+        }
+
+        /* Bullet List Styling */
+        .custom-bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .custom-bullet-list li {
+            position: relative;
+            padding-left: 26px;
+            font-size: 13px;
+            color: var(--text-body);
+        }
+
+        .custom-bullet-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--blue-accent);
+            font-size: 14px;
+        }
+
+        .custom-bullet-list li.warn::before {
+            content: "\f071";
+            color: var(--amber-accent);
+        }
+
+        .custom-bullet-list li.danger::before {
+            content: "\f057";
+            color: var(--rose-accent);
+        }
+
+        /* Hero Banner Component (Slide 1) */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(2, 132, 199, 0.04) 100%);
+            border: 1px solid var(--blue-border);
+            border-radius: var(--radius-lg);
+            padding: 30px 38px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 10px 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .author-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--blue-subtle);
+            color: var(--blue-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: 700;
+            border: 2px solid var(--blue-border);
+        }
+
+        /* Callout Component */
+        .callout-box {
+            background: var(--blue-subtle);
+            border: 1px solid var(--blue-border);
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 12.5px;
+        }
+
+        .callout-box i {
+            color: var(--blue-accent);
+            font-size: 17px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Chart Canvas Box */
+        .chart-box {
+            position: relative;
+            width: 100%;
+            height: 290px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Process Steps Component */
+        .step-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 12px 0 16px 0;
+        }
+
+        .step-item {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 12px 14px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
+        }
+
+        .step-item:hover {
+            border-color: var(--blue-accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--blue-accent);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 6px auto;
+        }
+
+        .step-connector {
+            width: 20px;
+            height: 2px;
+            background: var(--blue-border);
+            position: relative;
+        }
+
+        .step-connector::after {
+            content: "▶";
+            position: absolute;
+            right: -3px;
+            top: -7px;
+            font-size: 9px;
+            color: var(--blue-accent);
+        }
+
+        /* ==========================================================================
+           6. PRESENTATION NAVIGATION BARS & FULLSCREEN MODE CONTROLS
+           ========================================================================== */
+        /* Normal Mode Top Bar */
+        #deck-top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            font-size: 13px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-bar-brand {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            color: var(--blue-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .top-bar-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border-light);
+        }
+
+        .top-bar-paper-title {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 12px;
+            max-width: 520px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-tool-btn {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            color: var(--text-body);
+            height: 32px;
+            padding: 0 10px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+
+        .nav-tool-btn:hover {
+            background: var(--blue-subtle);
+            color: var(--blue-accent);
+            border-color: var(--blue-border);
+        }
+
+        .nav-tool-btn.btn-primary-action {
+            background: var(--blue-accent);
+            color: #ffffff;
+            border-color: var(--blue-accent);
+        }
+
+        .nav-tool-btn.btn-primary-action:hover {
+            background: var(--blue-primary);
+            color: #ffffff;
+        }
+
+        .timer-display {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 12px;
+            color: var(--blue-primary);
+            background: var(--blue-subtle);
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--blue-border);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Top Progress Line */
+        #deck-progress-bar {
+            position: fixed;
+            top: 48px;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue-accent) 0%, var(--cyan-accent) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+            z-index: 1001;
+        }
+
+        /* Normal Mode Bottom Bar */
+        #deck-bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid var(--border-light);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            font-size: 12px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .slide-counter-badge {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--blue-primary);
+            background: var(--blue-subtle);
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--blue-border);
+        }
+
+        .control-arrow-btn {
+            background: none;
+            border: 1px solid var(--border-light);
+            color: var(--text-body);
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .control-arrow-btn:hover {
+            background: var(--blue-accent);
+            color: #ffffff;
+            border-color: var(--blue-accent);
+        }
+
+        /* ==========================================================================
+           7. PURE FULLSCREEN PRESENTATION MODE (LIKE REAL PPT / KEYNOTE)
+           ========================================================================== */
+        /* When in Fullscreen Presentation Mode: hide fixed top/bottom headers for edge-to-edge slides */
+        body.is-fullscreen #deck-top-bar {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        body.is-fullscreen #deck-bottom-bar {
+            transform: translateY(100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        body.is-fullscreen #deck-progress-bar {
+            top: 0;
+            height: 4px;
+        }
+
+        /* Floating Presenter Toolbar in Fullscreen Mode */
+        #floating-presentation-bar {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-pill);
+            padding: 6px 16px;
+            display: none;
+            align-items: center;
+            gap: 14px;
+            z-index: 9999;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        body.is-fullscreen #floating-presentation-bar {
+            display: flex;
+        }
+
+        #floating-presentation-bar.idle-fade {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(-50%) translateY(12px);
+        }
+
+        .floating-bar-btn {
+            background: transparent;
+            border: none;
+            color: #f8fafc;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 13px;
+        }
+
+        .floating-bar-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #60a5fa;
+        }
+
+        .floating-counter {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 12px;
+            color: #e2e8f0;
+            padding: 0 4px;
+        }
+
+        /* Slide Jump Drawer */
+        #slide-jump-menu {
+            position: fixed;
+            top: 54px;
+            right: 24px;
+            width: 330px;
+            max-height: 480px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 8px;
+        }
+
+        .jump-item {
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 12.5px;
+            color: var(--text-body);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .jump-item:hover {
+            background: var(--blue-subtle);
+            color: var(--blue-accent);
+        }
+
+        .jump-item.active {
+            background: #dbeafe;
+            color: var(--blue-primary);
+            font-weight: 600;
+        }
+
+        .jump-num {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-muted);
+            width: 22px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =========================================================================
+         NORMAL VIEWPORT: TOP PRESENTATION BAR
+         ========================================================================= -->
+    <header id="deck-top-bar">
+        <div class="top-bar-left">
+            <div class="top-bar-brand">
+                <i class="fa-solid fa-atom text-blue-accent"></i>
+                <span>SENTRA PENDIPA 2026</span>
+            </div>
+            <div class="top-bar-divider"></div>
+            <div class="top-bar-paper-title" id="current-slide-breadcrumb">
+                Penerapan Model Pembelajaran SSCS Berbantuan Flashcard
+            </div>
+        </div>
+
+        <div class="top-bar-right">
+            <!-- Presenter Stopwatch -->
+            <div class="timer-display" id="sessionTimer" title="Klik untuk Start/Pause, Double-Click Reset">
+                <i class="fa-regular fa-clock"></i>
+                <span id="timerText">00:00</span>
+            </div>
+
+            <!-- Slide Jump Menu Trigger -->
+            <button class="nav-tool-btn" id="btnToggleJump" title="Daftar Slide (J)">
+                <i class="fa-solid fa-list-ul"></i>
+                <span>Slide (J)</span>
+            </button>
+
+            <!-- Slide Overview Trigger -->
+            <button class="nav-tool-btn" onclick="Reveal.toggleOverview()" title="Slide Grid (ESC)">
+                <i class="fa-solid fa-table-cells-large"></i>
+                <span>Grid (ESC)</span>
+            </button>
+
+            <!-- Fullscreen Presentation Mode Trigger -->
+            <button class="nav-tool-btn btn-primary-action" id="btnFullscreen" title="Mulai Mode Presentasi Penuh (F)">
+                <i class="fa-solid fa-play"></i>
+                <span id="fsBtnLabel">Presentasi (F)</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Top Progress Line -->
+    <div id="deck-progress-bar"></div>
+
+    <!-- Quick Slide Jump Menu Drawer -->
+    <div id="slide-jump-menu"></div>
+
+    <!-- =========================================================================
+         FULLSCREEN VIEWPORT: FLOATING PRESENTATION BAR (PPT/KEYNOTE STYLE)
+         ========================================================================= -->
+    <div id="floating-presentation-bar" title="Arahkan mouse untuk memunculkan toolbar">
+        <button class="floating-bar-btn" onclick="Reveal.prev()" title="Slide Sebelumnya (←)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <span class="floating-counter" id="floatingCounterBadge">01 / 17</span>
+        <button class="floating-bar-btn" onclick="Reveal.next()" title="Slide Berikutnya (→)">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div style="width: 1px; height: 16px; background: rgba(255,255,255,0.2);"></div>
+        <button class="floating-bar-btn" onclick="Reveal.toggleOverview()" title="Ikhtisar Slide (ESC)">
+            <i class="fa-solid fa-table-cells-large"></i>
+        </button>
+        <button class="floating-bar-btn" onclick="togglePresentationMode()" title="Keluar Mode Presentasi (F / ESC)">
+            <i class="fa-solid fa-compress"></i>
+        </button>
+    </div>
+
+    <!-- =========================================================================
+         REVEAL SLIDES CONTAINER (17 COMPLETE SLIDES)
+         ========================================================================= -->
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: COVER / TITLE (HERO SLIDE) -->
+            <section data-title="Cover Judul">
+                <div class="hero-banner">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                        <span class="slide-tag">
+                            <i class="fa-solid fa-award"></i> SEMINAR NASIONAL TRANSFORMASI PENDIDIKAN IPA
+                        </span>
+                        <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--blue-primary); background: #ffffff; padding: 4px 12px; border-radius: var(--radius-pill); border: 1px solid var(--blue-border);">
+                            SENTRA PENDIPA 2026
+                        </span>
+                    </div>
+
+                    <h1 style="font-size: 26px; line-height: 1.35; margin-bottom: 14px; color: var(--text-heading);">
+                        Penerapan Model Pembelajaran <span style="color: var(--blue-accent);">Search, Solve, Create, and Share (SSCS)</span> Berbantuan Flashcard untuk Meningkatkan Keterampilan Pemecahan Masalah Peserta Didik pada Materi Suhu dan Kalor
+                    </h1>
+
+                    <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 20px;">
+                        Studi Eksperimen Kuasi Komparatif terhadap Model Problem Based Learning (PBL) di Kelas XII MIPA MAN 2 Bandung
+                    </p>
+
+                    <div class="grid-2" style="margin-top: 10px;">
+                        <div class="author-card">
+                            <div class="author-avatar"><i class="fa-solid fa-user-graduate"></i></div>
+                            <div>
+                                <div style="font-size: 14px; font-weight: 700; color: var(--text-heading);">Trissanggrah Nirmala Desinta</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">Peneliti Utama • trissanggrahnirmaladesinta@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="author-card">
+                            <div class="author-avatar"><i class="fa-solid fa-chalkboard-user"></i></div>
+                            <div>
+                                <div style="font-size: 14px; font-weight: 700; color: var(--text-heading);">Dr. Muhammad Minan Chusni, M.Pd.</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">Dosen Pembimbing • Jurusan Pendidikan Fisika</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap;">
+                        <span class="slide-tag" style="background:#ffffff;"><i class="fa-solid fa-university"></i> UIN Sunan Gunung Djati Bandung</span>
+                        <span class="slide-tag" style="background:#ffffff;"><i class="fa-solid fa-flask-vial"></i> Kuasi Eksperimen</span>
+                        <span class="slide-tag" style="background:#ffffff;"><i class="fa-solid fa-layer-group"></i> 5 Indikator Heller</span>
+                        <span class="slide-tag" style="background:#ffffff;"><i class="fa-solid fa-chart-line"></i> N-Gain & Uji Mann-Whitney</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: EXECUTIVE SUMMARY & ROADMAP -->
+            <section data-title="Eksekutif Summary">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-compass"></i> Peta Jalan Presentasi</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-chart-pie"></i> Ringkasan Eksekutif & Struktur Riset</h2>
+                        <p class="slide-subtitle">Sintesis komprehensif latar belakang, metodologi, temuan empiris, dan implikasi pembelajaran fisika</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-users"></i> Sampel: 65 Siswa (XII MIPA)
+                    </div>
+                </div>
+
+                <div class="grid-4" style="margin-bottom: 14px;">
+                    <div class="metric-card">
+                        <div class="metric-label">Keterlaksanaan SSCS</div>
+                        <div class="metric-value">95%</div>
+                        <div class="metric-badge badge-blue">Guru (95%) • Siswa (93%)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">N-Gain Kelompok SSCS</div>
+                        <div class="metric-value emerald">0,88</div>
+                        <div class="metric-badge badge-emerald">Tinggi (Pre: 26 → Post: 91)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">N-Gain Kelompok PBL</div>
+                        <div class="metric-value">0,82</div>
+                        <div class="metric-badge badge-blue">Tinggi (Pre: 21 → Post: 86)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Signifikansi Statistik</div>
+                        <div class="metric-value" style="font-size: 26px; color: var(--blue-primary);">< 0,001</div>
+                        <div class="metric-badge badge-purple">Mann-Whitney U = 195,000</div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);"><i class="fa-solid fa-clipboard-check text-blue-accent"></i> Alur 4 Pilar Penelitian</span>
+                        </div>
+                        <ul class="custom-bullet-list">
+                            <li><strong>Identifikasi Masalah:</strong> Mengurai kelemahan evaluasi solusi dan dominasi ceramah konvensional.</li>
+                            <li><strong>Intervensi Inovatif:</strong> Integrasi 4 varian flashcard tematik ke dalam 4 tahapan sintaks SSCS.</li>
+                            <li><strong>Eksperimentasi Terkontrol:</strong> Komparasi berkeadilan terhadap kelas PBL dengan media setara.</li>
+                            <li><strong>Analisis Multidimensi:</strong> Evaluasi 5 indikator Heller, 3 submateri, dan uji non-parametrik SPSS.</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card accent-bar-emerald">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);"><i class="fa-solid fa-lightbulb" style="color: var(--emerald-accent);"></i> Nilai Kebaruan (Novelty)</span>
+                        </div>
+                        <p style="font-size: 12.5px; margin-bottom: 8px;">
+                            Sebagian besar studi SSCS terdahulu hanya berfokus pada matematika SMP/SMA (Sari & Ningsih 2019, Meika 2021).
+                        </p>
+                        <div class="callout-box" style="background: #f0fdf4; border-color: #bbf7d0;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--emerald-accent);"></i>
+                            <div style="font-size: 12px; color: #166534;">
+                                <strong>Kontribusi Baru:</strong> Memadukan 4 flashcard tematik secara spesifik ke dalam sintaks SSCS untuk menambal kelemahan representasi fenomena mikroskopis dan matematis pada materi termal.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: LATAR BELAKANG & FAKTA EMPIRIS -->
+            <section data-title="Latar Belakang">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-triangle-exclamation"></i> Urgensi Pedagogis</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-magnifying-glass-chart"></i> Latar Belakang & Masalah Lapangan</h2>
+                        <p class="slide-subtitle">Tantangan pemecahan masalah fisika dan temuan diagnostik awal di MAN 2 Bandung</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-school"></i> Studi Pendahuluan MAN 2 Bandung
+                    </div>
+                </div>
+
+                <div class="grid-2-1">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div class="glass-card accent-bar-left">
+                            <div style="font-weight: 700; font-size: 13.5px; color: var(--text-heading); margin-bottom: 4px;">
+                                <i class="fa-solid fa-brain text-blue-accent"></i> Hakekat Keterampilan Pemecahan Masalah
+                            </div>
+                            <p style="font-size: 12.5px; margin: 0;">
+                                Keterampilan pemecahan masalah bukan sekadar mencari hasil perhitungan numerik akhir, melainkan proses kognitif terintegrasi: mengidentifikasi informasi, mendefinisikan masalah, memilih konsep fisis relevan, merancang strategi, hingga mengevaluasi keabsahan hasil secara logis (Siswanto, 2024; Ayudha, 2021; Hanifah, 2026).
+                            </p>
+                        </div>
+
+                        <div class="grid-2">
+                            <div class="glass-card" style="border-left: 4px solid var(--amber-accent);">
+                                <div style="font-size: 11.5px; font-weight: 700; color: var(--amber-accent); text-transform: uppercase;">Skor Baseline Siswa</div>
+                                <div style="font-size: 26px; font-weight: 800; color: var(--text-heading);">48,00 <span style="font-size: 13px; font-weight: 600; color: var(--amber-accent);">(Sedang)</span></div>
+                                <p style="font-size: 11.5px; color: var(--text-muted); margin: 2px 0 0 0;">Rata-rata keterampilan pemecahan masalah suhu & kalor masih rendah.</p>
+                            </div>
+
+                            <div class="glass-card" style="border-left: 4px solid var(--rose-accent);">
+                                <div style="font-size: 11.5px; font-weight: 700; color: var(--rose-accent); text-transform: uppercase;">Titik Terlemah Siswa</div>
+                                <div style="font-size: 26px; font-weight: 800; color: var(--rose-accent);">46,11</div>
+                                <p style="font-size: 11.5px; color: var(--text-muted); margin: 2px 0 0 0;">Indikator <em>memeriksa & mengevaluasi solusi</em> menempati skor paling kritis.</p>
+                            </div>
+                        </div>
+
+                        <div class="callout-box">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <div style="font-size: 12px;">
+                                <strong>Hasil Angket & Wawancara Guru-Siswa:</strong> Sebanyak <strong>70% dari 30 peserta didik</strong> menyatakan kesulitan memahami materi kalor dan gagal menghubungkan formula matematis dengan fenomena termal kehidupan sehari-hari.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--text-heading);"><i class="fa-solid fa-list-check text-blue-accent"></i> 3 Kendala Pokok Pembelajaran</span>
+                            <span class="metric-badge badge-amber">Diagnostik</span>
+                        </div>
+                        <ul class="custom-bullet-list">
+                            <li class="warn">
+                                <strong>Didominasi Ceramah:</strong> Pembelajaran pasif satu arah, guru fokus mentransfer rumus tanpa memberi porsi investigasi mandiri.
+                            </li>
+                            <li class="warn">
+                                <strong>Bahan Ajar Terbatas:</strong> Bergantung penuh pada buku teks sekolah yang minim stimulasi visual dan tantangan kontekstual.
+                            </li>
+                            <li class="danger">
+                                <strong>Latihan Berorientasi Jawaban:</strong> Soal latihan belum secara eksplisit melatih tahapan indikator pemecahan masalah sistematis.
+                            </li>
+                        </ul>
+                        <div style="margin-top: 12px; padding: 10px; background: var(--blue-subtle); border-radius: var(--radius-sm); border: 1px dashed var(--blue-border); font-size: 11.5px; color: var(--blue-primary);">
+                            <strong>Kebutuhan Solutif:</strong> Model pembelajaran aktif terstruktur (SSCS) dipadukan dengan media stimulus ringkas (Flashcard).
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: MODEL PEMBELAJARAN SSCS -->
+            <section data-title="Model Pembelajaran SSCS">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-diagram-project"></i> Landasan Teori</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-sitemap"></i> Sintaks Search, Solve, Create, and Share (SSCS)</h2>
+                        <p class="slide-subtitle">Struktur empat tahapan pemecahan masalah sistematis menurut Pizzini (1988)</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-book-open"></i> Pizzini et al. (1988)
+                    </div>
+                </div>
+
+                <div class="step-flow">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <strong style="color: var(--blue-primary); font-size: 13.5px;">SEARCH</strong>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Identifikasi Masalah</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <strong style="color: var(--blue-primary); font-size: 13.5px;">SOLVE</strong>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Perencanaan Strategi</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <strong style="color: var(--blue-primary); font-size: 13.5px;">CREATE</strong>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Konstruksi Solusi</div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <strong style="color: var(--blue-primary); font-size: 13.5px;">SHARE</strong>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Komunikasi & Evaluasi</div>
+                    </div>
+                </div>
+
+                <div class="grid-4" style="margin-top: 6px;">
+                    <div class="glass-card" style="border-top: 3px solid var(--blue-accent);">
+                        <div style="font-weight: 700; font-size: 13px; color: var(--text-heading); margin-bottom: 4px;">
+                            <i class="fa-solid fa-magnifying-glass text-blue-accent"></i> 1. Search
+                        </div>
+                        <p style="font-size: 11.5px; color: var(--text-body); margin: 0;">
+                            Peserta didik mengamati fenomena termal, mendata besaran yang diketahui dan ditanyakan, serta memformulasikan masalah dalam kalimat fisika terarah.
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="border-top: 3px solid var(--cyan-accent);">
+                        <div style="font-weight: 700; font-size: 13px; color: var(--text-heading); margin-bottom: 4px;">
+                            <i class="fa-solid fa-gears text-blue-accent"></i> 2. Solve
+                        </div>
+                        <p style="font-size: 11.5px; color: var(--text-body); margin: 0;">
+                            Menentukan konsep fisika relevan (asas Black, kalor laten, laju konduksi), merancang alur matematis, dan memilih persamaan kalkulasi yang tepat.
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="border-top: 3px solid var(--emerald-accent);">
+                        <div style="font-weight: 700; font-size: 13px; color: var(--text-heading); margin-bottom: 4px;">
+                            <i class="fa-solid fa-lightbulb text-blue-accent"></i> 3. Create
+                        </div>
+                        <p style="font-size: 11.5px; color: var(--text-body); margin: 0;">
+                            Mengembangkan hasil pemikiran menjadi produk solusi nyata: melakukan kalkulasi matematis runtut dan menyusun simpulan jawaban yang dapat diuji.
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="border-top: 3px solid var(--purple-accent);">
+                        <div style="font-weight: 700; font-size: 13px; color: var(--text-heading); margin-bottom: 4px;">
+                            <i class="fa-solid fa-comments text-blue-accent"></i> 4. Share
+                        </div>
+                        <p style="font-size: 11.5px; color: var(--text-body); margin: 0;">
+                            Mengomunikasikan hasil penyelesaian kepada rekan kelas, mempertahankan argumentasi fisis secara ilmiah, dan merefleksi validitas solusi.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="callout-box" style="margin-top: 14px;">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <div>
+                        <strong>Komparasi Filosofis:</strong> Berbeda dengan PBL yang langsung menyajikan investigasi terbuka, <strong>SSCS memberikan tahapan berjenjang eksplisit</strong> dari penemuan konsep hingga pembuktian mandiri, sehingga menurunkan beban kognitif siswa (Sari, 2024; Hasibuan, 2026).
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: INOVASI MEDIA FLASHCARD (FLIP CARDS) -->
+            <section data-title="Inovasi Flashcard">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Media Scaffold</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-id-card"></i> Integrasi Media Flashcard pada Sintaks SSCS</h2>
+                        <p class="slide-subtitle">Arahkan kursor / klik kartu untuk melihat contoh implementasi stimulus interaktif di kelas</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-rotate"></i> Klik / Hover Kartu untuk Membalik
+                    </div>
+                </div>
+
+                <div class="grid-4">
+                    <!-- Flashcard 1: Search -->
+                    <div class="flashcard-container" onclick="this.classList.toggle('is-flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div>
+                                    <span class="slide-tag" style="font-size: 10px; margin-bottom: 6px;">Tahap Search</span>
+                                    <div style="font-weight: 800; font-size: 14.5px; color: var(--blue-primary); margin-bottom: 2px;">Kartu Stimulus</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Menyajikan fenomena termal kontekstual kehidupan nyata.</div>
+                                </div>
+                                <div style="text-align: center; color: var(--blue-accent); font-size: 30px;">
+                                    <i class="fa-solid fa-temperature-three-quarters"></i>
+                                </div>
+                                <div class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Balik: Contoh Kasus</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div>
+                                    <span class="card-badge-back">Contoh Kartu Search</span>
+                                    <div style="font-weight: 700; font-size: 12.5px; margin: 4px 0 2px 0;">Studi Fenomena Termal:</div>
+                                    <p><em>"Mengapa es batu di atas pelat seng meleleh jauh lebih cepat dibandingkan di atas papan kayu pada suhu ruang yang sama?"</em></p>
+                                </div>
+                                <div style="font-size: 10px; opacity: 0.9;">Tujuan: Memantik siswa merumuskan variabel suhu & perpindahan kalor.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flashcard 2: Solve -->
+                    <div class="flashcard-container" onclick="this.classList.toggle('is-flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div>
+                                    <span class="slide-tag" style="font-size: 10px; margin-bottom: 6px;">Tahap Solve</span>
+                                    <div style="font-weight: 800; font-size: 14.5px; color: var(--blue-primary); margin-bottom: 2px;">Kartu Konsep</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Petunjuk pemetaan besaran fisis & pemilihan hukum.</div>
+                                </div>
+                                <div style="text-align: center; color: var(--cyan-accent); font-size: 30px;">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </div>
+                                <div class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Balik: Panduan Konsep</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div>
+                                    <span class="card-badge-back">Contoh Kartu Solve</span>
+                                    <div style="font-weight: 700; font-size: 12.5px; margin: 4px 0 2px 0;">Panduan Konseptual:</div>
+                                    <p>Laju kalor konduksi: $H = k \cdot A \cdot \frac{\Delta T}{L}$. Identifikasi perbedaan nilai konduktivitas termal ($k$) seng vs kayu.</p>
+                                </div>
+                                <div style="font-size: 10px; opacity: 0.9;">Tujuan: Mencegah hafalan rumus buta (*blind guessing*).</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flashcard 3: Create -->
+                    <div class="flashcard-container" onclick="this.classList.toggle('is-flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div>
+                                    <span class="slide-tag" style="font-size: 10px; margin-bottom: 6px;">Tahap Create</span>
+                                    <div style="font-weight: 800; font-size: 14.5px; color: var(--blue-primary); margin-bottom: 2px;">Kartu Tantangan</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Panduan perumusan matematis & evaluasi besaran.</div>
+                                </div>
+                                <div style="text-align: center; color: var(--emerald-accent); font-size: 30px;">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Balik: Contoh Tantangan</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div>
+                                    <span class="card-badge-back">Contoh Kartu Create</span>
+                                    <div style="font-weight: 700; font-size: 12.5px; margin: 4px 0 2px 0;">Tantangan Solusi:</div>
+                                    <p>Substitusikan $\Delta T$ dan dimensi bahan. Gunakan $Q = mL$ untuk menghitung waktu yang dibutuhkan hingga 50 gram es melebur sempurna!</p>
+                                </div>
+                                <div style="font-size: 10px; opacity: 0.9;">Tujuan: Melatih akurasi prosedur matematika & konversi satuan SI.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flashcard 4: Share -->
+                    <div class="flashcard-container" onclick="this.classList.toggle('is-flipped')">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div>
+                                    <span class="slide-tag" style="font-size: 10px; margin-bottom: 6px;">Tahap Share</span>
+                                    <div style="font-weight: 800; font-size: 14.5px; color: var(--blue-primary); margin-bottom: 2px;">Kartu Pemantik</div>
+                                    <div style="font-size: 11px; color: var(--text-muted);">Memicu debat ilmiah, validasi hasil, & evaluasi logis.</div>
+                                </div>
+                                <div style="text-align: center; color: var(--purple-accent); font-size: 30px;">
+                                    <i class="fa-solid fa-comments"></i>
+                                </div>
+                                <div class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Balik: Pemantik Diskusi</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div>
+                                    <span class="card-badge-back">Contoh Kartu Share</span>
+                                    <div style="font-weight: 700; font-size: 12.5px; margin: 4px 0 2px 0;">Pemantik Argumentasi:</div>
+                                    <p><em>"Apakah hasil hitungan Anda logis? Jika pelat seng diganti isolator gabus, mengapa es tahan lebih lama? Presentasikan!"</em></p>
+                                </div>
+                                <div style="font-size: 10px; opacity: 0.9;">Tujuan: Menguatkan indikator evaluasi solusi (Heller 5).</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box" style="margin-top: 14px;">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>Keadilan Metodologis:</strong> Flashcard juga diberikan kepada kelompok kontrol (PBL). Dengan demikian, perbedaan capaian murni dipicu oleh <strong>efektivitas sintaks model pembelajaran SSCS</strong>, bukan semata efek kehadiran media (Kholidi, 2026).
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: 5 INDIKATOR HELLER (1992) -->
+            <section data-title="Indikator Pemecahan Masalah">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-bullseye"></i> Parameter Evaluasi</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-crosshairs"></i> 5 Indikator Keterampilan Pemecahan Masalah</h2>
+                        <p class="slide-subtitle">Taksonomi evaluasi keterampilan pemecahan masalah fisika menurut Heller, Keith, & Anderson (1992)</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-check-double"></i> Heller (1992)
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="glass-card">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--text-heading);"><i class="fa-solid fa-list-ol text-blue-accent"></i> Sintesis 5 Indikator Heller</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                <span class="metric-badge badge-blue" style="font-size: 11px; min-width: 24px; text-align: center;">1</span>
+                                <div style="font-size: 12.5px;">
+                                    <strong>Deskripsi yang Berguna (Visualize):</strong> Memvisualisasikan fenomena, membuat sketsa/diagram termal, dan memetakan besaran fisis yang diketahui/ditanyakan.
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                <span class="metric-badge badge-blue" style="font-size: 11px; min-width: 24px; text-align: center;">2</span>
+                                <div style="font-size: 12.5px;">
+                                    <strong>Pendekatan Fisika (Physics Terms):</strong> Menentukan prinsip fisika yang melandasi persoalan (asas Black, perpindahan kalor, pemuaian zat).
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                <span class="metric-badge badge-blue" style="font-size: 11px; min-width: 24px; text-align: center;">3</span>
+                                <div style="font-size: 12.5px;">
+                                    <strong>Aplikasi Fisika Spesifik (Plan):</strong> Menyusun rencana matematis operasional dan menghubungkan relasi antar besaran fisika spesifik.
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                <span class="metric-badge badge-blue" style="font-size: 11px; min-width: 24px; text-align: center;">4</span>
+                                <div style="font-size: 12.5px;">
+                                    <strong>Prosedur Matematika Tepat (Execute):</strong> Melakukan manipulasi aljabar, substitusi nilai besaran, dan komputasi nilai numerik secara benar.
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 10px; align-items: flex-start;">
+                                <span class="metric-badge badge-blue" style="font-size: 11px; min-width: 24px; text-align: center;">5</span>
+                                <div style="font-size: 12.5px;">
+                                    <strong>Progresi Logis & Evaluasi (Evaluate):</strong> Mengecek runtutan langkah, kesesuaian satuan SI, serta mengevaluasi kelogisan solusi akhir.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="background: linear-gradient(145deg, #ffffff 0%, #f0f7ff 100%);">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--text-heading);"><i class="fa-solid fa-link text-blue-accent"></i> Keterkaitan Sintaks SSCS & Heller</span>
+                        </div>
+                        <table class="modern-table">
+                            <thead>
+                                <tr>
+                                    <th>Tahap SSCS</th>
+                                    <th>Indikator Heller yang Dilatih</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Search</strong></td>
+                                    <td>Deskripsi yang Berguna (Visualisasi fenomena)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Solve</strong></td>
+                                    <td>Pendekatan Fisika & Aplikasi Fisika Spesifik</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Create</strong></td>
+                                    <td>Prosedur Matematika yang Tepat & Eksekusi</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Share</strong></td>
+                                    <td>Progresi Logis, Verifikasi & Evaluasi Solusi</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="callout-box" style="margin-top: 10px; font-size: 12px; padding: 10px;">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <div>Instrumen tes dirancang dalam bentuk soal uraian berbasis 5 indikator ini (Tipe A & Tipe B, masing-masing 3 soal) diuji ANATES v4.0.5.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: METODOLOGI PENELITIAN -->
+            <section data-title="Metodologi Penelitian">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-flask"></i> Prosedur Ilmiah</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-microscope"></i> Desain & Metodologi Penelitian</h2>
+                        <p class="slide-subtitle">Pendekatan kuantitatif kuasi eksperimen dengan pretest-posttest non-equivalent control group</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-calendar-days"></i> 3 Pertemuan Pembelajaran
+                    </div>
+                </div>
+
+                <div class="grid-3" style="margin-bottom: 14px;">
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--text-heading);">Desain Penelitian</span>
+                            <i class="fa-solid fa-vial-circle-check text-blue-accent"></i>
+                        </div>
+                        <div style="font-size: 12.5px;">
+                            <strong>Quasi Experimental:</strong>
+                            <div style="font-family: var(--font-mono); font-size: 11px; background: #f1f5f9; padding: 6px; border-radius: 4px; margin: 6px 0;">
+                                O₁ × X₁ → O₂ (Eksperimen)<br>
+                                O₃ × X₂ → O₄ (Kontrol)
+                            </div>
+                            Pretest ($O_1, O_3$) dan Posttest ($O_2, O_4$) untuk mengukur N-Gain.
+                        </div>
+                    </div>
+
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--text-heading);">Populasi & Sampel</span>
+                            <i class="fa-solid fa-users text-blue-accent"></i>
+                        </div>
+                        <div style="font-size: 12.5px;">
+                            <strong>MAN 2 Bandung (Random Sampling):</strong>
+                            <ul style="margin: 6px 0 0 16px; padding: 0; font-size: 12px;">
+                                <li><strong>Kelas Eksperimen:</strong> XII MIPA 5 ($N = 32$) • Model SSCS + Flashcard</li>
+                                <li><strong>Kelas Kontrol:</strong> XII MIPA 6 ($N = 33$) • Model PBL + Flashcard</li>
+                            </ul>
+                            Total subjek penelitian: <strong>65 peserta didik</strong>.
+                        </div>
+                    </div>
+
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--text-heading);">Instrumen & Uji Coba</span>
+                            <i class="fa-solid fa-chart-simple text-blue-accent"></i>
+                        </div>
+                        <div style="font-size: 12.5px;">
+                            <strong>Kelayakan Instrumen:</strong>
+                            <ul style="margin: 6px 0 0 16px; padding: 0; font-size: 12px;">
+                                <li>Lembar Observasi Aktivitas (3 Observer)</li>
+                                <li>Tes Uraian Pemecahan Masalah (Tipe A & B)</li>
+                                <li>Uji Validitas, Reliabilitas, Daya Pembeda via <strong>ANATES v4.0.5</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <div style="font-weight: 700; font-size: 13.5px; color: var(--text-heading); margin-bottom: 6px;">
+                        <i class="fa-solid fa-timeline text-blue-accent"></i> Cakupan Materi 3 Pertemuan
+                    </div>
+                    <div class="grid-3">
+                        <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 9px 12px; border-radius: var(--radius-sm);">
+                            <span class="metric-badge badge-blue">Pertemuan 1</span>
+                            <div style="font-weight: 700; font-size: 13px; margin: 3px 0;">Suhu & Termometer</div>
+                            <div style="font-size: 11.5px; color: var(--text-muted);">Konversi skala termometer, kalibrasi termometer zat cair, fenomena kesetimbangan suhu.</div>
+                        </div>
+                        <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 9px 12px; border-radius: var(--radius-sm);">
+                            <span class="metric-badge badge-blue">Pertemuan 2</span>
+                            <div style="font-weight: 700; font-size: 13px; margin: 3px 0;">Kalor & Perubahan Wujud Zat</div>
+                            <div style="font-size: 11.5px; color: var(--text-muted);">Kapasitas kalor, kalor jenis, kalor laten lebur/uap, serta Asas Black ($Q_{lepas} = Q_{terima}$).</div>
+                        </div>
+                        <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 9px 12px; border-radius: var(--radius-sm);">
+                            <span class="metric-badge badge-blue">Pertemuan 3</span>
+                            <div style="font-weight: 700; font-size: 13px; margin: 3px 0;">Perpindahan Kalor</div>
+                            <div style="font-size: 11.5px; color: var(--text-muted);">Mekanisme konduksi pada logam majemuk, konveksi fluida, dan radiasi hukum Stefan-Boltzmann.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: KETERLAKSANAAN PEMBELAJARAN -->
+            <section data-title="Keterlaksanaan Pembelajaran">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-clipboard-user"></i> Observasi Lapangan</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-users-viewfinder"></i> Keterlaksanaan Pembelajaran SSCS vs PBL</h2>
+                        <p class="slide-subtitle">Hasil lembar observasi keterlaksanaan aktivitas guru dan peserta didik oleh 3 observer independen</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-eye"></i> 3 Observer Independen
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <div>
+                                <strong style="font-size: 13.5px; color: var(--blue-primary);">Tabel 1. Keterlaksanaan Model SSCS</strong>
+                                <div style="font-size: 11px; color: var(--text-muted);">Kelompok Eksperimen (Kelas XII MIPA 5)</div>
+                            </div>
+                            <span class="metric-badge badge-emerald">Sangat Baik</span>
+                        </div>
+                        <table class="modern-table">
+                            <thead>
+                                <tr>
+                                    <th>Pertemuan</th>
+                                    <th>Aktivitas Guru</th>
+                                    <th>Aktivitas Siswa</th>
+                                    <th>Kategori</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pertama</td>
+                                    <td>94%</td>
+                                    <td>92%</td>
+                                    <td>Sangat Baik</td>
+                                </tr>
+                                <tr>
+                                    <td>Kedua</td>
+                                    <td>94%</td>
+                                    <td>92%</td>
+                                    <td>Sangat Baik</td>
+                                </tr>
+                                <tr>
+                                    <td>Ketiga</td>
+                                    <td>96%</td>
+                                    <td>96%</td>
+                                    <td>Sangat Baik</td>
+                                </tr>
+                                <tr class="highlight-row">
+                                    <td><strong>Rata-rata</strong></td>
+                                    <td><strong>95%</strong></td>
+                                    <td><strong>93%</strong></td>
+                                    <td><strong>Sangat Baik</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <div>
+                                <strong style="font-size: 13.5px; color: var(--text-heading);">Tabel 2. Keterlaksanaan Model PBL</strong>
+                                <div style="font-size: 11px; color: var(--text-muted);">Kelompok Kontrol (Kelas XII MIPA 6)</div>
+                            </div>
+                            <span class="metric-badge badge-blue">Sangat Baik</span>
+                        </div>
+                        <table class="modern-table">
+                            <thead>
+                                <tr>
+                                    <th>Pertemuan</th>
+                                    <th>Aktivitas Guru</th>
+                                    <th>Aktivitas Siswa</th>
+                                    <th>Kategori</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pertama</td>
+                                    <td>90%</td>
+                                    <td>91%</td>
+                                    <td>Sangat Baik</td>
+                                </tr>
+                                <tr>
+                                    <td>Kedua</td>
+                                    <td>93%</td>
+                                    <td>89%</td>
+                                    <td>Sangat Baik</td>
+                                </tr>
+                                <tr>
+                                    <td>Ketiga</td>
+                                    <td>91%</td>
+                                    <td>89%</td>
+                                    <td>Sangat Baik</td>
+                                </tr>
+                                <tr class="highlight-row">
+                                    <td><strong>Rata-rata</strong></td>
+                                    <td><strong>91%</strong></td>
+                                    <td><strong>89%</strong></td>
+                                    <td><strong>Sangat Baik</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid-3" style="margin-top: 14px;">
+                    <div class="metric-card">
+                        <div class="metric-label">Konsistensi Sintaks</div>
+                        <div class="metric-value" style="font-size: 26px;">100%</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">Seluruh tahapan terlaksana runtut</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Keunggulan Partisipasi SSCS</div>
+                        <div class="metric-value emerald" style="font-size: 26px;">+4%</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">Aktivitas siswa SSCS (93% vs 89%)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Reliabilitas Antar-Observer</div>
+                        <div class="metric-value" style="font-size: 26px; color: var(--blue-accent);">Tinggi</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">Koefisien kesepakatan 3 penilai valid</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 9: HASIL UTAMA: PRETEST, POSTTEST & N-GAIN -->
+            <section data-title="Hasil N-Gain Makro">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-chart-column"></i> Data Temuan Utama</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-square-poll-vertical"></i> Peningkatan Keterampilan Pemecahan Masalah</h2>
+                        <p class="slide-subtitle">Perbandingan perolehan skor Pretest, Posttest, dan Normalized Gain (N-Gain) Hake</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-arrow-trend-up"></i> N-Gain Score Comparison
+                    </div>
+                </div>
+
+                <div class="grid-1-2">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div class="glass-card">
+                            <strong style="font-size: 13px; color: var(--text-heading); margin-bottom: 6px;">Tabel 3. Rekapitulasi Nilai Keseluruhan</strong>
+                            <table class="modern-table">
+                                <thead>
+                                    <tr>
+                                        <th>Kelas / Model</th>
+                                        <th>Pre</th>
+                                        <th>Post</th>
+                                        <th>N-Gain</th>
+                                        <th>Kategori</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="highlight-row">
+                                        <td><strong>SSCS + Flashcard</strong></td>
+                                        <td>26</td>
+                                        <td>91</td>
+                                        <td><strong>0,88</strong></td>
+                                        <td><span class="metric-badge badge-emerald">Tinggi</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>PBL + Flashcard</strong></td>
+                                        <td>21</td>
+                                        <td>86</td>
+                                        <td><strong>0,82</strong></td>
+                                        <td><span class="metric-badge badge-blue">Tinggi</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="metric-card accent-bar-emerald" style="text-align: left; padding: 12px 16px;">
+                            <div style="font-size: 11.5px; font-weight: 700; color: var(--emerald-accent); text-transform: uppercase;">Selisih Keunggulan SSCS</div>
+                            <div style="font-size: 24px; font-weight: 800; color: var(--text-heading);">$\Delta$ 0,06 Poin N-Gain</div>
+                            <p style="font-size: 12px; color: var(--text-muted); margin: 2px 0 0 0;">
+                                Kelas SSCS melesat dari 26 ke 91 (kenaikan 65 poin), sedangkan PBL dari 21 ke 86 (kenaikan 65 poin pada basis awal lebih rendah).
+                            </p>
+                        </div>
+
+                        <div class="callout-box" style="padding: 10px 14px; font-size: 12px;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--emerald-accent);"></i>
+                            <div>Keduanya masuk kategori <strong>Tinggi ($g > 0,70$)</strong>, namun SSCS lebih efektif secara deskriptif dan statistik.</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <canvas id="macroComparisonChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 10: CAPAIAN PER SUBMATERI FISIKA -->
+            <section data-title="Capaian Submateri">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-temperature-arrow-up"></i> Tinjauan Materi Fisika</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-layer-group"></i> Analisis N-Gain Berdasarkan Submateri</h2>
+                        <p class="slide-subtitle">Dekomposisi efektivitas model pada Suhu-Termometer, Kalor-Wujud Zat, dan Perpindahan Kalor</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-fire-burner"></i> Suhu & Kalor Fisika SMA
+                    </div>
+                </div>
+
+                <div class="grid-1-2">
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="glass-card" style="border-left: 4px solid var(--blue-accent); padding: 10px 14px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong style="font-size: 13px; color: var(--text-heading);">1. Suhu & Termometer</strong>
+                                <span class="metric-badge badge-emerald">Gap +0,11</span>
+                            </div>
+                            <div style="font-size: 12px; color: var(--text-body); margin-top: 3px;">
+                                SSCS: <strong>0,94</strong> vs PBL: <strong>0,83</strong>. Tahap <em>Search</em> membimbing siswa memahami perbandingan skala termometer secara presisi.
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="border-left: 4px solid var(--amber-accent); padding: 10px 14px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong style="font-size: 13px; color: var(--text-heading);">2. Kalor & Perubahan Wujud</strong>
+                                <span class="metric-badge badge-amber">Gap +0,06</span>
+                            </div>
+                            <div style="font-size: 12px; color: var(--text-body); margin-top: 3px;">
+                                SSCS: <strong>0,83</strong> vs PBL: <strong>0,77</strong>. Materi paling kompleks karena melibatkan multi-variabel ($m, c, L, \Delta T$).
+                            </div>
+                        </div>
+
+                        <div class="glass-card" style="border-left: 4px solid var(--cyan-accent); padding: 10px 14px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong style="font-size: 13px; color: var(--text-heading);">3. Perpindahan Kalor</strong>
+                                <span class="metric-badge badge-blue">Gap +0,02</span>
+                            </div>
+                            <div style="font-size: 12px; color: var(--text-body); margin-top: 3px;">
+                                SSCS: <strong>0,88</strong> vs PBL: <strong>0,86</strong>. Konduksi dan radiasi mudah divisualisasikan oleh kedua kelompok.
+                            </div>
+                        </div>
+
+                        <div class="callout-box" style="padding: 8px 12px; font-size: 11.5px;">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <div>Materi Kalor & Wujud Zat menuntut scaffolding ekstra karena banyaknya variabel yang diproses secara simultan.</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <canvas id="submateriChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 11: ANATOMI KOGNITIF: 5 INDIKATOR HELLER -->
+            <section data-title="Indikator Heller">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-dna"></i> Anatomi Kognitif</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-chart-radar"></i> Evaluasi Mendalam Berdasarkan 5 Indikator Heller</h2>
+                        <p class="slide-subtitle">Membedah kekuatan dan kelemahan dimensi kognitif siswa pada kedua model pembelajaran</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-sliders"></i> Heller 5 Dimensions
+                    </div>
+                </div>
+
+                <div class="grid-1-2">
+                    <div class="glass-card">
+                        <strong style="font-size: 13px; color: var(--text-heading); margin-bottom: 6px;">Tabel 4 & 5. N-Gain per Indikator Heller</strong>
+                        <table class="modern-table">
+                            <thead>
+                                <tr>
+                                    <th>Indikator Heller</th>
+                                    <th>SSCS</th>
+                                    <th>PBL</th>
+                                    <th>$\Delta$ Gap</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight-row">
+                                    <td><i class="fa-solid fa-calculator text-blue-accent"></i> Prosedur Matematika</td>
+                                    <td><strong>0,92</strong></td>
+                                    <td><strong>0,87</strong></td>
+                                    <td><span class="metric-badge badge-emerald">+0,05</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-eye text-blue-accent"></i> Deskripsi Berguna</td>
+                                    <td>0,88</td>
+                                    <td>0,84</td>
+                                    <td><span class="metric-badge badge-blue">+0,04</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-compass-drafting text-blue-accent"></i> Pendekatan Fisika</td>
+                                    <td>0,87</td>
+                                    <td>0,81</td>
+                                    <td><span class="metric-badge badge-blue">+0,06</span></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa-solid fa-arrow-down-1-9 text-blue-accent"></i> Progresi Logis</td>
+                                    <td>0,87</td>
+                                    <td>0,80</td>
+                                    <td><span class="metric-badge badge-blue">+0,07</span></td>
+                                </tr>
+                                <tr style="background: #fffbeb;">
+                                    <td><i class="fa-solid fa-circle-exclamation text-amber-accent"></i> Aplikasi Fisika Spesifik</td>
+                                    <td style="color: var(--amber-accent);">0,85</td>
+                                    <td style="color: var(--rose-accent);">0,79*</td>
+                                    <td><span class="metric-badge badge-amber">+0,06</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">
+                            *Catatan: Nilai 0,79 pada kelas PBL merupakan satu-satunya capaian yang masuk kategori <em>Sedang</em>.
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <canvas id="hellerRadarChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 12: UJI HIPOTESIS & STATISTIK INFERENSIAL -->
+            <section data-title="Uji Hipotesis SPSS">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-square-root-variable"></i> Uji Statistik Inferensial</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-calculator"></i> Pengujian Prasyarat & Uji Hipotesis (SPSS v26)</h2>
+                        <p class="slide-subtitle">Bukti empiris signifikansi perbedaan peningkatan keterampilan pemecahan masalah</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-check"></i> $H_0$ Ditolak ($p < 0,001$)
+                    </div>
+                </div>
+
+                <div class="grid-3" style="margin-bottom: 14px;">
+                    <div class="glass-card" style="border-top: 3px solid var(--amber-accent);">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13px; color: var(--text-heading);">1. Uji Normalitas</span>
+                            <span class="metric-badge badge-amber">Shapiro-Wilk</span>
+                        </div>
+                        <ul class="custom-bullet-list" style="font-size: 12px; gap: 4px;">
+                            <li>Eksperimen: <strong>Sig. = 0,002</strong></li>
+                            <li>Kontrol: <strong>Sig. = 0,000</strong></li>
+                        </ul>
+                        <div style="margin-top: 8px; font-size: 11.5px; background: #fffbeb; padding: 6px; border-radius: 4px; color: #92400e;">
+                            Karena $p < 0,05$, data <strong>tidak berdistribusi normal</strong>.
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="border-top: 3px solid var(--blue-accent);">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13px; color: var(--text-heading);">2. Uji Homogenitas</span>
+                            <span class="metric-badge badge-blue">Levene Test</span>
+                        </div>
+                        <div style="font-size: 12px;">
+                            Nilai Signifikansi: <strong>Sig. = 0,283</strong>
+                        </div>
+                        <div style="margin-top: 8px; font-size: 11.5px; background: #eff6ff; padding: 6px; border-radius: 4px; color: #1e40af;">
+                            Karena $p > 0,05$, varians kedua kelompok dinyatakan <strong>homogen</strong>.
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="border-top: 3px solid var(--emerald-accent);">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13px; color: var(--text-heading);">3. Uji Hipotesis</span>
+                            <span class="metric-badge badge-emerald">Mann-Whitney U</span>
+                        </div>
+                        <ul class="custom-bullet-list" style="font-size: 12px; gap: 4px;">
+                            <li>Mann-Whitney U: <strong>195,000</strong></li>
+                            <li>Derajat Bebas (df): <strong>65</strong></li>
+                        </ul>
+                        <div style="margin-top: 8px; font-size: 11.5px; background: #f0fdf4; padding: 6px; border-radius: 4px; color: #166534;">
+                            Asumsi parametrik gagal → Uji Non-parametrik dipilih.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card highlight" style="border: 2px solid #93c5fd; padding: 16px 22px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <div>
+                            <div style="font-size: 11.5px; font-weight: 700; color: var(--blue-accent); text-transform: uppercase;">Keputusan Uji Hipotesis Statistik</div>
+                            <div style="font-size: 21px; font-weight: 800; color: var(--blue-primary); margin-top: 2px;">
+                                Sig. (2-tailed) = 0,000 &nbsp;•&nbsp; Nilai $p < 0,001$ &nbsp;•&nbsp; $H_0$ DITOLAK
+                            </div>
+                        </div>
+                        <div class="metric-badge badge-emerald" style="font-size: 13px; padding: 6px 14px;">
+                            <i class="fa-solid fa-certificate"></i> Signifikan secara Statistik
+                        </div>
+                    </div>
+                    <div style="font-size: 12.5px; color: var(--text-body); margin-top: 8px; border-top: 1px dashed var(--blue-border); padding-top: 8px;">
+                        <strong>Kesimpulan Inferensial:</strong> Terdapat perbedaan peningkatan keterampilan pemecahan masalah yang signifikan antara peserta didik yang belajar dengan model <strong>SSCS berbantuan flashcard</strong> dibanding <strong>PBL berbantuan flashcard</strong> pada materi suhu dan kalor.
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 13: PEMBAHASAN KRITIS I: KEUNGGULAN SSCS -->
+            <section data-title="Pembahasan Keunggulan SSCS">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-comments"></i> Analisis Diskusi I</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-code-compare"></i> Pembahasan I: Mengapa Model SSCS Lebih Unggul?</h2>
+                        <p class="slide-subtitle">Dekomposisi struktural beban kognitif dan intervensi flashcard pada sintaks pembelajaran</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-diagram-project"></i> Structural Superiority
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);"><i class="fa-solid fa-circle-check text-blue-accent"></i> 1. Struktur Eksplisit & Terarah</span>
+                        </div>
+                        <p style="font-size: 12.5px; color: var(--text-body); margin-bottom: 8px;">
+                            Model SSCS mengorganisasikan proses kognitif secara terarah ke dalam 4 siklus berjenjang. Peserta didik tidak langsung berhadapan dengan masalah acak, tetapi dipandu mulai dari mengurai informasi (<em>Search</em>) hingga merencanakan strategi pemecahan (<em>Solve</em>).
+                        </p>
+                        <div class="callout-box" style="font-size: 12px; padding: 10px;">
+                            <i class="fa-solid fa-bolt"></i>
+                            <div>Sebaliknya, pada PBL orientasi investigasi yang terlalu terbuka sering menimbulkan kebingungan bagi siswa berdaya nalar sedang.</div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);"><i class="fa-solid fa-id-card-clip text-blue-accent"></i> 2. Peran Flashcard sebagai Scaffolding</span>
+                        </div>
+                        <p style="font-size: 12.5px; color: var(--text-body); margin-bottom: 8px;">
+                            Dalam kelas SSCS, flashcard diintegrasikan langsung pada setiap tahap sintaks:
+                        </p>
+                        <ul class="custom-bullet-list" style="font-size: 12px; gap: 4px;">
+                            <li>Kartu stimulus memantik identifikasi fenomena (Search).</li>
+                            <li>Kartu konsep membimbing pemilihan formula fisika (Solve).</li>
+                            <li>Kartu tantangan mengarahkan formulasi solusi matematis (Create).</li>
+                            <li>Kartu pemantik menuntut pertanggungjawaban logika (Share).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="margin-top: 14px; background: linear-gradient(145deg, #ffffff 0%, #f0f7ff 100%);">
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <div class="card-icon-badge" style="width: 44px; height: 44px; font-size: 20px;">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div style="font-size: 12.5px;">
+                            <strong>Refleksi Komparasi Media:</strong> Mengingat kelas kontrol (PBL) juga menggunakan flashcard pendukung, maka keunggulan N-Gain (0,88 vs 0,82) membuktikan bahwa <strong>perbedaan karakteristik model pembelajarannyalah yang menjadi pemicu utama keunggulan</strong>, bukan semata-mata kehadiran kartu fisika tersebut.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 14: PEMBAHASAN KRITIS II: PARADOKS MEKANISASI HITUNGAN -->
+            <section data-title="Pembahasan Paradoks Kognitif">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag" style="background:#fff1f2; color:#be123c; border-color:#fecdd3;"><i class="fa-solid fa-triangle-exclamation"></i> Temuan Kritis Riset</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-bolt-lightning text-amber-accent"></i> Pembahasan II: Fenomena "Mekanisasi Hitungan"</h2>
+                        <p class="slide-subtitle">Mengapa skor prosedur matematika tinggi (0,92), namun aplikasi fisika spesifik terendah (0,85 / 0,79)?</p>
+                    </div>
+                    <div class="slide-context-badge" style="color: var(--rose-accent);">
+                        <i class="fa-solid fa-magnifying-glass"></i> Anomali Kognitif Siswa
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="glass-card" style="border-left: 4px solid var(--emerald-accent);">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--emerald-accent);"><i class="fa-solid fa-square-check"></i> Indikator Tertinggi: Prosedur Matematika</span>
+                            <span class="metric-badge badge-emerald">0,92 & 0,87</span>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-body);">
+                            Peserta didik sangat mahir melakukan substitusi angka, kalkulasi aritmatika, dan manipulasi persamaan aljabar setelah diberikan rumus yang sudah siap pakai.
+                        </p>
+                        <div style="background: #f0fdf4; padding: 8px 12px; border-radius: 6px; font-size: 11.5px; color: #166534;">
+                            <strong>Faktor Pemicu:</strong> Budaya latihan soal drilling rumus di sekolah membuat aspek komputasi matematis lebih cepat terasah.
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="border-left: 4px solid var(--rose-accent);">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--rose-accent);"><i class="fa-solid fa-circle-xmark"></i> Indikator Terendah: Aplikasi Fisika Spesifik</span>
+                            <span class="metric-badge badge-amber">0,85 & 0,79</span>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-body);">
+                            Peserta didik mengalami kebingungan menentukan prinsip fisika yang sesuai ketika berhadapan dengan situasi kontekstual yang baru atau multi-tahap (seperti es mencair bercampur air hangat).
+                        </p>
+                        <div style="background: #fff1f2; padding: 8px 12px; border-radius: 6px; font-size: 11.5px; color: #9f1239;">
+                            <strong>Faktor Pemicu:</strong> Pemahaman konsep fisis mikroskopis yang belum kuat serta beban memproses banyak variabel bersamaan.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout-box" style="margin-top: 14px; background: #fffbeb; border-color: #fde68a;">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: var(--amber-accent);"></i>
+                    <div style="font-size: 12px; color: #78350f;">
+                        <strong>Catatan Kritis Bagi Praktisi Pendidik (Pantaleon et al., 2026):</strong> Keberhasilan pembelajaran fisika tidak boleh diukur hanya dari kepiawaian siswa menyelesaikan hitungan matematis di kertas. Siswa memerlukan lebih banyak <em>latihan berbasis fenomena kontekstual</em> dan <em>pertanyaan penuntun (guiding questions)</em> sebelum mereka diperkenankan mengutak-atik angka dan formula.
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 15: KESIMPULAN PENELITIAN -->
+            <section data-title="Kesimpulan Riset">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-flag-checkered"></i> Simpulan Akhir</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-bullseye"></i> Kesimpulan Utama Penelitian</h2>
+                        <p class="slide-subtitle">Tiga simpulan kunci berdasarkan temuan observasi, analisis N-Gain, dan uji hipotesis inferensial</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-check-circle"></i> Jawaban Rumusan Masalah
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="glass-card highlight" style="border-top: 4px solid var(--blue-accent);">
+                        <div class="card-icon-badge" style="margin-bottom: 10px;">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <div style="font-weight: 700; font-size: 13.5px; color: var(--text-heading); margin-bottom: 4px;">
+                            1. Keterlaksanaan Sangat Baik
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-body); margin: 0;">
+                            Penerapan model SSCS berbantuan flashcard terlaksana dengan persentase <strong>95% pada aktivitas guru</strong> dan <strong>93% pada aktivitas siswa</strong> (kategori Sangat Baik), lebih tinggi dibanding model PBL (91% dan 89%).
+                        </p>
+                    </div>
+
+                    <div class="glass-card highlight" style="border-top: 4px solid var(--emerald-accent);">
+                        <div class="card-icon-badge" style="margin-bottom: 10px; background: #d1fae5; color: #059669; border-color: #6ee7b7;">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div style="font-weight: 700; font-size: 13.5px; color: var(--text-heading); margin-bottom: 4px;">
+                            2. Peningkatan N-Gain Tinggi
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-body); margin: 0;">
+                            Keterampilan pemecahan masalah kelompok SSCS meningkat drastis dengan <strong>N-Gain 0,88 (kategori tinggi)</strong>, mengungguli perolehan kelompok PBL sebesar <strong>0,82 (kategori tinggi)</strong>.
+                        </p>
+                    </div>
+
+                    <div class="glass-card highlight" style="border-top: 4px solid var(--purple-accent);">
+                        <div class="card-icon-badge" style="margin-bottom: 10px; background: #ede9fe; color: #7c3aed; border-color: #c4b5fd;">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <div style="font-weight: 700; font-size: 13.5px; color: var(--text-heading); margin-bottom: 4px;">
+                            3. Perbedaan Signifikan
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-body); margin: 0;">
+                            Uji Mann-Whitney membuktikan adanya <strong>perbedaan peningkatan keterampilan pemecahan masalah yang signifikan secara statistik ($p < 0,001$)</strong> antara kedua kelompok.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="callout-box" style="margin-top: 18px;">
+                    <i class="fa-solid fa-award"></i>
+                    <div>
+                        <strong>Pesan Penutup:</strong> Model pembelajaran SSCS berbantuan flashcard terbukti secara empiris efektif merekonstruksi pola pikir peserta didik dari penerima informasi pasif menjadi pemecah masalah yang aktif, sistematis, dan komunikatif pada materi suhu dan kalor.
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 16: REKOMENDASI PEDAGOGIS & AKSI NYATA -->
+            <section data-title="Rekomendasi Pedagogis">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-lightbulb"></i> Tindak Lanjut Riset</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-hand-holding-heart"></i> Rekomendasi Praktis & Aksi Nyata Guru</h2>
+                        <p class="slide-subtitle">Strategi tindak lanjut untuk guru fisika, pengembang kurikulum, dan agenda penelitian masa depan</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i> Aksi Nyata Kelas
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--text-heading);">1. Scaffolding Bertahap</span>
+                            <i class="fa-solid fa-stairs text-blue-accent"></i>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-body);">
+                            Guru wajib memberikan pertanyaan pengarah bertahap pada tahap <em>Solve</em>. Tanyakan <em>"Mengapa hukum fisika ini dipilih?"</em> sebelum mengizinkan siswa menyentuh kalkulasi angka.
+                        </p>
+                    </div>
+
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--text-heading);">2. Redesain Flashcard</span>
+                            <i class="fa-solid fa-paint-roller text-blue-accent"></i>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-body);">
+                            Hindari mencetak flashcard sebagai "rangkuman rumus mati". Transformasikan menjadi stimulus studi kasus fenomena termal sehari-hari dengan diagram fisis multi-representasi.
+                        </p>
+                    </div>
+
+                    <div class="glass-card accent-bar-left">
+                        <div class="glass-card-header">
+                            <span style="font-weight: 700; font-size: 13.5px; color: var(--text-heading);">3. LKPD Terstruktur</span>
+                            <i class="fa-solid fa-file-lines text-blue-accent"></i>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-body);">
+                            Khusus materi multi-variabel seperti <em>Kalor dan Perubahan Wujud Zat</em>, sediakan tabel dekomposisi variabel (massa, kalor jenis, kalor laten) untuk mengurai kompleksitas kognitif siswa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="margin-top: 14px; background: #ffffff;">
+                    <div style="font-weight: 700; font-size: 13px; color: var(--blue-primary); margin-bottom: 4px;">
+                        <i class="fa-solid fa-telescope text-blue-accent"></i> Agenda Penelitian Lanjutan (Future Research)
+                    </div>
+                    <div style="display: flex; gap: 14px; font-size: 12px;">
+                        <div><i class="fa-solid fa-check text-blue-accent"></i> Uji efektivitas SSCS berbantuan flashcard digital / gamified app.</div>
+                        <div><i class="fa-solid fa-check text-blue-accent"></i> Ekspansi pada topik fisika abstrak lain (misal Listrik Magnet, Fluida Dinamis).</div>
+                        <div><i class="fa-solid fa-check text-blue-accent"></i> Analisis retensi memori jangka panjang (delayed posttest).</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 17: SESI TANYA JAWAB (Q&A) & PENUTUP -->
+            <section data-title="Sesi Tanya Jawab (Q&A)">
+                <div class="slide-header">
+                    <div class="title-area">
+                        <span class="slide-tag"><i class="fa-solid fa-circle-question"></i> Sesi Diskusi</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-comments"></i> Sesi Tanya Jawab (Q&A) & Diskusi Ilmiah</h2>
+                        <p class="slide-subtitle">Terima kasih atas perhatian Dewan Penguji, Moderator, dan Bapak/Ibu Peserta Seminar SENTRA PENDIPA 2026</p>
+                    </div>
+                    <div class="slide-context-badge">
+                        <i class="fa-solid fa-handshake"></i> Open for Discussion
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="glass-card highlight" style="text-align: center; justify-content: center; padding: 22px;">
+                        <div style="width: 54px; height: 54px; border-radius: 50%; background: var(--blue-subtle); color: var(--blue-accent); font-size: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; border: 2px solid var(--blue-border);">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <h3 style="font-size: 21px; color: var(--blue-primary); margin-bottom: 4px;">Terima Kasih Banyak!</h3>
+                        <p style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 14px;">
+                            "Pendidikan fisika yang hebat tidak hanya menghasilkan penghafal rumus, melainkan pencetak pemikir analitis dan pemecah masalah bangsa."
+                        </p>
+                        
+                        <div style="background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 12px; text-align: left;">
+                            <div style="font-weight: 700; color: var(--text-heading); margin-bottom: 3px;">Kontak Peneliti:</div>
+                            <div style="color: var(--text-body);"><i class="fa-solid fa-envelope text-blue-accent"></i> trissanggrahnirmaladesinta@gmail.com</div>
+                            <div style="color: var(--text-body);"><i class="fa-solid fa-building-columns text-blue-accent"></i> UIN Sunan Gunung Djati Bandung</div>
+                        </div>
+
+                        <button id="btnConfetti" style="margin-top: 12px; background: var(--blue-accent); color: #ffffff; border: none; padding: 7px 16px; border-radius: var(--radius-pill); font-weight: 700; font-size: 11.5px; cursor: pointer; transition: var(--transition-smooth);" onclick="fireConfetti()">
+                            <i class="fa-solid fa-sparkles"></i> Rayakan Penyelesaian Presentasi
+                        </button>
+                    </div>
+
+                    <div class="glass-card">
+                        <div style="font-weight: 700; font-size: 13px; color: var(--text-heading); margin-bottom: 6px;">
+                            <i class="fa-solid fa-shield-halved text-blue-accent"></i> Lembar Antisipasi Pertanyaan Kritis Dewan Penguji
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 7px; font-size: 11.5px;">
+                            <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 7px 10px; border-radius: 6px;">
+                                <strong style="color: var(--blue-primary);">Q: Mengapa kelas kontrol (PBL) juga memakai flashcard?</strong>
+                                <div style="color: var(--text-muted); margin-top: 2px;">
+                                    Agar variabel media konstan. Dengan demikian, keunggulan hasil dapat dipertanggungjawabkan murni dari sintaks model SSCS, bukan bias media baru.
+                                </div>
+                            </div>
+
+                            <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 7px 10px; border-radius: 6px;">
+                                <strong style="color: var(--blue-primary);">Q: Mengapa uji hipotesis menggunakan Mann-Whitney?</strong>
+                                <div style="color: var(--text-muted); margin-top: 2px;">
+                                    Karena hasil uji normalitas Shapiro-Wilk menghasilkan $p < 0,05$ (data tidak normal), sehingga uji t parametrik tidak memenuhi syarat.
+                                </div>
+                            </div>
+
+                            <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 7px 10px; border-radius: 6px;">
+                                <strong style="color: var(--blue-primary);">Q: Apa kelemahan model SSCS yang ditemukan?</strong>
+                                <div style="color: var(--text-muted); margin-top: 2px;">
+                                    Siswa masih rentan terpaku pada kecepatan berhitung daripada penguasaan aplikasi fisika spesifik pada soal multi-fase termal.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         NORMAL VIEWPORT: BOTTOM STATUS BAR
+         ========================================================================= -->
+    <footer id="deck-bottom-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-user-pen text-blue-accent"></i>
+            <span>Presenter: <strong>Trissanggrah Nirmala Desinta</strong> (UIN SGD Bandung)</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="font-size: 11px; color: var(--text-muted);">Gunakan panah [←] [→] atau spasi</span>
+            <button class="control-arrow-btn" onclick="Reveal.prev()" title="Slide Sebelumnya (←)">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <span class="slide-counter-badge" id="slideNumberBadge">01 / 17</span>
+            <button class="control-arrow-btn" onclick="Reveal.next()" title="Slide Berikutnya (→)">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Reveal.js JavaScript Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+
+    <script>
+        // =========================================================================
+        // REVEAL.JS INITIALIZATION & CORE CONFIG
+        // =========================================================================
+        Reveal.initialize({
+            width: 1280,
+            height: 720,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.2,
+            hash: true,
+            history: true,
+            center: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            transitionSpeed: 'fast',
+            overview: true,
+            keyboard: true,
+            touch: true,
+            mouseWheel: false
+        });
+
+        // Global Chart instances
+        let macroChart = null;
+        let submateriChart = null;
+        let hellerChart = null;
+
+        // Presentation ready callback
+        Reveal.on('ready', event => {
+            initSlideJumpMenu();
+            updateCustomUI(event.indexh);
+            renderMathFormulas();
+            renderChartIfNeeded(event.indexh);
+        });
+
+        // Slide change callback
+        Reveal.on('slidechanged', event => {
+            updateCustomUI(event.indexh);
+            renderChartIfNeeded(event.indexh);
+        });
+
+        // =========================================================================
+        // FULLSCREEN PRESENTATION MODE CONTROLLER
+        // =========================================================================
+        function togglePresentationMode() {
+            if (!document.fullscreenElement) {
+                const docEl = document.documentElement;
+                const requestFs = docEl.requestFullscreen || docEl.webkitRequestFullscreen || docEl.mozRequestFullScreen || docEl.msRequestFullscreen;
+                if (requestFs) {
+                    requestFs.call(docEl).catch(err => {
+                        console.warn('Fullscreen request failed:', err);
+                    });
+                }
+            } else {
+                const exitFs = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+                if (exitFs) {
+                    exitFs.call(document);
+                }
+            }
+        }
+
+        const btnFs = document.getElementById('btnFullscreen');
+        if (btnFs) btnFs.addEventListener('click', togglePresentationMode);
+
+        // Sync Fullscreen state
+        document.addEventListener('fullscreenchange', handleFullscreenSync);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenSync);
+        document.addEventListener('mozfullscreenchange', handleFullscreenSync);
+        document.addEventListener('MSFullscreenChange', handleFullscreenSync);
+
+        function handleFullscreenSync() {
+            const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+            document.body.classList.toggle('is-fullscreen', isFull);
+            
+            const fsLabel = document.getElementById('fsBtnLabel');
+            if (fsLabel) {
+                fsLabel.textContent = isFull ? 'Keluar (ESC)' : 'Presentasi (F)';
+            }
+
+            // Force layout recalculation for perfect 16:9 projection
+            setTimeout(() => {
+                Reveal.layout();
+                if (macroChart) macroChart.resize();
+                if (submateriChart) submateriChart.resize();
+                if (hellerChart) hellerChart.resize();
+            }, 180);
+        }
+
+        // Auto-hide floating presenter toolbar in fullscreen mode when idle
+        let mouseIdleTimer = null;
+        const floatingBar = document.getElementById('floating-presentation-bar');
+
+        document.addEventListener('mousemove', () => {
+            if (document.body.classList.contains('is-fullscreen')) {
+                floatingBar.classList.remove('idle-fade');
+                clearTimeout(mouseIdleTimer);
+                mouseIdleTimer = setTimeout(() => {
+                    floatingBar.classList.add('idle-fade');
+                }, 2800);
+            }
+        });
+
+        // Global Keydown Handler (F for Fullscreen, J for Jump Menu)
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+            if (e.key === 'f' || e.key === 'F') {
+                e.preventDefault();
+                togglePresentationMode();
+            } else if (e.key === 'j' || e.key === 'J') {
+                e.preventDefault();
+                const menu = document.getElementById('slide-jump-menu');
+                menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+            }
+        });
+
+        // =========================================================================
+        // KATEX FORMULA AUTO-RENDER
+        // =========================================================================
+        function renderMathFormulas() {
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false }
+                    ],
+                    throwOnError: false
+                });
+            }
+        }
+
+        // =========================================================================
+        // UI SYNC: PROGRESS BAR, BREADCRUMB, & SLIDE COUNTER
+        // =========================================================================
+        function updateCustomUI(index) {
+            const total = Reveal.getTotalSlides();
+            const current = index + 1;
+            
+            const formattedCurrent = current < 10 ? '0' + current : current;
+            const formattedTotal = total < 10 ? '0' + total : total;
+            const counterText = `${formattedCurrent} / ${formattedTotal}`;
+
+            document.getElementById('slideNumberBadge').textContent = counterText;
+            document.getElementById('floatingCounterBadge').textContent = counterText;
+
+            // Update top progress line
+            const progressPercent = (current / total) * 100;
+            document.getElementById('deck-progress-bar').style.width = progressPercent + '%';
+
+            // Update breadcrumb
+            const currentSection = Reveal.getCurrentSlide();
+            const slideTitle = currentSection ? (currentSection.getAttribute('data-title') || 'Seminar SENTRA PENDIPA 2026') : '';
+            document.getElementById('current-slide-breadcrumb').textContent = `Slide ${current}: ${slideTitle}`;
+
+            // Update jump menu items active class
+            document.querySelectorAll('.jump-item').forEach((item, idx) => {
+                item.classList.toggle('active', idx === index);
+            });
+        }
+
+        // =========================================================================
+        // QUICK SLIDE JUMP MENU DRAWER
+        // =========================================================================
+        function initSlideJumpMenu() {
+            const menuContainer = document.getElementById('slide-jump-menu');
+            menuContainer.innerHTML = '';
+            const slides = document.querySelectorAll('.reveal .slides > section');
+
+            slides.forEach((slide, idx) => {
+                const title = slide.getAttribute('data-title') || `Slide ${idx + 1}`;
+                const item = document.createElement('div');
+                item.className = 'jump-item' + (idx === 0 ? ' active' : '');
+                item.innerHTML = `
+                    <span class="jump-num">${idx + 1 < 10 ? '0' + (idx + 1) : idx + 1}</span>
+                    <span>${title}</span>
+                `;
+                item.addEventListener('click', () => {
+                    Reveal.slide(idx);
+                    menuContainer.style.display = 'none';
+                });
+                menuContainer.appendChild(item);
+            });
+
+            document.getElementById('btnToggleJump').addEventListener('click', (e) => {
+                e.stopPropagation();
+                menuContainer.style.display = menuContainer.style.display === 'flex' ? 'none' : 'flex';
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('#slide-jump-menu') && !e.target.closest('#btnToggleJump')) {
+                    menuContainer.style.display = 'none';
+                }
+            });
+        }
+
+        // =========================================================================
+        // LIVE PRESENTATION STOPWATCH
+        // =========================================================================
+        let timerSeconds = 0;
+        let timerInterval = null;
+        let timerRunning = true;
+
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                if (timerRunning) {
+                    timerSeconds++;
+                    const mins = Math.floor(timerSeconds / 60);
+                    const secs = timerSeconds % 60;
+                    document.getElementById('timerText').textContent = 
+                        (mins < 10 ? '0' + mins : mins) + ':' + (secs < 10 ? '0' + secs : secs);
+                }
+            }, 1000);
+        }
+        startTimer();
+
+        const timerBox = document.getElementById('sessionTimer');
+        timerBox.addEventListener('click', () => {
+            timerRunning = !timerRunning;
+            timerBox.style.opacity = timerRunning ? '1' : '0.6';
+        });
+
+        timerBox.addEventListener('dblclick', () => {
+            timerSeconds = 0;
+            document.getElementById('timerText').textContent = '00:00';
+        });
+
+        // =========================================================================
+        // CELEBRATION CONFETTI (SLIDE 17)
+        // =========================================================================
+        function fireConfetti() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 120,
+                    spread: 80,
+                    origin: { y: 0.6 },
+                    colors: ['#2563eb', '#38bdf8', '#10b981', '#f59e0b']
+                });
+            }
+        }
+
+        // =========================================================================
+        // ROBUST & LAZY CHART.JS INITIALIZATION
+        // =========================================================================
+        function renderChartIfNeeded(slideIndex) {
+            // Slide 9 (0-indexed: 8) -> Macro Chart
+            if (slideIndex === 8) {
+                if (!macroChart) {
+                    initMacroChart();
+                } else {
+                    macroChart.resize();
+                    macroChart.update();
+                }
+            }
+
+            // Slide 10 (0-indexed: 9) -> Submateri Chart
+            if (slideIndex === 9) {
+                if (!submateriChart) {
+                    initSubmateriChart();
+                } else {
+                    submateriChart.resize();
+                    submateriChart.update();
+                }
+            }
+
+            // Slide 11 (0-indexed: 10) -> Heller Radar Chart
+            if (slideIndex === 10) {
+                if (!hellerChart) {
+                    initHellerChart();
+                } else {
+                    hellerChart.resize();
+                    hellerChart.update();
+                }
+            }
+
+            // Slide 17 (0-indexed: 16) -> Trigger Confetti
+            if (slideIndex === 16) {
+                setTimeout(fireConfetti, 400);
+            }
+        }
+
+        // Chart 1: Macro Comparison (Slide 9)
+        function initMacroChart() {
+            const ctx = document.getElementById('macroComparisonChart');
+            if (!ctx) return;
+            macroChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Pretest (Awal)', 'Posttest (Akhir)', 'N-Gain (Tingkat Peningkatan)'],
+                    datasets: [
+                        {
+                            label: 'SSCS + Flashcard (Eksperimen)',
+                            data: [26, 91, 88], // 88 represents 0.88 normalized
+                            backgroundColor: '#2563eb',
+                            borderRadius: 6,
+                            barPercentage: 0.7,
+                            categoryPercentage: 0.8
+                        },
+                        {
+                            label: 'PBL + Flashcard (Kontrol)',
+                            data: [21, 86, 82], // 82 represents 0.82 normalized
+                            backgroundColor: '#94a3b8',
+                            borderRadius: 6,
+                            barPercentage: 0.7,
+                            categoryPercentage: 0.8
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: { duration: 900, easing: 'easeOutQuart' },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: { family: "'Plus Jakarta Sans', sans-serif", size: 12, weight: '600' },
+                                color: '#0f172a',
+                                usePointStyle: true,
+                                pointStyle: 'rectRounded'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    if (context.dataIndex === 2) {
+                                        return `${context.dataset.label}: N-Gain ${(context.raw / 100).toFixed(2)} (Kategori Tinggi)`;
+                                    }
+                                    return `${context.dataset.label}: Skor ${context.raw}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            min: 0,
+                            max: 100,
+                            ticks: { color: '#64748b', font: { family: "'Inter', sans-serif", size: 11 }, stepSize: 20 },
+                            grid: { color: 'rgba(226, 232, 240, 0.8)' }
+                        },
+                        x: {
+                            ticks: { color: '#0f172a', font: { family: "'Plus Jakarta Sans', sans-serif", size: 11, weight: '600' } },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Chart 2: Submateri Comparison (Slide 10)
+        function initSubmateriChart() {
+            const ctx = document.getElementById('submateriChart');
+            if (!ctx) return;
+            submateriChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Suhu & Termometer', 'Kalor & Perubahan Wujud', 'Perpindahan Kalor'],
+                    datasets: [
+                        {
+                            label: 'SSCS + Flashcard',
+                            data: [0.94, 0.83, 0.88],
+                            backgroundColor: '#2563eb',
+                            borderRadius: 6,
+                            barPercentage: 0.65
+                        },
+                        {
+                            label: 'PBL + Flashcard',
+                            data: [0.83, 0.77, 0.86],
+                            backgroundColor: '#94a3b8',
+                            borderRadius: 6,
+                            barPercentage: 0.65
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y', // Horizontal Bar Chart
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: { duration: 900, easing: 'easeOutQuart' },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: { family: "'Plus Jakarta Sans', sans-serif", size: 12, weight: '600' },
+                                color: '#0f172a',
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: N-Gain ${context.raw}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            min: 0.70,
+                            max: 1.00,
+                            ticks: { color: '#64748b', stepSize: 0.05 },
+                            grid: { color: 'rgba(226, 232, 240, 0.8)' }
+                        },
+                        y: {
+                            ticks: { color: '#0f172a', font: { family: "'Plus Jakarta Sans', sans-serif", size: 11, weight: '600' } },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Chart 3: Heller Radar Chart (Slide 11)
+        function initHellerChart() {
+            const ctx = document.getElementById('hellerRadarChart');
+            if (!ctx) return;
+            hellerChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        '1. Deskripsi Berguna',
+                        '2. Pendekatan Fisika',
+                        '3. Aplikasi Spesifik',
+                        '4. Prosedur Matematika',
+                        '5. Progresi Logis'
+                    ],
+                    datasets: [
+                        {
+                            label: 'SSCS + Flashcard',
+                            data: [0.88, 0.87, 0.85, 0.92, 0.87],
+                            backgroundColor: 'rgba(37, 99, 235, 0.18)',
+                            borderColor: '#2563eb',
+                            borderWidth: 2.5,
+                            pointBackgroundColor: '#2563eb',
+                            pointBorderColor: '#ffffff',
+                            pointHoverRadius: 6,
+                            pointRadius: 4
+                        },
+                        {
+                            label: 'PBL + Flashcard',
+                            data: [0.84, 0.81, 0.79, 0.87, 0.80],
+                            backgroundColor: 'rgba(148, 163, 184, 0.2)',
+                            borderColor: '#64748b',
+                            borderWidth: 2,
+                            pointBackgroundColor: '#64748b',
+                            pointBorderColor: '#ffffff',
+                            pointHoverRadius: 6,
+                            pointRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: { duration: 1100, easing: 'easeOutQuart' },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: { family: "'Plus Jakarta Sans', sans-serif", size: 12, weight: '600' },
+                                color: '#0f172a',
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: N-Gain ${context.raw}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            min: 0.70,
+                            max: 1.00,
+                            ticks: { stepSize: 0.05, color: '#64748b', font: { size: 10 }, backdropColor: 'transparent' },
+                            pointLabels: { font: { family: "'Plus Jakarta Sans', sans-serif", size: 11, weight: '600' }, color: '#0f172a' },
+                            grid: { color: 'rgba(203, 213, 225, 0.6)' },
+                            angleLines: { color: 'rgba(203, 213, 225, 0.6)' }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
