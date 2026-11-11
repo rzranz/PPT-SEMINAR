@@ -112,6 +112,18 @@ function handleFullscreenSync() {
     }, 180);
 }
 
+// Window Resize Synchronization
+let windowResizeTimer = null;
+window.addEventListener('resize', () => {
+    clearTimeout(windowResizeTimer);
+    windowResizeTimer = setTimeout(() => {
+        Reveal.layout();
+        if (macroChart) macroChart.resize();
+        if (submateriChart) submateriChart.resize();
+        if (hellerChart) hellerChart.resize();
+    }, 150);
+});
+
 // Auto-hide floating presenter toolbar in fullscreen mode when idle
 const floatingBar = document.getElementById('floating-presentation-bar');
 

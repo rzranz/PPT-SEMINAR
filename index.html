@@ -57,19 +57,19 @@
             <!-- Slide Jump Menu Trigger -->
             <button class="nav-tool-btn" id="btnToggleJump" title="Daftar Slide (J)">
                 <i class="fa-solid fa-list-ul"></i>
-                <span>Slide (J)</span>
+                <span class="btn-text">Slide (J)</span>
             </button>
 
             <!-- Slide Overview Trigger -->
             <button class="nav-tool-btn" onclick="Reveal.toggleOverview()" title="Slide Grid (ESC)">
                 <i class="fa-solid fa-table-cells-large"></i>
-                <span>Grid (ESC)</span>
+                <span class="btn-text">Grid (ESC)</span>
             </button>
 
             <!-- Fullscreen Presentation Mode Trigger -->
             <button class="nav-tool-btn btn-primary-action" id="btnFullscreen" title="Mulai Mode Presentasi Penuh (F)">
                 <i class="fa-solid fa-play"></i>
-                <span id="fsBtnLabel">Presentasi (F)</span>
+                <span class="btn-text" id="fsBtnLabel">Presentasi (F)</span>
             </button>
         </div>
     </header>
@@ -819,21 +819,21 @@
                         </div>
                     </div>
 
-                    <div class="grid-3" style="max-height: 100px;">
-                        <div class="metric-card">
+                    <div class="grid-3">
+                        <div class="metric-card accent-bar-left">
                             <div class="metric-label">Konsistensi Sintaks</div>
-                            <div class="metric-value" style="font-size: 28px;">100%</div>
-                            <div style="font-size: 11.5px; color: var(--text-muted);">Seluruh tahapan terlaksana runtut</div>
+                            <div class="metric-value" style="font-size: 32px;">100%</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Seluruh 4 siklus SSCS terlaksana sempurna</div>
                         </div>
-                        <div class="metric-card">
+                        <div class="metric-card accent-bar-emerald">
                             <div class="metric-label">Keunggulan Partisipasi SSCS</div>
-                            <div class="metric-value emerald" style="font-size: 28px;">+4%</div>
-                            <div style="font-size: 11.5px; color: var(--text-muted);">Aktivitas siswa SSCS (93% vs 89%)</div>
+                            <div class="metric-value emerald" style="font-size: 32px;">+4%</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Aktivitas siswa SSCS unggul (93% vs 89%)</div>
                         </div>
-                        <div class="metric-card">
+                        <div class="metric-card accent-bar-left">
                             <div class="metric-label">Reliabilitas Antar-Observer</div>
-                            <div class="metric-value" style="font-size: 28px; color: var(--blue-accent);">Tinggi</div>
-                            <div style="font-size: 11.5px; color: var(--text-muted);">Koefisien kesepakatan 3 penilai valid</div>
+                            <div class="metric-value" style="font-size: 32px; color: var(--blue-accent);">Tinggi</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Koefisien kesepakatan 3 observer valid</div>
                         </div>
                     </div>
                 </div>
@@ -853,55 +853,87 @@
                 </div>
 
                 <div class="slide-body">
-                    <div class="grid-1-2">
-                        <div style="display: flex; flex-direction: column; gap: 14px; height: 100%; justify-content: space-between;">
-                            <div class="glass-card">
-                                <strong style="font-size: 14px; color: var(--text-heading); margin-bottom: 8px;">Tabel 3. Rekapitulasi Nilai Keseluruhan</strong>
+                    <div class="grid-2">
+                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <div class="glass-card-header">
+                                    <div>
+                                        <strong style="font-size: 15px; color: var(--blue-primary);">Tabel 3. Rekapitulasi Nilai Pretest, Posttest, & N-Gain</strong>
+                                        <div style="font-size: 12px; color: var(--text-muted);">Data Empiris Hasil Belajar (Kelas XII MIPA MAN 2 Bandung)</div>
+                                    </div>
+                                    <span class="metric-badge badge-emerald">Hake (1999)</span>
+                                </div>
                                 <table class="modern-table">
                                     <thead>
                                         <tr>
                                             <th>Kelas / Model</th>
-                                            <th>Pre</th>
-                                            <th>Post</th>
-                                            <th>N-Gain</th>
-                                            <th>Kategori</th>
+                                            <th style="text-align: center;">Pretest</th>
+                                            <th style="text-align: center;">Posttest</th>
+                                            <th style="text-align: center;">Kenaikan (Δ)</th>
+                                            <th style="text-align: center;">N-Gain</th>
+                                            <th style="text-align: center;">Kategori</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="highlight-row">
                                             <td><strong>SSCS + Flashcard</strong></td>
-                                            <td>26</td>
-                                            <td>91</td>
-                                            <td><strong>0,88</strong></td>
-                                            <td><span class="metric-badge badge-emerald">Tinggi</span></td>
+                                            <td style="text-align: center;">26</td>
+                                            <td style="text-align: center; font-weight: 800; color: var(--blue-primary);">91</td>
+                                            <td style="text-align: center; font-weight: 700; color: var(--emerald-accent);">+65</td>
+                                            <td style="text-align: center; font-size: 16px; font-weight: 800; color: var(--blue-primary);">0,88</td>
+                                            <td style="text-align: center;"><span class="metric-badge badge-emerald">Tinggi</span></td>
                                         </tr>
                                         <tr>
                                             <td><strong>PBL + Flashcard</strong></td>
-                                            <td>21</td>
-                                            <td>86</td>
-                                            <td><strong>0,82</strong></td>
-                                            <td><span class="metric-badge badge-blue">Tinggi</span></td>
+                                            <td style="text-align: center;">21</td>
+                                            <td style="text-align: center; font-weight: 700;">86</td>
+                                            <td style="text-align: center; font-weight: 700;">+65</td>
+                                            <td style="text-align: center; font-size: 16px; font-weight: 700;">0,82</td>
+                                            <td style="text-align: center;"><span class="metric-badge badge-blue">Tinggi</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
 
-                            <div class="metric-card accent-bar-emerald" style="text-align: left; padding: 14px 18px;">
-                                <div style="font-size: 12px; font-weight: 700; color: var(--emerald-accent); text-transform: uppercase;">Selisih Keunggulan SSCS</div>
-                                <div style="font-size: 26px; font-weight: 800; color: var(--text-heading);">$\Delta$ 0,06 Poin N-Gain</div>
-                                <p style="font-size: 12.5px; color: var(--text-muted); margin: 3px 0 0 0;">
-                                    Kelas SSCS melesat dari 26 ke 91 (kenaikan 65 poin), sedangkan PBL dari 21 ke 86 (kenaikan 65 poin pada basis awal lebih rendah).
-                                </p>
+                            <div class="grid-2" style="gap: 12px; margin: 10px 0;">
+                                <div class="metric-card accent-bar-emerald" style="text-align: left; padding: 12px 16px;">
+                                    <div style="font-size: 11px; font-weight: 700; color: var(--emerald-accent); text-transform: uppercase;">Keunggulan N-Gain</div>
+                                    <div style="font-size: 24px; font-weight: 800; color: var(--text-heading);">+0,06 Poin</div>
+                                    <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">SSCS 7,3% lebih efektif dalam peningkatan</div>
+                                </div>
+                                <div class="metric-card accent-bar-left" style="text-align: left; padding: 12px 16px;">
+                                    <div style="font-size: 11px; font-weight: 700; color: var(--blue-accent); text-transform: uppercase;">Ketuntasan Klasikal</div>
+                                    <div style="font-size: 24px; font-weight: 800; color: var(--blue-primary);">100% Tuntas</div>
+                                    <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">Seluruh 32 siswa melampaui KKM 75</div>
+                                </div>
                             </div>
 
-                            <div class="callout-box">
+                            <div class="callout-box" style="padding: 10px 14px;">
                                 <i class="fa-solid fa-circle-check" style="color: var(--emerald-accent);"></i>
-                                <div style="font-size: 12.5px;">Keduanya masuk kategori <strong>Tinggi ($g > 0,70$)</strong>, namun SSCS lebih efektif secara deskriptif dan statistik.</div>
+                                <div style="font-size: 12.5px;">Keduanya masuk kategori <strong>Tinggi ($g > 0,70$)</strong>, namun model SSCS menghasilkan peningkatan yang secara signifikan lebih konsisten dan unggul ($p < 0,001$).</div>
                             </div>
                         </div>
 
-                        <div class="chart-box">
-                            <canvas id="macroComparisonChart"></canvas>
+                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div class="glass-card-header">
+                                <div>
+                                    <strong style="font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-chart-column text-blue-accent"></i> Grafik Komparasi Pretest, Posttest, & N-Gain</strong>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Visualisasi Skor Skala 0-100 & N-Gain</div>
+                                </div>
+                                <span class="metric-badge badge-blue">Chart.js Live Data</span>
+                            </div>
+
+                            <div style="position: relative; flex: 1; min-height: 270px; width: 100%;">
+                                <canvas id="macroComparisonChart"></canvas>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-around; align-items: center; background: #f8fafc; border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 8px 12px; margin-top: 10px; font-size: 12px;">
+                                <div><strong style="color: var(--blue-primary);">Baseline Pre:</strong> 26 vs 21</div>
+                                <div style="width: 1px; height: 16px; background: var(--border-light);"></div>
+                                <div><strong style="color: var(--blue-primary);">Posttest:</strong> 91 vs 86 (+5)</div>
+                                <div style="width: 1px; height: 16px; background: var(--border-light);"></div>
+                                <div><strong style="color: var(--emerald-accent);">N-Gain:</strong> 0,88 vs 0,82</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -921,46 +953,60 @@
                 </div>
 
                 <div class="slide-body">
-                    <div class="grid-1-2">
-                        <div style="display: flex; flex-direction: column; gap: 12px; height: 100%; justify-content: space-between;">
-                            <div class="glass-card" style="border-left: 5px solid var(--blue-accent); padding: 12px 16px;">
+                    <div class="grid-2">
+                        <div style="display: flex; flex-direction: column; gap: 10px; height: 100%; justify-content: space-between;">
+                            <div class="glass-card" style="border-left: 5px solid var(--emerald-accent); padding: 12px 18px;">
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="font-size: 14px; color: var(--text-heading);">1. Suhu & Termometer</strong>
-                                    <span class="metric-badge badge-emerald">Gap +0,11</span>
+                                    <strong style="font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-temperature-low text-emerald-accent"></i> 1. Suhu & Termometer</strong>
+                                    <span class="metric-badge badge-emerald">Gap Tertinggi +0,11</span>
                                 </div>
                                 <div style="font-size: 13px; color: var(--text-body); margin-top: 4px;">
-                                    SSCS: <strong>0,94</strong> vs PBL: <strong>0,83</strong>. Tahap <em>Search</em> membimbing siswa memahami perbandingan skala termometer secara presisi.
+                                    SSCS: <strong>0,94</strong> vs PBL: <strong>0,83</strong>. Tahap <em>Search</em> membimbing siswa memahami perbandingan skala Celcius, Reamur, Fahrenheit, dan Kelvin secara presisi.
                                 </div>
                             </div>
 
-                            <div class="glass-card" style="border-left: 5px solid var(--amber-accent); padding: 12px 16px;">
+                            <div class="glass-card" style="border-left: 5px solid var(--amber-accent); padding: 12px 18px;">
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="font-size: 14px; color: var(--text-heading);">2. Kalor & Perubahan Wujud</strong>
+                                    <strong style="font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-cubes-stacked text-amber-accent"></i> 2. Kalor & Perubahan Wujud Zat</strong>
                                     <span class="metric-badge badge-amber">Gap +0,06</span>
                                 </div>
                                 <div style="font-size: 13px; color: var(--text-body); margin-top: 4px;">
-                                    SSCS: <strong>0,83</strong> vs PBL: <strong>0,77</strong>. Materi paling kompleks karena melibatkan multi-variabel ($m, c, L, \Delta T$).
+                                    SSCS: <strong>0,83</strong> vs PBL: <strong>0,77</strong>. Materi paling kompleks karena melibatkan simultanitas kalor laten ($Q=mL$), kapasitas kalor, dan Asas Black ($Q_{lepas} = Q_{terima}$).
                                 </div>
                             </div>
 
-                            <div class="glass-card" style="border-left: 5px solid var(--cyan-accent); padding: 12px 16px;">
+                            <div class="glass-card" style="border-left: 5px solid var(--cyan-accent); padding: 12px 18px;">
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="font-size: 14px; color: var(--text-heading);">3. Perpindahan Kalor</strong>
+                                    <strong style="font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-arrows-spin text-blue-accent"></i> 3. Perpindahan Kalor</strong>
                                     <span class="metric-badge badge-blue">Gap +0,02</span>
                                 </div>
                                 <div style="font-size: 13px; color: var(--text-body); margin-top: 4px;">
-                                    SSCS: <strong>0,88</strong> vs PBL: <strong>0,86</strong>. Konduksi dan radiasi mudah divisualisasikan oleh kedua kelompok.
+                                    SSCS: <strong>0,88</strong> vs PBL: <strong>0,86</strong>. Konduksi logam majemuk, konveksi, dan radiasi termal mudah divisualisasikan oleh kedua kelompok dengan flashcard.
                                 </div>
                             </div>
 
                             <div class="callout-box" style="padding: 10px 14px;">
                                 <i class="fa-solid fa-lightbulb"></i>
-                                <div style="font-size: 12.5px;">Materi Kalor & Wujud Zat menuntut scaffolding ekstra karena banyaknya variabel yang diproses secara simultan.</div>
+                                <div style="font-size: 12.5px;"><strong>Temuan Pedagogis:</strong> Materi Kalor & Wujud Zat menuntut scaffolding ekstra karena banyaknya variabel ($m, c, L, \Delta T$) yang diproses secara simultan.</div>
                             </div>
                         </div>
 
-                        <div class="chart-box">
-                            <canvas id="submateriChart"></canvas>
+                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div class="glass-card-header">
+                                <div>
+                                    <strong style="font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-chart-bar text-blue-accent"></i> Grafik Batang Horizontal N-Gain per Submateri</strong>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Perbandingan Efektivitas SSCS vs PBL di Tiap Topik</div>
+                                </div>
+                                <span class="metric-badge badge-emerald">SSCS Unggul 100%</span>
+                            </div>
+
+                            <div style="position: relative; flex: 1; min-height: 270px; width: 100%;">
+                                <canvas id="submateriChart"></canvas>
+                            </div>
+
+                            <div style="background: #eff6ff; border: 1px solid var(--blue-border); border-radius: var(--radius-sm); padding: 8px 14px; margin-top: 10px; font-size: 12px; color: var(--blue-primary);">
+                                <i class="fa-solid fa-circle-check"></i> <strong>Sintesis:</strong> Pada ketiga topik pokok bahasan suhu & kalor, model SSCS secara konsisten mengungguli kelas PBL dengan gap rentang +0,02 hingga +0,11.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -980,60 +1026,107 @@
                 </div>
 
                 <div class="slide-body">
-                    <div class="grid-1-2">
-                        <div class="glass-card" style="height: 100%; justify-content: space-between;">
+                    <div class="grid-2">
+                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
                             <div>
-                                <strong style="font-size: 14px; color: var(--text-heading); margin-bottom: 8px; display: block;">Tabel 4 & 5. N-Gain per Indikator Heller</strong>
+                                <div class="glass-card-header">
+                                    <div>
+                                        <strong style="font-size: 15px; color: var(--blue-primary);">Tabel 4 & 5. N-Gain per Indikator Heller</strong>
+                                        <div style="font-size: 12px; color: var(--text-muted);">Komparasi Capaian 5 Dimensi Kognitif (Heller et al., 1992)</div>
+                                    </div>
+                                    <span class="metric-badge badge-blue">Evaluasi Kognitif</span>
+                                </div>
                                 <table class="modern-table">
                                     <thead>
                                         <tr>
-                                            <th>Indikator Heller</th>
-                                            <th>SSCS</th>
-                                            <th>PBL</th>
-                                            <th>$\Delta$ Gap</th>
+                                            <th style="width: 44%;">Indikator Heller (1992)</th>
+                                            <th style="width: 18%; text-align: center;">SSCS</th>
+                                            <th style="width: 18%; text-align: center;">PBL</th>
+                                            <th style="width: 20%; text-align: center;">$\Delta$ Gap</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="highlight-row">
-                                            <td><i class="fa-solid fa-calculator text-blue-accent"></i> Prosedur Matematika</td>
-                                            <td><strong>0,92</strong></td>
-                                            <td><strong>0,87</strong></td>
-                                            <td><span class="metric-badge badge-emerald">+0,05</span></td>
+                                            <td>
+                                                <div style="font-weight: 700; color: var(--blue-primary);"><i class="fa-solid fa-calculator text-blue-accent"></i> Prosedur Matematika</div>
+                                                <div style="font-size: 11px; color: var(--text-muted);">Manipulasi aljabar & kalkulasi akurat</div>
+                                            </td>
+                                            <td style="text-align: center; font-size: 16px; font-weight: 800; color: var(--blue-primary);">0,92</td>
+                                            <td style="text-align: center; font-size: 15px; font-weight: 700;">0,87</td>
+                                            <td style="text-align: center;"><span class="metric-badge badge-emerald">+0,05</span></td>
                                         </tr>
                                         <tr>
-                                            <td><i class="fa-solid fa-eye text-blue-accent"></i> Deskripsi Berguna</td>
-                                            <td>0,88</td>
-                                            <td>0,84</td>
-                                            <td><span class="metric-badge badge-blue">+0,04</span></td>
+                                            <td>
+                                                <div style="font-weight: 700;"><i class="fa-solid fa-eye text-blue-accent"></i> Deskripsi yang Berguna</div>
+                                                <div style="font-size: 11px; color: var(--text-muted);">Visualisasi masalah & diagram termal</div>
+                                            </td>
+                                            <td style="text-align: center; font-size: 15px; font-weight: 700;">0,88</td>
+                                            <td style="text-align: center; font-size: 15px;">0,84</td>
+                                            <td style="text-align: center;"><span class="metric-badge badge-blue">+0,04</span></td>
                                         </tr>
                                         <tr>
-                                            <td><i class="fa-solid fa-compass-drafting text-blue-accent"></i> Pendekatan Fisika</td>
-                                            <td>0,87</td>
-                                            <td>0,81</td>
-                                            <td><span class="metric-badge badge-blue">+0,06</span></td>
+                                            <td>
+                                                <div style="font-weight: 700;"><i class="fa-solid fa-compass-drafting text-blue-accent"></i> Pendekatan Fisika</div>
+                                                <div style="font-size: 11px; color: var(--text-muted);">Pemilihan hukum & konsep fisis relevan</div>
+                                            </td>
+                                            <td style="text-align: center; font-size: 15px; font-weight: 700;">0,87</td>
+                                            <td style="text-align: center; font-size: 15px;">0,81</td>
+                                            <td style="text-align: center;"><span class="metric-badge badge-blue">+0,06</span></td>
                                         </tr>
                                         <tr>
-                                            <td><i class="fa-solid fa-arrow-down-1-9 text-blue-accent"></i> Progresi Logis</td>
-                                            <td>0,87</td>
-                                            <td>0,80</td>
-                                            <td><span class="metric-badge badge-blue">+0,07</span></td>
+                                            <td>
+                                                <div style="font-weight: 700;"><i class="fa-solid fa-arrow-down-1-9 text-blue-accent"></i> Progresi Logis</div>
+                                                <div style="font-size: 11px; color: var(--text-muted);">Konsistensi alur & evaluasi satuan SI</div>
+                                            </td>
+                                            <td style="text-align: center; font-size: 15px; font-weight: 700;">0,87</td>
+                                            <td style="text-align: center; font-size: 15px;">0,80</td>
+                                            <td style="text-align: center;"><span class="metric-badge badge-blue">+0,07</span></td>
                                         </tr>
                                         <tr style="background: #fffbeb;">
-                                            <td><i class="fa-solid fa-circle-exclamation text-amber-accent"></i> Aplikasi Fisika Spesifik</td>
-                                            <td style="color: var(--amber-accent); font-weight: 700;">0,85</td>
-                                            <td style="color: var(--rose-accent); font-weight: 700;">0,79*</td>
-                                            <td><span class="metric-badge badge-amber">+0,06</span></td>
+                                            <td>
+                                                <div style="font-weight: 700; color: #b45309;"><i class="fa-solid fa-circle-exclamation text-amber-accent"></i> Aplikasi Fisika Spesifik</div>
+                                                <div style="font-size: 11px; color: #b45309;">Relasi matematis antar-variabel kondisi</div>
+                                            </td>
+                                            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #b45309;">0,85</td>
+                                            <td style="text-align: center; font-size: 15px; font-weight: 800; color: var(--rose-accent);">0,79*</td>
+                                            <td style="text-align: center;"><span class="metric-badge badge-amber">+0,06</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px; border-top: 1px dashed var(--border-light); padding-top: 8px;">
-                                *Catatan: Nilai 0,79 pada kelas PBL merupakan satu-satunya capaian yang masuk kategori <em>Sedang</em>.
+                            <div class="callout-box" style="margin-top: 10px; padding: 10px 14px; background: #fffbeb; border-color: #fde68a;">
+                                <i class="fa-solid fa-triangle-exclamation" style="color: var(--amber-accent); font-size: 16px;"></i>
+                                <div style="font-size: 12px; color: #92400e;">
+                                    <strong>*Temuan Kritis:</strong> Skor <strong>0,79</strong> pada kelas PBL merupakan satu-satunya capaian yang masuk kategori <em>Sedang</em> ($g < 0,80$). Di kelas SSCS seluruh 5 indikator konsisten menembus kategori <em>Tinggi</em> ($g \ge 0,85$).
+                                </div>
                             </div>
                         </div>
 
-                        <div class="chart-box">
-                            <canvas id="hellerRadarChart"></canvas>
+                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div class="glass-card-header" style="margin-bottom: 6px;">
+                                <div>
+                                    <strong style="font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-chart-radar text-blue-accent"></i> Poligon 5 Dimensi Kognitif</strong>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Visualisasi Sebaran N-Gain SSCS vs PBL</div>
+                                </div>
+                                <span class="metric-badge badge-emerald">SSCS Dominan di 5 Aspek</span>
+                            </div>
+
+                            <div style="position: relative; flex: 1; min-height: 270px; width: 100%;">
+                                <canvas id="hellerRadarChart"></canvas>
+                            </div>
+
+                            <div class="grid-2" style="margin-top: 10px; gap: 10px; flex: 0 0 auto;">
+                                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-sm); padding: 8px 12px;">
+                                    <div style="font-size: 11px; font-weight: 700; color: #166534; text-transform: uppercase;"><i class="fa-solid fa-circle-check"></i> Puncak Capaian (SSCS)</div>
+                                    <div style="font-size: 16px; font-weight: 800; color: #15803d;">0,92 (Prosedur Matematika)</div>
+                                    <div style="font-size: 11px; color: #166534; margin-top: 2px;">Siswa sangat terampil mengeksekusi rumus kalor & wujud zat.</div>
+                                </div>
+                                <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-sm); padding: 8px 12px;">
+                                    <div style="font-size: 11px; font-weight: 700; color: #92400e; text-transform: uppercase;"><i class="fa-solid fa-circle-exclamation"></i> Titik Rentan (PBL)</div>
+                                    <div style="font-size: 16px; font-weight: 800; color: #b45309;">0,79 (Aplikasi Spesifik)</div>
+                                    <div style="font-size: 11px; color: #92400e; margin-top: 2px;">Kelemahan memetakan prinsip fisis sebelum berhitung.</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1416,13 +1509,13 @@
          NORMAL VIEWPORT: BOTTOM STATUS BAR
          ========================================================================= -->
     <footer id="deck-bottom-bar">
-        <div style="display: flex; align-items: center; gap: 8px;">
+        <div class="bottom-bar-presenter" style="display: flex; align-items: center; gap: 8px;">
             <i class="fa-solid fa-user-pen text-blue-accent"></i>
             <span>Presenter: <strong>Trissanggrah Nirmala Desinta</strong> (UIN SGD Bandung)</span>
         </div>
 
         <div style="display: flex; align-items: center; gap: 14px;">
-            <span style="font-size: 11.5px; color: var(--text-muted);">Gunakan panah [←] [→] atau spasi</span>
+            <span class="bottom-bar-hint" style="font-size: 11.5px; color: var(--text-muted);">Gunakan panah [←] [→] atau spasi</span>
             <button class="control-arrow-btn" onclick="Reveal.prev()" title="Slide Sebelumnya (←)">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>

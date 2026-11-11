@@ -69,6 +69,20 @@ html, body {
     font-family: var(--font-body);
     font-size: 20px;
     color: var(--text-body);
+    position: absolute;
+    top: 51px;
+    bottom: 42px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 93px);
+    transition: top 0.3s ease, bottom 0.3s ease, height 0.3s ease;
+}
+
+body.is-fullscreen .reveal {
+    top: 0;
+    bottom: 0;
+    height: 100%;
 }
 
 .reveal-viewport {
@@ -100,13 +114,29 @@ html, body {
 
 .reveal .slides section {
     text-align: left;
-    padding: 24px 38px 26px 38px;
+    padding: 18px 36px 20px 36px;
     box-sizing: border-box;
     width: 100% !important;
     height: 100% !important;
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+.reveal .slides section::-webkit-scrollbar {
+    width: 5px;
+}
+.reveal .slides section::-webkit-scrollbar-track {
+    background: transparent;
+}
+.reveal .slides section::-webkit-scrollbar-thumb {
+    background: rgba(37, 99, 235, 0.25);
+    border-radius: var(--radius-pill);
+}
+.reveal .slides section::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-accent);
 }
 
 .reveal .slides section:not(.present) {
@@ -775,12 +805,15 @@ html, body {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 380px;
+    min-height: 320px;
     background: #ffffff;
     border: 1px solid var(--border-light);
     border-radius: var(--radius-md);
-    padding: 16px;
+    padding: 16px 20px;
     box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Process Steps Flow Component (Slide 4) */
@@ -1130,4 +1163,166 @@ body.is-fullscreen #floating-presentation-bar {
     font-size: 11.5px;
     color: var(--text-muted);
     width: 22px;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE DESIGN & MULTI-DEVICE MEDIA QUERIES
+   ========================================================================== */
+
+/* Medium Laptops & Tablets Landscape (<= 1024px) */
+@media (max-width: 1024px) {
+    .slide-title-main {
+        font-size: 23px !important;
+    }
+    .top-bar-paper-title {
+        max-width: 320px;
+    }
+}
+
+/* Tablets Portrait & Small Screens (<= 900px) */
+@media (max-width: 900px) {
+    .hero-main-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+    #deck-top-bar {
+        height: 44px;
+        padding: 0 12px;
+    }
+    
+    .top-bar-left {
+        gap: 6px;
+    }
+
+    .top-bar-brand span {
+        font-size: 13px;
+        letter-spacing: -0.01em;
+    }
+
+    .top-bar-paper-title,
+    .top-bar-divider {
+        display: none !important;
+    }
+
+    .top-bar-right {
+        gap: 6px;
+    }
+
+    .nav-tool-btn {
+        height: 28px;
+        padding: 0 8px;
+        font-size: 11.5px;
+    }
+
+    .nav-tool-btn .btn-text {
+        display: none !important;
+    }
+
+    .timer-display {
+        padding: 3px 8px;
+        font-size: 11px;
+    }
+
+    #deck-progress-bar {
+        top: 44px;
+    }
+
+    #deck-bottom-bar {
+        height: 38px;
+        padding: 0 12px;
+    }
+
+    .bottom-bar-presenter,
+    .bottom-bar-hint {
+        display: none !important;
+    }
+
+    .reveal {
+        top: 47px; /* 44px top bar + 3px progress */
+        bottom: 38px;
+        height: calc(100% - 85px);
+    }
+
+    .reveal .slides section {
+        padding: 14px 18px 16px 18px;
+    }
+
+    .slide-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+    }
+
+    .slide-title-main {
+        font-size: 20px !important;
+    }
+
+    .slide-context-badge {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-1-2,
+    .grid-2-1 {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .hero-canvas {
+        padding: 0;
+    }
+
+    .hero-main-title {
+        font-size: 22px !important;
+    }
+
+    .hero-bottom-institution-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        font-size: 11.5px;
+        padding: 8px 14px;
+    }
+
+    .step-flow {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .step-connector {
+        width: 2px;
+        height: 14px;
+    }
+
+    .step-connector::after {
+        content: "▼";
+        top: 4px;
+        right: -3px;
+    }
+
+    .flashcard-container {
+        height: 320px;
+    }
+
+    #slide-jump-menu {
+        top: 48px;
+        right: 8px;
+        left: 8px;
+        width: auto;
+    }
 }
