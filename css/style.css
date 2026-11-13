@@ -1038,10 +1038,36 @@ ul.custom-bullet-list li,
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
     padding: 0 24px;
     font-size: 12.5px;
     color: var(--text-muted);
     transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.bottom-bar-presenter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bottom-bar-presenter span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bottom-bar-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .slide-counter-badge {
@@ -1052,6 +1078,10 @@ ul.custom-bullet-list li,
     padding: 3px 10px;
     border-radius: var(--radius-pill);
     border: 1px solid var(--blue-border);
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .control-arrow-btn {
@@ -1061,9 +1091,10 @@ ul.custom-bullet-list li,
     width: 28px;
     height: 28px;
     border-radius: 6px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     cursor: pointer;
     transition: var(--transition-smooth);
 }
@@ -1519,14 +1550,20 @@ body.is-fullscreen #floating-presentation-bar {
 /* Tablets Portrait & Small Screens (<= 900px) */
 @media (max-width: 900px) {
     .hero-main-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 16px;
     }
     .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .grid-2-1 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .bottom-bar-hint {
+        display: none !important;
     }
 }
 
@@ -1577,6 +1614,7 @@ body.is-fullscreen #floating-presentation-bar {
     #deck-bottom-bar {
         height: 38px;
         padding: 0 12px;
+        justify-content: flex-end;
     }
 
     .bottom-bar-presenter,
@@ -1592,6 +1630,43 @@ body.is-fullscreen #floating-presentation-bar {
 
     .reveal .slides section {
         padding: 14px 18px 16px 18px;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .template-uin-logo {
+        height: 62px;
+    }
+
+    .template-uin-logo-sm {
+        height: 48px;
+    }
+
+    .template-chevrons {
+        display: none;
+    }
+
+    .thank-you-split {
+        flex-direction: column !important;
+        gap: 18px !important;
+        padding: 8px 0 !important;
+        text-align: center;
+    }
+
+    .thank-you-divider {
+        display: none !important;
+    }
+
+    .thank-you-info {
+        align-items: center !important;
+    }
+
+    .thank-you-heading {
+        font-size: 38px !important;
+    }
+
+    .hero-title-box .template-display-heading {
+        font-size: 20px !important;
     }
 
     .slide-header {
