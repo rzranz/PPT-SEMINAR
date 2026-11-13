@@ -173,6 +173,7 @@ body.is-fullscreen .reveal {
 .slide-header .title-area {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 4px;
 }
 
@@ -1233,7 +1234,7 @@ body.is-fullscreen #floating-presentation-bar {
    8B. UIN SGD BANDUNG TEMPLATE DECORATIVE & PHOTO COMPONENTS
    ========================================================================== */
 .template-uin-logo {
-    height: 92px;
+    height: 105px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.08));
@@ -1245,11 +1246,12 @@ body.is-fullscreen #floating-presentation-bar {
 }
 
 .template-uin-logo-sm {
-    height: 66px;
+    height: 78px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .template-uin-logo-sm:hover {
@@ -1260,6 +1262,7 @@ body.is-fullscreen #floating-presentation-bar {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    width: fit-content;
     background: linear-gradient(135deg, #1b5e3a 0%, #24784b 100%);
     color: #ffffff;
     font-family: var(--font-display);
