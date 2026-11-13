@@ -44,7 +44,7 @@
     </script>
 
     <!-- Custom Presentation Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=6.2">
+    <link rel="stylesheet" href="css/style.css?v=6.3">
 </head>
 <body>
 
@@ -529,7 +529,7 @@
                 <div class="slide-body">
                     <div class="grid-2-1 flex-1" style="gap: 14px; min-height: 0;">
                         <!-- Kolom Kiri: Tabel Keseluruhan & 5 Indikator KPM -->
-                        <div style="display: flex; flex-direction: column; gap: 8px; min-height: 0; justify-content: space-between;">
+                        <div style="display: flex; flex-direction: column; gap: 8px; min-height: 0; min-width: 0; justify-content: space-between;">
                             <div class="glass-card anim-enter" style="padding: 8px 12px;">
                                 <div style="font-weight: 800; font-size: 12.5px; color: var(--blue-primary); margin-bottom: 4px;">
                                     Hasil Pretest, Posttest dan N-Gain Keseluruhan
@@ -643,14 +643,14 @@
                                 </div>
                             </div>
 
-                            <div id="tab-ngain" class="result-tab-panel active" style="flex: 1; min-height: 0;">
-                                <div style="position: relative; flex: 1; min-height: 210px; max-height: 320px; width: 100%;">
+                            <div id="tab-ngain" class="result-tab-panel active" style="flex: 1; min-height: 0; min-width: 0;">
+                                <div style="position: relative; flex: 1; min-height: 210px; max-height: 320px; width: 100%; min-width: 0; overflow: hidden;">
                                     <canvas id="macroComparisonChart"></canvas>
                                 </div>
                             </div>
 
-                            <div id="tab-indikator" class="result-tab-panel" style="flex: 1; min-height: 0;">
-                                <div style="position: relative; flex: 1; min-height: 210px; max-height: 320px; width: 100%;">
+                            <div id="tab-indikator" class="result-tab-panel" style="flex: 1; min-height: 0; min-width: 0;">
+                                <div style="position: relative; flex: 1; min-height: 210px; max-height: 320px; width: 100%; min-width: 0; overflow: hidden;">
                                     <canvas id="hellerRadarChart"></canvas>
                                 </div>
                             </div>
@@ -853,6 +853,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
 
     <!-- Custom Presentation Logic -->
-    <script src="js/presentation.js?v=6.2"></script>
+    <script src="js/presentation.js?v=6.3"></script>
 </body>
 </html>
