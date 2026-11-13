@@ -666,6 +666,22 @@ body.is-fullscreen .reveal {
     color: var(--blue-primary);
 }
 
+.modern-table.compact th {
+    padding: 6px 10px;
+    font-size: 11px;
+}
+
+.modern-table.compact td {
+    padding: 5px 10px;
+    font-size: 11px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 /* 3D Interactive Flip Flashcards (Slide 5 - Tall & Proportional) */
 .flashcard-container {
     perspective: 1200px;

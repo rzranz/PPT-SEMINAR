@@ -44,7 +44,7 @@
     </script>
 
     <!-- Custom Presentation Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=6.0">
+    <link rel="stylesheet" href="css/style.css?v=6.1">
 </head>
 <body>
 
@@ -527,104 +527,108 @@
                 </div>
 
                 <div class="slide-body">
-                    <div class="grid-2-1 flex-1" style="gap: 16px;">
+                    <div class="grid-2-1 flex-1" style="gap: 14px; min-height: 0;">
                         <!-- Kolom Kiri: Tabel Keseluruhan & 5 Indikator KPM -->
-                        <div style="display: flex; flex-direction: column; gap: 8px; height: 100%; justify-content: space-between;">
-                            <div class="glass-card anim-enter" style="padding: 9px 14px;">
-                                <div style="font-weight: 800; font-size: 13px; color: var(--blue-primary); margin-bottom: 4px;">
+                        <div style="display: flex; flex-direction: column; gap: 8px; min-height: 0; justify-content: space-between;">
+                            <div class="glass-card anim-enter" style="padding: 8px 12px;">
+                                <div style="font-weight: 800; font-size: 12.5px; color: var(--blue-primary); margin-bottom: 4px;">
                                     Hasil Pretest, Posttest dan N-Gain Keseluruhan
                                 </div>
-                                <table class="modern-table" style="font-size: 11.5px;">
-                                    <thead>
-                                        <tr>
-                                            <th>Kelas</th>
-                                            <th style="text-align: center;">Pretest</th>
-                                            <th style="text-align: center;">Posttest</th>
-                                            <th style="text-align: center;">N-Gain</th>
-                                            <th style="text-align: center;">Kategori</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr style="background: var(--blue-subtle);">
-                                            <td><strong>Eksperimen (SSCS)</strong></td>
-                                            <td style="text-align: center;">26</td>
-                                            <td style="text-align: center;"><strong>91</strong></td>
-                                            <td style="text-align: center;"><strong style="color: var(--blue-primary);">0,88</strong></td>
-                                            <td style="text-align: center;"><span class="metric-badge badge-emerald">Tinggi</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Kontrol (PBL)</strong></td>
-                                            <td style="text-align: center;">21</td>
-                                            <td style="text-align: center;"><strong>86</strong></td>
-                                            <td style="text-align: center;"><strong>0,82</strong></td>
-                                            <td style="text-align: center;"><span class="metric-badge badge-blue">Tinggi</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div class="glass-card anim-enter anim-delay-1" style="padding: 9px 14px; flex: 1; justify-content: space-between;">
-                                <div>
-                                    <div style="font-weight: 800; font-size: 13px; color: var(--blue-primary); margin-bottom: 4px;">
-                                        Hasil Pretest, Posttest dan N-Gain Setiap Indikator KPM
-                                    </div>
-                                    <table class="modern-table" style="font-size: 10.8px;">
+                                <div class="table-responsive">
+                                    <table class="modern-table compact">
                                         <thead>
                                             <tr>
-                                                <th>Indikator KPM</th>
-                                                <th style="text-align: center;">Eksp (Pre→Post)</th>
+                                                <th>Kelas</th>
+                                                <th style="text-align: center;">Pretest</th>
+                                                <th style="text-align: center;">Posttest</th>
                                                 <th style="text-align: center;">N-Gain</th>
-                                                <th style="text-align: center;">Kont (Pre→Post)</th>
-                                                <th style="text-align: center;">N-Gain</th>
+                                                <th style="text-align: center;">Kategori</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td><strong>1. Deskripsi yang berguna</strong></td>
-                                                <td style="text-align: center;">51 → 94</td>
-                                                <td style="text-align: center;"><strong>0,88</strong> (Tinggi)</td>
-                                                <td style="text-align: center;">44 → 91</td>
-                                                <td style="text-align: center;">0,84 (Tinggi)</td>
+                                            <tr style="background: var(--blue-subtle);">
+                                                <td><strong>Eksperimen (SSCS)</strong></td>
+                                                <td style="text-align: center;">26</td>
+                                                <td style="text-align: center;"><strong>91</strong></td>
+                                                <td style="text-align: center;"><strong style="color: var(--blue-primary);">0,88</strong></td>
+                                                <td style="text-align: center;"><span class="metric-badge badge-emerald" style="font-size: 10px; padding: 2px 7px;">Tinggi</span></td>
                                             </tr>
                                             <tr>
-                                                <td><strong>2. Pendekatan fisika</strong></td>
-                                                <td style="text-align: center;">30 → 91</td>
-                                                <td style="text-align: center;"><strong>0,87</strong> (Tinggi)</td>
-                                                <td style="text-align: center;">27 → 86</td>
-                                                <td style="text-align: center;">0,81 (Tinggi)</td>
-                                            </tr>
-                                            <tr style="background: #fffbeb;">
-                                                <td><strong>3. Aplikasi fisika spesifik</strong></td>
-                                                <td style="text-align: center;">10 → 87</td>
-                                                <td style="text-align: center;"><strong>0,85</strong> (Tinggi)</td>
-                                                <td style="text-align: center;">7 → 81</td>
-                                                <td style="text-align: center;"><strong style="color: #b45309;">0,79 (Sedang)</strong></td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>4. Prosedur matematika tepat</strong></td>
-                                                <td style="text-align: center;">13 → 93</td>
-                                                <td style="text-align: center;"><strong style="color: var(--blue-primary);">0,92</strong> (Tinggi)</td>
-                                                <td style="text-align: center;">11 → 88</td>
-                                                <td style="text-align: center;">0,87 (Tinggi)</td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>5. Progresi logis</strong></td>
-                                                <td style="text-align: center;">28 → 91</td>
-                                                <td style="text-align: center;"><strong>0,87</strong> (Tinggi)</td>
-                                                <td style="text-align: center;">17 → 84</td>
-                                                <td style="text-align: center;">0,80 (Tinggi)</td>
+                                                <td><strong>Kontrol (PBL)</strong></td>
+                                                <td style="text-align: center;">21</td>
+                                                <td style="text-align: center;"><strong>86</strong></td>
+                                                <td style="text-align: center;"><strong>0,82</strong></td>
+                                                <td style="text-align: center;"><span class="metric-badge badge-blue" style="font-size: 10px; padding: 2px 7px;">Tinggi</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <div style="font-size: 10.5px; color: #92400e; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 5px 10px; margin-top: 4px;">
+                            </div>
+
+                            <div class="glass-card anim-enter anim-delay-1" style="padding: 8px 12px; flex: 1; min-height: 0; justify-content: space-between;">
+                                <div style="min-height: 0;">
+                                    <div style="font-weight: 800; font-size: 12.5px; color: var(--blue-primary); margin-bottom: 4px;">
+                                        Hasil Pretest, Posttest dan N-Gain Setiap Indikator KPM
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="modern-table compact">
+                                            <thead>
+                                                <tr>
+                                                    <th>Indikator KPM</th>
+                                                    <th style="text-align: center;">Eksp (Pre→Post)</th>
+                                                    <th style="text-align: center;">N-Gain</th>
+                                                    <th style="text-align: center;">Kont (Pre→Post)</th>
+                                                    <th style="text-align: center;">N-Gain</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>1. Deskripsi yang berguna</strong></td>
+                                                    <td style="text-align: center;">51 → 94</td>
+                                                    <td style="text-align: center;"><strong>0,88</strong> (Tinggi)</td>
+                                                    <td style="text-align: center;">44 → 91</td>
+                                                    <td style="text-align: center;">0,84 (Tinggi)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>2. Pendekatan fisika</strong></td>
+                                                    <td style="text-align: center;">30 → 91</td>
+                                                    <td style="text-align: center;"><strong>0,87</strong> (Tinggi)</td>
+                                                    <td style="text-align: center;">27 → 86</td>
+                                                    <td style="text-align: center;">0,81 (Tinggi)</td>
+                                                </tr>
+                                                <tr style="background: #fffbeb;">
+                                                    <td><strong>3. Aplikasi fisika spesifik</strong></td>
+                                                    <td style="text-align: center;">10 → 87</td>
+                                                    <td style="text-align: center;"><strong>0,85</strong> (Tinggi)</td>
+                                                    <td style="text-align: center;">7 → 81</td>
+                                                    <td style="text-align: center;"><strong style="color: #b45309;">0,79 (Sedang)</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>4. Prosedur matematika tepat</strong></td>
+                                                    <td style="text-align: center;">13 → 93</td>
+                                                    <td style="text-align: center;"><strong style="color: var(--blue-primary);">0,92</strong> (Tinggi)</td>
+                                                    <td style="text-align: center;">11 → 88</td>
+                                                    <td style="text-align: center;">0,87 (Tinggi)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>5. Progresi logis</strong></td>
+                                                    <td style="text-align: center;">28 → 91</td>
+                                                    <td style="text-align: center;"><strong>0,87</strong> (Tinggi)</td>
+                                                    <td style="text-align: center;">17 → 84</td>
+                                                    <td style="text-align: center;">0,80 (Tinggi)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="font-size: 10.5px; color: #92400e; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 5px 10px; margin-top: 6px;">
                                     <strong>Temuan Kunci:</strong> Seluruh indikator di kelas SSCS berkategori <em>Tinggi</em> (puncak <strong>0,92</strong>), sedangkan kelas PBL memiliki 1 indikator berkategori <em>Sedang</em> (Aplikasi Fisika Spesifik: <strong>0,79</strong>).
                                 </div>
                             </div>
                         </div>
 
                         <!-- Kolom Kanan: Grafik Chart.js Interaktif (Tumbuh dari Dasar & Replay Bulak-Balik) -->
-                        <div class="glass-card h-full justify-between anim-enter anim-delay-2" style="padding: 12px 14px;">
+                        <div class="glass-card h-full justify-between anim-enter anim-delay-2" style="padding: 10px 14px; min-height: 0;">
                             <div class="glass-card-header" style="margin-bottom: 6px; flex-wrap: wrap; gap: 6px;">
                                 <span style="font-weight: 800; font-size: 13px; color: var(--text-heading);">
                                     <i class="fa-solid fa-chart-simple text-blue-accent"></i> Visualisasi Data
@@ -639,14 +643,14 @@
                                 </div>
                             </div>
 
-                            <div id="tab-ngain" class="result-tab-panel active" style="flex: 1;">
-                                <div style="position: relative; flex: 1; min-height: 255px; width: 100%;">
+                            <div id="tab-ngain" class="result-tab-panel active" style="flex: 1; min-height: 0;">
+                                <div style="position: relative; flex: 1; min-height: 210px; max-height: 320px; width: 100%;">
                                     <canvas id="macroComparisonChart"></canvas>
                                 </div>
                             </div>
 
-                            <div id="tab-indikator" class="result-tab-panel" style="flex: 1;">
-                                <div style="position: relative; flex: 1; min-height: 255px; width: 100%;">
+                            <div id="tab-indikator" class="result-tab-panel" style="flex: 1; min-height: 0;">
+                                <div style="position: relative; flex: 1; min-height: 210px; max-height: 320px; width: 100%;">
                                     <canvas id="hellerRadarChart"></canvas>
                                 </div>
                             </div>
@@ -811,6 +815,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
 
     <!-- Custom Presentation Logic -->
-    <script src="js/presentation.js?v=6.0"></script>
+    <script src="js/presentation.js?v=6.1"></script>
 </body>
 </html>
