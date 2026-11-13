@@ -10,7 +10,6 @@
 
 // Global Chart.js instances to prevent canvas reuse conflicts
 let macroChart = null;
-let submateriChart = null;
 let hellerChart = null;
 let mouseIdleTimer = null;
 let timerSeconds = 0;
@@ -108,7 +107,6 @@ function handleFullscreenSync() {
     setTimeout(() => {
         Reveal.layout();
         if (macroChart) macroChart.resize();
-        if (submateriChart) submateriChart.resize();
         if (hellerChart) hellerChart.resize();
     }, 180);
 }
@@ -120,7 +118,6 @@ window.addEventListener('resize', () => {
     windowResizeTimer = setTimeout(() => {
         Reveal.layout();
         if (macroChart) macroChart.resize();
-        if (submateriChart) submateriChart.resize();
         if (hellerChart) hellerChart.resize();
     }, 150);
 });
@@ -306,11 +303,17 @@ function triggerReplayAnimation(chart) {
     }, 50);
 }
 
-function renderChartIfNeeded(slideIndex) {
-    // Slide 9 (0-indexed: 8) -> Macro Comparison
-    if (slideIndex === 8) {
+function switchResultTab(tabId, btnEl) {
+    document.querySelectorAll('.result-tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.result-tab-panel').forEach(panel => panel.classList.remove('active'));
+
+    if (btnEl) btnEl.classList.add('active');
+    const targetPanel = document.getElementById(tabId);
+    if (targetPanel) targetPanel.classList.add('active');
+
+    if (tabId === 'tab-ngain') {
         if (!macroChart) {
-            setTimeout(initMacroChart, 80);
+            setTimeout(initMacroChart, 60);
         } else {
             macroChart.resize();
             triggerReplayAnimation(macroChart);
@@ -319,22 +322,9 @@ function renderChartIfNeeded(slideIndex) {
         macroChart.reset();
     }
 
-    // Slide 10 (0-indexed: 9) -> Submateri Horizontal Bar
-    if (slideIndex === 9) {
-        if (!submateriChart) {
-            setTimeout(initSubmateriChart, 80);
-        } else {
-            submateriChart.resize();
-            triggerReplayAnimation(submateriChart);
-        }
-    } else if (submateriChart) {
-        submateriChart.reset();
-    }
-
-    // Slide 11 (0-indexed: 10) -> Heller Radar Chart
-    if (slideIndex === 10) {
+    if (tabId === 'tab-indikator') {
         if (!hellerChart) {
-            setTimeout(initHellerChart, 80);
+            setTimeout(initHellerChart, 60);
         } else {
             hellerChart.resize();
             triggerReplayAnimation(hellerChart);
@@ -342,9 +332,36 @@ function renderChartIfNeeded(slideIndex) {
     } else if (hellerChart) {
         hellerChart.reset();
     }
+}
 
-    // Slide 17 (0-indexed: 16) -> Confetti Celebration
-    if (slideIndex === 16) {
+function renderChartIfNeeded(slideIndex) {
+    // Slide 4 (0-indexed: 3) -> Hasil dan Pembahasan (Tabbed Charts)
+    if (slideIndex === 3) {
+        const activePanel = document.querySelector('.result-tab-panel.active');
+        if (activePanel) {
+            if (activePanel.id === 'tab-ngain') {
+                if (!macroChart) {
+                    setTimeout(initMacroChart, 80);
+                } else {
+                    macroChart.resize();
+                    triggerReplayAnimation(macroChart);
+                }
+            } else if (activePanel.id === 'tab-indikator') {
+                if (!hellerChart) {
+                    setTimeout(initHellerChart, 80);
+                } else {
+                    hellerChart.resize();
+                    triggerReplayAnimation(hellerChart);
+                }
+            }
+        }
+    } else {
+        if (macroChart) macroChart.reset();
+        if (hellerChart) hellerChart.reset();
+    }
+
+    // Slide 5 (0-indexed: 4) -> Kesimpulan & Penutup Celebration
+    if (slideIndex === 4) {
         setTimeout(fireConfetti, 400);
     }
 }

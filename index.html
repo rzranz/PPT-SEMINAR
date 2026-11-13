@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Seminar SENTRA PENDIPA 2026 | Penerapan Model SSCS Berbantuan Flashcard</title>
+    <title>Seminar Nasional | Penerapan Model SSCS Berbantuan Flashcard</title>
 
     <!-- Google Fonts: Plus Jakarta Sans, Inter, & Fira Code -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,28 +44,28 @@
     </script>
 
     <!-- Custom Presentation Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=2.3">
+    <link rel="stylesheet" href="css/style.css?v=3.0">
 </head>
 <body>
 
     <!-- =========================================================================
-         NORMAL VIEWPORT: TOP PRESENTATION BAR
+         NORMAL VIEWPORT: PERSISTENT HEADER & PROGRESS BAR
          ========================================================================= -->
     <header id="deck-top-bar">
         <div class="top-bar-left">
             <div class="top-bar-brand">
                 <i class="fa-solid fa-atom text-blue-accent"></i>
-                <span>SENTRA PENDIPA 2026</span>
+                <span>SEMINAR NASIONAL</span>
             </div>
             <div class="top-bar-divider"></div>
             <div class="top-bar-paper-title" id="current-slide-breadcrumb">
-                Penerapan Model Pembelajaran SSCS Berbantuan Flashcard
+                Slide 1: Cover Judul & Identitas
             </div>
         </div>
 
         <div class="top-bar-right">
-            <!-- Presenter Stopwatch -->
-            <div class="timer-display" id="sessionTimer" title="Klik untuk Start/Pause, Double-Click Reset">
+            <!-- Presenter Stopwatch (Target 5 Menit) -->
+            <div class="timer-display" id="sessionTimer" title="Stopwatch 5 Menit (Klik Start/Pause, Double-Click Reset)">
                 <i class="fa-regular fa-clock"></i>
                 <span id="timerText">00:00</span>
             </div>
@@ -103,7 +103,7 @@
         <button class="floating-bar-btn" onclick="Reveal.prev()" title="Slide Sebelumnya (←)">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <span class="floating-counter" id="floatingCounterBadge">01 / 17</span>
+        <span class="floating-counter" id="floatingCounterBadge">01 / 05</span>
         <button class="floating-bar-btn" onclick="Reveal.next()" title="Slide Berikutnya (→)">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
@@ -117,1409 +117,664 @@
     </div>
 
     <!-- =========================================================================
-         REVEAL SLIDES CONTAINER (17 FULL-BLEED HIGH-IMPACT SLIDES)
+         REVEAL SLIDES CONTAINER (5 COMPACT SLIDES FOR 5-MINUTE PRESENTATION)
          ========================================================================= -->
     <div class="reveal">
         <div class="slides">
 
-            <!-- SLIDE 1: COVER / TITLE (COMMANDING FULL-BLEED HERO) -->
-            <section data-title="Cover Judul">
+            <!-- SLIDE 1: COVER / JUDUL & PERKENALAN (TEMPLATE KAMPUS UIN SGD BANDUNG) -->
+            <section data-title="Cover Judul & Identitas">
                 <div class="hero-canvas">
+                    <!-- Top Header Row: Seminar Nasional & Logo/Identitas UIN SGD Bandung -->
                     <div class="hero-top-badge-row">
                         <div class="hero-conference-pill">
-                            <i class="fa-solid fa-award"></i> SEMINAR NASIONAL TRANSFORMASI PENDIDIKAN IPA
+                            <i class="fa-solid fa-award"></i> SEMINAR NASIONAL
                         </div>
-                        <div class="hero-year-pill">
-                            <i class="fa-solid fa-calendar-check text-blue-accent"></i> SENTRA PENDIPA 2026
+                        <div class="hero-year-pill" style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-building-columns text-blue-accent"></i>
+                            <span>UIN SUNAN GUNUNG DJATI BANDUNG</span>
                         </div>
                     </div>
 
+                    <!-- Main Hero Grid -->
                     <div class="hero-main-grid">
                         <div class="hero-title-box">
                             <div>
+                                <div style="display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 700; color: var(--blue-accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">
+                                    <i class="fa-solid fa-atom"></i> Jurusan Pendidikan Fisika • Materi Suhu & Kalor
+                                </div>
                                 <h1 class="hero-main-title">
                                     Penerapan Model Pembelajaran <span class="blue-highlight">Search, Solve, Create, and Share (SSCS)</span> Berbantuan <span class="blue-highlight">Flashcard</span> untuk Meningkatkan Keterampilan Pemecahan Masalah Peserta Didik pada Materi Suhu dan Kalor
                                 </h1>
-                                <p class="hero-subtitle">
-                                    Studi Eksperimen Kuasi Komparatif terhadap Model Problem Based Learning (PBL) berbantuan Flashcard di Kelas XII MIPA MAN 2 Bandung
+                                <p class="hero-subtitle" style="margin-bottom: 14px;">
+                                    Studi Kuasi-Eksperimen Komparatif terhadap Model <em>Problem Based Learning</em> (PBL) Berbantuan Flashcard
                                 </p>
                             </div>
 
                             <div class="hero-chips-row">
-                                <span class="hero-chip"><i class="fa-solid fa-flask-vial text-blue-accent"></i> Kuasi Eksperimen</span>
-                                <span class="hero-chip"><i class="fa-solid fa-users text-blue-accent"></i> Kelas XII MIPA (N = 65)</span>
-                                <span class="hero-chip"><i class="fa-solid fa-layer-group text-blue-accent"></i> 5 Indikator Heller</span>
-                                <span class="hero-chip"><i class="fa-solid fa-chart-line text-blue-accent"></i> N-Gain & Mann-Whitney SPSS</span>
+                                <span class="hero-chip"><i class="fa-solid fa-flask-vial text-blue-accent"></i> Kuasi-Eksperimen</span>
+                                <span class="hero-chip"><i class="fa-solid fa-layer-group text-blue-accent"></i> 5 Indikator KPM Heller</span>
+                                <span class="hero-chip"><i class="fa-solid fa-stopwatch text-blue-accent"></i> Presentasi 5 Menit (5 Slide)</span>
                             </div>
                         </div>
 
+                        <!-- Right Column: Identitas Presenter Sesuai Template Kampus -->
                         <div class="hero-right-col">
-                            <div class="author-profile-card">
-                                <div class="author-profile-avatar"><i class="fa-solid fa-user-graduate"></i></div>
-                                <div>
-                                    <div style="font-size: 15px; font-weight: 800; color: var(--text-heading);">Trissanggrah Nirmala Desinta</div>
-                                    <div style="font-size: 12.5px; color: var(--text-muted); margin-top: 2px;">Peneliti Utama • S1 Pendidikan Fisika</div>
-                                    <div style="font-size: 11.5px; color: var(--blue-accent); margin-top: 2px;"><i class="fa-solid fa-envelope"></i> trissanggrahnirmaladesinta@gmail.com</div>
+                            <div class="author-profile-card" style="flex: 1; flex-direction: column; align-items: flex-start; justify-content: center; gap: 12px; background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%); border: 1.5px solid var(--blue-border); border-left: 6px solid var(--blue-primary);">
+                                <div style="display: flex; align-items: center; gap: 14px; width: 100%;">
+                                    <div class="author-profile-avatar" style="width: 56px; height: 56px; font-size: 24px; background: var(--blue-primary); color: #ffffff; border-color: var(--blue-accent);">
+                                        <i class="fa-solid fa-user-graduate"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-accent);">Oleh:</div>
+                                        <div style="font-size: 18px; font-weight: 800; color: var(--text-heading); line-height: 1.2;">Trissanggrah Nirmala Desinta</div>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="author-profile-card">
-                                <div class="author-profile-avatar"><i class="fa-solid fa-chalkboard-user"></i></div>
-                                <div>
-                                    <div style="font-size: 15px; font-weight: 800; color: var(--text-heading);">Dr. Muhammad Minan Chusni, M.Pd.</div>
-                                    <div style="font-size: 12.5px; color: var(--text-muted); margin-top: 2px;">Dosen Pembimbing • Jurusan Pendidikan Fisika</div>
-                                    <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">UIN Sunan Gunung Djati Bandung</div>
+                                <div style="width: 100%; height: 1px; background: var(--blue-border);"></div>
+
+                                <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-body); width: 100%;">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <i class="fa-solid fa-id-card text-blue-accent" style="width: 16px;"></i>
+                                        <span><strong>NIM.</strong> 1222070076</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <i class="fa-solid fa-university text-blue-accent" style="width: 16px;"></i>
+                                        <span><strong>UIN Sunan Gunung Djati Bandung</strong></span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <i class="fa-solid fa-graduation-cap text-blue-accent" style="width: 16px;"></i>
+                                        <span>Fakultas Tarbiyah dan Keguruan • Pendidikan Fisika</span>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="hero-stats-banner">
                                 <div class="hero-stat-item">
-                                    <strong>0,88</strong>
-                                    <span>N-Gain SSCS</span>
-                                </div>
-                                <div style="width: 1px; height: 32px; background: var(--blue-border);"></div>
-                                <div class="hero-stat-item">
                                     <strong>95%</strong>
-                                    <span>Keterlaksanaan</span>
+                                    <span>Keterlaksanaan SSCS</span>
                                 </div>
                                 <div style="width: 1px; height: 32px; background: var(--blue-border);"></div>
                                 <div class="hero-stat-item">
-                                    <strong>p < 0,001</strong>
-                                    <span>Signifikansi</span>
+                                    <strong>0,88</strong>
+                                    <span>N-Gain (Tinggi)</span>
+                                </div>
+                                <div style="width: 1px; height: 32px; background: var(--blue-border);"></div>
+                                <div class="hero-stat-item">
+                                    <strong>p &lt; 0,001</strong>
+                                    <span>Uji Mann-Whitney</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Bottom Institutional Bar -->
                     <div class="hero-bottom-institution-bar">
-                        <div><i class="fa-solid fa-building-columns text-blue-accent"></i> <strong>Jurusan Pendidikan Fisika</strong> • Fakultas Tarbiyah dan Keguruan • UIN Sunan Gunung Djati Bandung</div>
-                        <div><i class="fa-solid fa-location-dot text-blue-accent"></i> Bandung, Jawa Barat, Indonesia</div>
+                        <div><i class="fa-solid fa-chalkboard-user text-blue-accent"></i> <strong>Presentation by Trissanggrah Nirmala Desinta</strong> • NIM. 1222070076</div>
+                        <div><i class="fa-solid fa-location-dot text-blue-accent"></i> UIN Sunan Gunung Djati Bandung</div>
                     </div>
                 </div>
             </section>
 
-            <!-- SLIDE 2: EXECUTIVE SUMMARY & ROADMAP -->
-            <section data-title="Eksekutif Summary">
+            <!-- SLIDE 2: LATAR BELAKANG, NOVELTY & TUJUAN PENELITIAN -->
+            <section data-title="Latar Belakang, Novelty & Tujuan">
                 <div class="slide-header">
                     <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-compass"></i> Peta Jalan Presentasi</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-chart-pie"></i> Ringkasan Eksekutif & Struktur Riset</h2>
-                        <p class="slide-subtitle">Sintesis cepat latar belakang, metodologi, temuan empiris, dan implikasi pembelajaran fisika</p>
+                        <span class="slide-tag"><i class="fa-solid fa-compass"></i> Urgensi & Arah Riset</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-magnifying-glass-chart"></i> Latar Belakang, Novelty & Tujuan Penelitian</h2>
+                        <p class="slide-subtitle">Kesenjangan keterampilan pemecahan masalah fisika di lapangan dan fokus kebaruan riset</p>
                     </div>
                     <div class="slide-context-badge">
-                        <i class="fa-solid fa-users"></i> Sampel: 65 Siswa (XII MIPA)
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-4">
-                        <div class="metric-card">
-                            <div class="metric-label">Keterlaksanaan SSCS</div>
-                            <div class="metric-value">95%</div>
-                            <div class="metric-badge badge-blue">Guru (95%) • Siswa (93%)</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-label">N-Gain Kelompok SSCS</div>
-                            <div class="metric-value emerald">0,88</div>
-                            <div class="metric-badge badge-emerald">Tinggi (Pre: 26 → Post: 91)</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-label">N-Gain Kelompok PBL</div>
-                            <div class="metric-value">0,82</div>
-                            <div class="metric-badge badge-blue">Tinggi (Pre: 21 → Post: 86)</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-label">Signifikansi Statistik</div>
-                            <div class="metric-value" style="font-size: 30px; color: var(--blue-primary);">< 0,001</div>
-                            <div class="metric-badge badge-purple">Mann-Whitney U = 195,000</div>
-                        </div>
-                    </div>
-
-                    <div class="grid-2">
-                        <div class="glass-card accent-bar-left">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-clipboard-check text-blue-accent"></i> Alur 4 Pilar Penelitian</span>
-                            </div>
-                            <ul class="custom-bullet-list">
-                                <li><strong>Identifikasi Masalah:</strong> Mengurai kelemahan evaluasi solusi dan dominasi metode ceramah di MAN 2 Bandung.</li>
-                                <li><strong>Intervensi Inovatif:</strong> Integrasi 4 varian flashcard tematik ke dalam setiap tahapan sintaks SSCS.</li>
-                                <li><strong>Eksperimentasi Terkontrol:</strong> Komparasi berkeadilan terhadap kelas PBL dengan media flashcard yang setara.</li>
-                                <li><strong>Analisis Multidimensi:</strong> Evaluasi 5 indikator Heller, 3 submateri, dan uji nonparametrik SPSS v26.</li>
-                            </ul>
-                        </div>
-
-                        <div class="glass-card accent-bar-emerald">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-lightbulb" style="color: var(--emerald-accent);"></i> Nilai Kebaruan (Novelty)</span>
-                            </div>
-                            <p style="font-size: 13.5px; margin-bottom: 8px;">
-                                Sebagian besar studi SSCS terdahulu masih berfokus pada ranah matematika SMP/SMA (Sari & Ningsih 2019, Meika 2021).
-                            </p>
-                            <div class="callout-box" style="background: #f0fdf4; border-color: #bbf7d0;">
-                                <i class="fa-solid fa-circle-check" style="color: var(--emerald-accent);"></i>
-                                <div style="font-size: 13px; color: #166534;">
-                                    <strong>Kontribusi Baru:</strong> Memadukan 4 jenis flashcard tematik ke dalam sintaks SSCS untuk menambal kelemahan representasi fenomena mikroskopis dan matematis pada materi termal fisika SMA.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 3: LATAR BELAKANG & FAKTA EMPIRIS -->
-            <section data-title="Latar Belakang">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-triangle-exclamation"></i> Urgensi Pedagogis</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-magnifying-glass-chart"></i> Latar Belakang & Masalah Lapangan</h2>
-                        <p class="slide-subtitle">Tantangan pemecahan masalah fisika dan temuan diagnostik awal di MAN 2 Bandung</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-school"></i> Studi Pendahuluan MAN 2 Bandung
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-2-1">
-                        <div style="display: flex; flex-direction: column; gap: 10px; height: 100%; justify-content: space-between;">
-                            <div class="glass-card accent-bar-left" style="padding: 12px 18px;">
-                                <div style="font-weight: 700; font-size: 14px; color: var(--text-heading); margin-bottom: 4px;">
-                                    <i class="fa-solid fa-brain text-blue-accent"></i> Hakekat Keterampilan Pemecahan Masalah
-                                </div>
-                                <p style="font-size: 13px; line-height: 1.5; margin: 0;">
-                                    Keterampilan pemecahan masalah bukan sekadar mencari hasil perhitungan aljabar akhir, melainkan proses kognitif terintegrasi: mengidentifikasi informasi, mendefinisikan masalah, memilih konsep fisis relevan, merancang strategi, hingga mengevaluasi keabsahan hasil secara logis (Siswanto, 2024; Ayudha, 2021; Hanifah, 2026).
-                                </p>
-                            </div>
-
-                            <div class="grid-2" style="gap: 10px;">
-                                <div class="glass-card" style="border-left: 5px solid var(--amber-accent); padding: 12px 16px;">
-                                    <div style="font-size: 11px; font-weight: 700; color: var(--amber-accent); text-transform: uppercase;">Skor Baseline Siswa</div>
-                                    <div style="font-size: 26px; font-weight: 800; color: var(--text-heading); margin: 2px 0;">48,00 <span style="font-size: 13px; font-weight: 600; color: var(--amber-accent);">(Sedang)</span></div>
-                                    <p style="font-size: 11.5px; color: var(--text-muted); margin: 0;">Rata-rata keterampilan awal suhu & kalor masih rendah.</p>
-                                </div>
-
-                                <div class="glass-card" style="border-left: 5px solid var(--rose-accent); padding: 12px 16px;">
-                                    <div style="font-size: 11px; font-weight: 700; color: var(--rose-accent); text-transform: uppercase;">Titik Terlemah Siswa</div>
-                                    <div style="font-size: 26px; font-weight: 800; color: var(--rose-accent); margin: 2px 0;">46,11</div>
-                                    <p style="font-size: 11.5px; color: var(--text-muted); margin: 0;">Indikator <em>evaluasi solusi</em> menempati skor paling kritis.</p>
-                                </div>
-                            </div>
-
-                            <div class="callout-box" style="padding: 10px 14px;">
-                                <i class="fa-solid fa-quote-left" style="font-size: 16px; margin-top: 1px;"></i>
-                                <div style="font-size: 12px; line-height: 1.45;">
-                                    <strong>Hasil Angket & Wawancara Guru-Siswa:</strong> Sebanyak <strong>70% dari 30 peserta didik</strong> menyatakan kesulitan memahami materi kalor dan gagal menghubungkan formula matematis dengan fenomena termal kehidupan sehari-hari.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="glass-card h-full justify-between" style="padding: 16px 20px;">
-                            <div>
-                                <div class="glass-card-header" style="margin-bottom: 8px;">
-                                    <span style="font-weight: 700; font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-list-check text-blue-accent"></i> 3 Kendala Pokok Kelas</span>
-                                    <span class="metric-badge badge-amber">Diagnostik</span>
-                                </div>
-                                <ul class="custom-bullet-list">
-                                    <li class="warn">
-                                        <strong>Didominasi Ceramah:</strong> Pembelajaran pasif satu arah, guru fokus mentransfer rumus tanpa memberi porsi investigasi mandiri.
-                                    </li>
-                                    <li class="warn">
-                                        <strong>Bahan Ajar Terbatas:</strong> Bergantung penuh pada buku teks sekolah yang minim stimulasi visual dan tantangan kontekstual.
-                                    </li>
-                                    <li class="danger">
-                                        <strong>Latihan Berorientasi Jawaban:</strong> Soal latihan belum secara eksplisit melatih tahapan indikator pemecahan masalah sistematis.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div style="margin-top: 12px; padding: 10px 14px; background: var(--blue-subtle); border-radius: var(--radius-sm); border: 1.5px dashed var(--blue-border); font-size: 12px; color: var(--blue-primary); line-height: 1.45;">
-                                <i class="fa-solid fa-lightbulb"></i> <strong>Kebutuhan Solutif:</strong> Model pembelajaran aktif terstruktur (SSCS) dipadukan dengan media stimulus ringkas (Flashcard).
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 4: MODEL PEMBELAJARAN SSCS -->
-            <section data-title="Model Pembelajaran SSCS">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-diagram-project"></i> Landasan Teori</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-sitemap"></i> Sintaks Search, Solve, Create, and Share (SSCS)</h2>
-                        <p class="slide-subtitle">Struktur empat tahapan pemecahan masalah sistematis menurut Pizzini (1988)</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-book-open"></i> Pizzini et al. (1988)
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="step-flow">
-                        <div class="step-item">
-                            <div class="step-number">1</div>
-                            <strong style="color: var(--blue-primary); font-size: 15px;">SEARCH</strong>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Identifikasi Masalah</div>
-                        </div>
-                        <div class="step-connector"></div>
-                        <div class="step-item">
-                            <div class="step-number">2</div>
-                            <strong style="color: var(--blue-primary); font-size: 15px;">SOLVE</strong>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Perencanaan Strategi</div>
-                        </div>
-                        <div class="step-connector"></div>
-                        <div class="step-item">
-                            <div class="step-number">3</div>
-                            <strong style="color: var(--blue-primary); font-size: 15px;">CREATE</strong>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Konstruksi Solusi</div>
-                        </div>
-                        <div class="step-connector"></div>
-                        <div class="step-item">
-                            <div class="step-number">4</div>
-                            <strong style="color: var(--blue-primary); font-size: 15px;">SHARE</strong>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Komunikasi & Evaluasi</div>
-                        </div>
-                    </div>
-
-                    <div class="grid-4">
-                        <div class="glass-card" style="border-top: 4px solid var(--blue-accent);">
-                            <div style="font-weight: 700; font-size: 14px; color: var(--text-heading); margin-bottom: 6px;">
-                                <i class="fa-solid fa-magnifying-glass text-blue-accent"></i> 1. Search
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body); margin: 0;">
-                                Peserta didik mengamati fenomena termal, mendata besaran yang diketahui dan ditanyakan, serta memformulasikan masalah dalam kalimat fisika terarah.
-                            </p>
-                        </div>
-
-                        <div class="glass-card" style="border-top: 4px solid var(--cyan-accent);">
-                            <div style="font-weight: 700; font-size: 14px; color: var(--text-heading); margin-bottom: 6px;">
-                                <i class="fa-solid fa-gears text-blue-accent"></i> 2. Solve
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body); margin: 0;">
-                                Menentukan konsep fisika relevan (asas Black, kalor laten, laju konduksi), merancang alur matematis, dan memilih persamaan kalkulasi yang tepat.
-                            </p>
-                        </div>
-
-                        <div class="glass-card" style="border-top: 4px solid var(--emerald-accent);">
-                            <div style="font-weight: 700; font-size: 14px; color: var(--text-heading); margin-bottom: 6px;">
-                                <i class="fa-solid fa-lightbulb text-blue-accent"></i> 3. Create
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body); margin: 0;">
-                                Mengembangkan hasil pemikiran menjadi produk solusi nyata: melakukan kalkulasi matematis runtut dan menyusun simpulan jawaban yang dapat diuji.
-                            </p>
-                        </div>
-
-                        <div class="glass-card" style="border-top: 4px solid #8b5cf6;">
-                            <div style="font-weight: 700; font-size: 14px; color: var(--text-heading); margin-bottom: 6px;">
-                                <i class="fa-solid fa-comments text-blue-accent"></i> 4. Share
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body); margin: 0;">
-                                Mengomunikasikan hasil penyelesaian kepada rekan kelas, mempertahankan argumentasi fisis secara ilmiah, dan merefleksi validitas solusi.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="callout-box" style="margin-top: 10px;">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                        <div style="font-size: 13px;">
-                            <strong>Komparasi Filosofis:</strong> Berbeda dengan PBL yang langsung menyajikan investigasi terbuka, <strong>SSCS memberikan tahapan berjenjang eksplisit</strong> dari penemuan konsep hingga pembuktian mandiri, sehingga menurunkan beban kognitif siswa (Sari, 2024; Hasibuan, 2026).
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 5: INOVASI MEDIA FLASHCARD (FLIP CARDS - TALL & PROPORTIONAL) -->
-            <section data-title="Inovasi Flashcard">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Media Scaffold</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-id-card"></i> Integrasi Media Flashcard pada Sintaks SSCS</h2>
-                        <p class="slide-subtitle">Arahkan kursor / klik kartu untuk melihat contoh implementasi stimulus interaktif di kelas</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-rotate"></i> Klik / Hover Kartu untuk Membalik
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-4" style="flex: 1;">
-                        <!-- Flashcard 1: Search -->
-                        <div class="flashcard-container" onclick="this.classList.toggle('is-flipped')">
-                            <div class="flashcard-inner">
-                                <div class="flashcard-front">
-                                    <div>
-                                        <span class="slide-tag" style="font-size: 10.5px; margin-bottom: 8px;">Tahap Search</span>
-                                        <div style="font-weight: 800; font-size: 16px; color: var(--blue-primary); margin-bottom: 4px;">Kartu Stimulus</div>
-                                        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">Menyajikan fenomena termal kontekstual kehidupan nyata yang memancing rasa ingin tahu.</div>
-                                    </div>
-                                    <div style="text-align: center; color: var(--blue-accent); font-size: 38px; margin: 12px 0;">
-                                        <i class="fa-solid fa-temperature-three-quarters"></i>
-                                    </div>
-                                    <div class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Balik: Contoh Kasus</div>
-                                </div>
-                                <div class="flashcard-back">
-                                    <div>
-                                        <span class="card-badge-back">Contoh Kartu Search</span>
-                                        <div style="font-weight: 700; font-size: 13.5px; margin: 8px 0 4px 0;">Studi Fenomena Termal:</div>
-                                        <p><em>"Mengapa es batu di atas pelat seng meleleh jauh lebih cepat dibandingkan di atas papan kayu pada suhu ruang yang sama?"</em></p>
-                                    </div>
-                                    <div style="font-size: 11px; opacity: 0.9; border-top: 1px dashed rgba(255,255,255,0.3); padding-top: 6px;">Tujuan: Memantik siswa merumuskan variabel suhu & perpindahan kalor.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Flashcard 2: Solve -->
-                        <div class="flashcard-container" onclick="this.classList.toggle('is-flipped')">
-                            <div class="flashcard-inner">
-                                <div class="flashcard-front">
-                                    <div>
-                                        <span class="slide-tag" style="font-size: 10.5px; margin-bottom: 8px;">Tahap Solve</span>
-                                        <div style="font-weight: 800; font-size: 16px; color: var(--blue-primary); margin-bottom: 4px;">Kartu Konsep</div>
-                                        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">Petunjuk pemetaan besaran fisis & pemilihan hukum yang relevan.</div>
-                                    </div>
-                                    <div style="text-align: center; color: var(--cyan-accent); font-size: 38px; margin: 12px 0;">
-                                        <i class="fa-solid fa-lightbulb"></i>
-                                    </div>
-                                    <div class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Balik: Panduan Konsep</div>
-                                </div>
-                                <div class="flashcard-back">
-                                    <div>
-                                        <span class="card-badge-back">Contoh Kartu Solve</span>
-                                        <div style="font-weight: 700; font-size: 13.5px; margin: 8px 0 4px 0;">Panduan Konseptual:</div>
-                                        <p>Laju kalor konduksi: $H = k \cdot A \cdot \frac{\Delta T}{L}$. Identifikasi perbedaan nilai konduktivitas termal ($k$) seng vs kayu.</p>
-                                    </div>
-                                    <div style="font-size: 11px; opacity: 0.9; border-top: 1px dashed rgba(255,255,255,0.3); padding-top: 6px;">Tujuan: Mencegah hafalan rumus buta (*blind guessing*).</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Flashcard 3: Create -->
-                        <div class="flashcard-container" onclick="this.classList.toggle('is-flipped')">
-                            <div class="flashcard-inner">
-                                <div class="flashcard-front">
-                                    <div>
-                                        <span class="slide-tag" style="font-size: 10.5px; margin-bottom: 8px;">Tahap Create</span>
-                                        <div style="font-weight: 800; font-size: 16px; color: var(--blue-primary); margin-bottom: 4px;">Kartu Tantangan</div>
-                                        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">Panduan perumusan matematis & evaluasi besaran terstruktur.</div>
-                                    </div>
-                                    <div style="text-align: center; color: var(--emerald-accent); font-size: 38px; margin: 12px 0;">
-                                        <i class="fa-solid fa-calculator"></i>
-                                    </div>
-                                    <div class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Balik: Contoh Tantangan</div>
-                                </div>
-                                <div class="flashcard-back">
-                                    <div>
-                                        <span class="card-badge-back">Contoh Kartu Create</span>
-                                        <div style="font-weight: 700; font-size: 13.5px; margin: 8px 0 4px 0;">Tantangan Solusi:</div>
-                                        <p>Substitusikan $\Delta T$ dan dimensi bahan. Gunakan $Q = mL$ untuk menghitung waktu yang dibutuhkan hingga 50 gram es melebur sempurna!</p>
-                                    </div>
-                                    <div style="font-size: 11px; opacity: 0.9; border-top: 1px dashed rgba(255,255,255,0.3); padding-top: 6px;">Tujuan: Melatih akurasi prosedur matematika & konversi satuan SI.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Flashcard 4: Share -->
-                        <div class="flashcard-container" onclick="this.classList.toggle('is-flipped')">
-                            <div class="flashcard-inner">
-                                <div class="flashcard-front">
-                                    <div>
-                                        <span class="slide-tag" style="font-size: 10.5px; margin-bottom: 8px;">Tahap Share</span>
-                                        <div style="font-weight: 800; font-size: 16px; color: var(--blue-primary); margin-bottom: 4px;">Kartu Pemantik</div>
-                                        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">Memicu debat ilmiah, validasi hasil, & evaluasi logis antarsiswa.</div>
-                                    </div>
-                                    <div style="text-align: center; color: #8b5cf6; font-size: 38px; margin: 12px 0;">
-                                        <i class="fa-solid fa-comments"></i>
-                                    </div>
-                                    <div class="flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Balik: Pemantik Diskusi</div>
-                                </div>
-                                <div class="flashcard-back">
-                                    <div>
-                                        <span class="card-badge-back">Contoh Kartu Share</span>
-                                        <div style="font-weight: 700; font-size: 13.5px; margin: 8px 0 4px 0;">Pemantik Argumentasi:</div>
-                                        <p><em>"Apakah hasil hitungan Anda logis? Jika pelat seng diganti isolator gabus, mengapa es tahan lebih lama? Presentasikan!"</em></p>
-                                    </div>
-                                    <div style="font-size: 11px; opacity: 0.9; border-top: 1px dashed rgba(255,255,255,0.3); padding-top: 6px;">Tujuan: Menguatkan indikator evaluasi solusi (Heller 5).</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="callout-box" style="margin-top: 10px;">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <div>
-                            <strong>Keadilan Metodologis:</strong> Flashcard juga diberikan kepada kelompok kontrol (PBL). Dengan demikian, perbedaan capaian murni dipicu oleh <strong>efektivitas sintaks model pembelajaran SSCS</strong>, bukan semata efek kehadiran media (Kholidi, 2026).
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 6: 5 INDIKATOR HELLER (1992) -->
-            <section data-title="Indikator Pemecahan Masalah">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-bullseye"></i> Parameter Evaluasi</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-crosshairs"></i> 5 Indikator Keterampilan Pemecahan Masalah</h2>
-                        <p class="slide-subtitle">Taksonomi evaluasi keterampilan pemecahan masalah fisika menurut Heller, Keith, & Anderson (1992)</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-check-double"></i> Heller (1992)
+                        <i class="fa-solid fa-school"></i> MAN 2 Bandung
                     </div>
                 </div>
 
                 <div class="slide-body">
                     <div class="grid-2 flex-1">
-                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; gap: 8px;">
-                            <div class="glass-card-header" style="margin-bottom: 2px;">
-                                <span style="font-weight: 700; font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-list-ol text-blue-accent"></i> Sintesis 5 Indikator Heller</span>
-                                <span class="metric-badge badge-blue">Taksonomi</span>
+                        <!-- Kolom Kiri: Latar Belakang & Novelty -->
+                        <div style="display: flex; flex-direction: column; gap: 14px; height: 100%; justify-content: space-between;">
+                            <div class="glass-card accent-bar-amber" style="flex: 1; justify-content: space-between;">
+                                <div>
+                                    <div class="glass-card-header" style="margin-bottom: 8px;">
+                                        <span style="font-weight: 800; font-size: 15.5px; color: var(--text-heading);"><i class="fa-solid fa-triangle-exclamation text-amber-accent"></i> Latar Belakang Masalah</span>
+                                        <span class="metric-badge badge-amber">Studi Pendahuluan</span>
+                                    </div>
+                                    <p style="font-size: 13.5px; line-height: 1.6; color: var(--text-body);">
+                                        Hasil studi pendahuluan menunjukkan bahwa keterampilan pemecahan masalah peserta didik kelas XI MIPA di <strong>MAN 2 Bandung</strong> masih berada dalam kategori <strong>rendah</strong> pada setiap aspek yang diuji.
+                                    </p>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 14px; background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-sm); padding: 10px 14px; margin-top: 10px;">
+                                    <div style="font-size: 28px; font-weight: 800; color: #b45309; font-family: var(--font-heading); line-height: 1;">48%</div>
+                                    <div style="font-size: 12px; color: #92400e; line-height: 1.4;">
+                                        <strong>Rata-rata Persentase Awal</strong><br>Peserta didik masih kesulitan menghubungkan konsep fisis dan rumus matematis.
+                                    </div>
+                                </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; gap: 7px; flex: 1; justify-content: space-between;">
-                                <div style="display: flex; gap: 10px; align-items: center; background: #f8fafc; border: 1px solid var(--border-light); padding: 7px 12px; border-radius: var(--radius-sm);">
-                                    <span class="metric-badge badge-blue" style="font-size: 12px; min-width: 24px; text-align: center;">1</span>
-                                    <div style="font-size: 12.5px;">
-                                        <strong>Deskripsi yang Berguna:</strong> Memvisualisasikan fenomena termal & memetakan besaran fisis.
-                                    </div>
+
+                            <div class="glass-card accent-bar-emerald" style="flex: 1; justify-content: center;">
+                                <div class="glass-card-header" style="margin-bottom: 8px;">
+                                    <span style="font-weight: 800; font-size: 15.5px; color: var(--text-heading);"><i class="fa-solid fa-lightbulb" style="color: var(--emerald-accent);"></i> Novelty (Kebaruan)</span>
+                                    <span class="metric-badge badge-emerald">Inovasi</span>
                                 </div>
-                                <div style="display: flex; gap: 10px; align-items: center; background: #f8fafc; border: 1px solid var(--border-light); padding: 7px 12px; border-radius: var(--radius-sm);">
-                                    <span class="metric-badge badge-blue" style="font-size: 12px; min-width: 24px; text-align: center;">2</span>
-                                    <div style="font-size: 12.5px;">
-                                        <strong>Pendekatan Fisika:</strong> Menentukan hukum fisika dasar (asas Black, konduksi kalor, kalor jenis).
-                                    </div>
-                                </div>
-                                <div style="display: flex; gap: 10px; align-items: center; background: #f8fafc; border: 1px solid var(--border-light); padding: 7px 12px; border-radius: var(--radius-sm);">
-                                    <span class="metric-badge badge-blue" style="font-size: 12px; min-width: 24px; text-align: center;">3</span>
-                                    <div style="font-size: 12.5px;">
-                                        <strong>Aplikasi Fisika Spesifik:</strong> Merumuskan persamaan matematis operasional antar-variabel.
-                                    </div>
-                                </div>
-                                <div style="display: flex; gap: 10px; align-items: center; background: #f8fafc; border: 1px solid var(--border-light); padding: 7px 12px; border-radius: var(--radius-sm);">
-                                    <span class="metric-badge badge-blue" style="font-size: 12px; min-width: 24px; text-align: center;">4</span>
-                                    <div style="font-size: 12.5px;">
-                                        <strong>Prosedur Matematika Tepat:</strong> Substitusi angka, manipulasi aljabar, & komputasi numerik akurat.
-                                    </div>
-                                </div>
-                                <div style="display: flex; gap: 10px; align-items: center; background: #f8fafc; border: 1px solid var(--border-light); padding: 7px 12px; border-radius: var(--radius-sm);">
-                                    <span class="metric-badge badge-blue" style="font-size: 12px; min-width: 24px; text-align: center;">5</span>
-                                    <div style="font-size: 12.5px;">
-                                        <strong>Progresi Logis & Evaluasi:</strong> Verifikasi runtutan langkah, satuan SI, & kelogisan solusi akhir.
-                                    </div>
-                                </div>
+                                <p style="font-size: 13.5px; line-height: 1.6; color: var(--text-body);">
+                                    Keterbaruan penelitian ini terletak pada penerapan model pembelajaran <strong>Search, Solve, Create, and Share (SSCS)</strong> yang diintegrasikan dengan media <strong>Flashcard</strong> untuk meningkatkan keterampilan pemecahan masalah peserta didik dalam pembelajaran fisika, khususnya pada materi <strong>Suhu dan Kalor</strong>.
+                                </p>
                             </div>
                         </div>
 
-                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(145deg, #ffffff 0%, #f0f7ff 100%);">
+                        <!-- Kolom Kanan: Tujuan Penelitian & Sintaks Ringkas -->
+                        <div class="glass-card h-full justify-between highlight" style="border-top: 5px solid var(--blue-primary);">
                             <div>
-                                <div class="glass-card-header" style="margin-bottom: 8px;">
-                                    <span style="font-weight: 700; font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-link text-blue-accent"></i> Keterkaitan Sintaks SSCS & Heller</span>
-                                    <span class="metric-badge badge-emerald">Integrasi</span>
+                                <div class="glass-card-header" style="margin-bottom: 12px;">
+                                    <span style="font-weight: 800; font-size: 16px; color: var(--blue-primary);"><i class="fa-solid fa-bullseye text-blue-accent"></i> Tujuan Penelitian</span>
+                                    <span class="metric-badge badge-blue">2 Fokus Utama</span>
                                 </div>
-                                <table class="modern-table">
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 32%;">Tahap SSCS</th>
-                                            <th>Indikator Heller yang Dilatih</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>1. Search</strong></td>
-                                            <td>Deskripsi yang Berguna (Visualisasi fenomena kontekstual)</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>2. Solve</strong></td>
-                                            <td>Pendekatan Fisika & Aplikasi Fisika Spesifik</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>3. Create</strong></td>
-                                            <td>Prosedur Matematika yang Tepat & Eksekusi Hitungan</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>4. Share</strong></td>
-                                            <td>Progresi Logis, Verifikasi & Evaluasi Hasil Solusi</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div style="background: #ffffff; border: 1px solid var(--blue-border); border-radius: var(--radius-sm); padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; box-shadow: var(--shadow-sm);">
+                                        <span class="metric-badge badge-blue" style="font-size: 13px; min-width: 28px; text-align: center;">1</span>
+                                        <div style="font-size: 13.5px; line-height: 1.55; color: var(--text-body);">
+                                            <strong>Menganalisis Keterlaksanaan Pembelajaran:</strong> Mengevaluasi aktivitas guru dan peserta didik selama penerapan model <strong>SSCS</strong> dan <strong>PBL</strong> berbantuan <em>Flashcard</em>.
+                                        </div>
+                                    </div>
+
+                                    <div style="background: #ffffff; border: 1px solid var(--blue-border); border-radius: var(--radius-sm); padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; box-shadow: var(--shadow-sm);">
+                                        <span class="metric-badge badge-blue" style="font-size: 13px; min-width: 28px; text-align: center;">2</span>
+                                        <div style="font-size: 13.5px; line-height: 1.55; color: var(--text-body);">
+                                            <strong>Menganalisis Perbedaan Peningkatan KPM:</strong> Membandingkan peningkatan keterampilan pemecahan masalah (KPM) peserta didik antara kedua model yang diterapkan.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="callout-box" style="margin-top: 10px; font-size: 12px; padding: 10px 14px;">
-                                <i class="fa-solid fa-bullseye" style="font-size: 16px;"></i>
-                                <div>Instrumen tes dirancang berupa soal uraian berbasis 5 indikator ini (Tipe A & Tipe B, masing-masing 3 soal) teruji valid via <strong>ANATES v4.0.5</strong>.</div>
+
+                            <div class="callout-box" style="margin-top: 12px;">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <div style="font-size: 12.5px; line-height: 1.45;">
+                                    <strong>Integrasi SSCS + Flashcard:</strong> Memandu siswa secara terstruktur mulai dari memahami fenomena (<em>Search</em>), memilih prinsip fisika (<em>Solve</em>), mengeksekusi rumus (<em>Create</em>), hingga mengevaluasi solusi (<em>Share</em>).
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- SLIDE 7: METODOLOGI PENELITIAN -->
+            <!-- SLIDE 3: PENDEKATAN, METODE, DESAIN & TEKNIK PENGUMPULAN DATA -->
             <section data-title="Metodologi Penelitian">
                 <div class="slide-header">
                     <div class="title-area">
                         <span class="slide-tag"><i class="fa-solid fa-flask"></i> Prosedur Ilmiah</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-microscope"></i> Desain & Metodologi Penelitian</h2>
-                        <p class="slide-subtitle">Pendekatan kuantitatif kuasi eksperimen dengan pretest-posttest non-equivalent control group</p>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-microscope"></i> Pendekatan, Metode, Desain & Pengumpulan Data</h2>
+                        <p class="slide-subtitle">Kerangka metodologis komparatif antara kelas eksperimen (SSCS) dan kelas kontrol (PBL)</p>
                     </div>
                     <div class="slide-context-badge">
-                        <i class="fa-solid fa-calendar-days"></i> 3 Pertemuan Pembelajaran
+                        <i class="fa-solid fa-calendar-days"></i> 3 Pertemuan
                     </div>
                 </div>
 
-                <div class="slide-body" style="gap: 12px; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div class="grid-3" style="flex: 1.1; min-height: 0;">
-                        <div class="glass-card accent-bar-left" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 14px 16px;">
-                            <div class="glass-card-header" style="margin-bottom: 6px;">
-                                <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);">Desain Penelitian</span>
-                                <i class="fa-solid fa-vial-circle-check text-blue-accent"></i>
-                            </div>
-                            <div style="font-size: 12.5px;">
-                                <strong>Quasi Experimental:</strong>
-                                <div style="font-family: var(--font-mono); font-size: 11.5px; background: #f1f5f9; padding: 6px 8px; border-radius: 6px; margin: 6px 0;">
-                                    O₁ × X₁ → O₂ (Eksperimen)<br>
-                                    O₃ × X₂ → O₄ (Kontrol)
+                <div class="slide-body" style="gap: 14px;">
+                    <!-- 4 Pillars Grid (Sesuai Page 3 PDF) -->
+                    <div class="grid-2 flex-1" style="gap: 16px;">
+                        <div class="glass-card accent-bar-left" style="justify-content: center; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 14px;">
+                                <div class="card-icon-badge" style="width: 48px; height: 48px; font-size: 20px; flex-shrink: 0;">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
                                 </div>
-                                Pretest ($O_1, O_3$) dan Posttest ($O_2, O_4$) untuk mengukur N-Gain.
+                                <div>
+                                    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-accent);">1. Pendekatan</div>
+                                    <div style="font-size: 18px; font-weight: 800; color: var(--text-heading);">Pendekatan Kuantitatif</div>
+                                </div>
+                            </div>
+                            <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                                Pengukuran numerik objektif terhadap skor keterampilan pemecahan masalah (pretest–posttest) dan persentase observasi kelas.
+                            </p>
+                        </div>
+
+                        <div class="glass-card accent-bar-left" style="justify-content: center; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 14px;">
+                                <div class="card-icon-badge" style="width: 48px; height: 48px; font-size: 20px; flex-shrink: 0;">
+                                    <i class="fa-solid fa-gears"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-accent);">2. Metode</div>
+                                    <div style="font-size: 18px; font-weight: 800; color: var(--text-heading);">Kuasi-Eksperimen</div>
+                                </div>
+                            </div>
+                            <p style="font-size: 13px; color: var(--text-muted); margin: 0;">
+                                Membandingkan perlakuan model <strong>SSCS + Flashcard</strong> (Kelas Eksperimen) terhadap model <strong>PBL + Flashcard</strong> (Kelas Kontrol).
+                            </p>
+                        </div>
+
+                        <div class="glass-card accent-bar-left" style="justify-content: center; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 14px;">
+                                <div class="card-icon-badge" style="width: 48px; height: 48px; font-size: 20px; flex-shrink: 0;">
+                                    <i class="fa-solid fa-puzzle-piece"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-accent);">3. Desain Penelitian</div>
+                                    <div style="font-size: 18px; font-weight: 800; color: var(--text-heading);">Non-Equivalent Control Group Design</div>
+                                </div>
+                            </div>
+                            <div style="font-family: var(--font-mono); font-size: 12px; background: #f1f5f9; padding: 6px 10px; border-radius: var(--radius-sm); color: var(--blue-primary); font-weight: 600;">
+                                Eksperimen: $O_1 \rightarrow X_{\text{SSCS}} \rightarrow O_2$ &nbsp;|&nbsp; Kontrol: $O_3 \rightarrow X_{\text{PBL}} \rightarrow O_4$
                             </div>
                         </div>
 
-                        <div class="glass-card accent-bar-left" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 14px 16px;">
-                            <div class="glass-card-header" style="margin-bottom: 6px;">
-                                <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);">Populasi & Sampel</span>
-                                <i class="fa-solid fa-users text-blue-accent"></i>
+                        <div class="glass-card accent-bar-left" style="justify-content: center; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 14px;">
+                                <div class="card-icon-badge" style="width: 48px; height: 48px; font-size: 20px; flex-shrink: 0;">
+                                    <i class="fa-solid fa-clipboard-list"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-accent);">4. Teknik Pengumpulan Data</div>
+                                    <div style="font-size: 18px; font-weight: 800; color: var(--text-heading);">Instrumen Tervalidasi</div>
+                                </div>
                             </div>
-                            <div style="font-size: 12.5px;">
-                                <strong>MAN 2 Bandung (Cluster Random):</strong>
-                                <ul style="margin: 6px 0 0 14px; padding: 0; font-size: 12px; line-height: 1.55;">
-                                    <li><strong>Kelas Eksperimen:</strong> XII MIPA 5 ($N = 32$) • SSCS + FC</li>
-                                    <li><strong>Kelas Kontrol:</strong> XII MIPA 6 ($N = 33$) • PBL + FC</li>
-                                </ul>
-                                Total subjek riset: <strong>65 peserta didik</strong>.
-                            </div>
-                        </div>
-
-                        <div class="glass-card accent-bar-left" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 14px 16px;">
-                            <div class="glass-card-header" style="margin-bottom: 6px;">
-                                <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);">Instrumen & Uji Coba</span>
-                                <i class="fa-solid fa-chart-simple text-blue-accent"></i>
-                            </div>
-                            <div style="font-size: 12.5px;">
-                                <strong>Kelayakan Instrumen:</strong>
-                                <ul style="margin: 6px 0 0 14px; padding: 0; font-size: 12px; line-height: 1.55;">
-                                    <li>Lembar Observasi Aktivitas (3 Observer)</li>
-                                    <li>Tes Uraian Pemecahan Masalah (Tipe A & B)</li>
-                                    <li>Validitas & Reliabilitas via <strong>ANATES v4.0.5</strong></li>
-                                </ul>
-                            </div>
+                            <ul class="custom-bullet-list" style="font-size: 13px; gap: 4px;">
+                                <li class="check"><strong>Lembar Observasi:</strong> Mengukur keterlaksanaan aktivitas guru &amp; peserta didik (3 pertemuan).</li>
+                                <li class="check"><strong>Tes KPM:</strong> Soal uraian berbasis 5 indikator keterampilan pemecahan masalah (Heller).</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="glass-card" style="flex: 0.9; min-height: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 12px 18px;">
-                        <div style="font-weight: 700; font-size: 13.5px; color: var(--text-heading); margin-bottom: 6px;">
-                            <i class="fa-solid fa-timeline text-blue-accent"></i> Cakupan Materi 3 Pertemuan Pembelajaran
-                        </div>
-                        <div class="grid-3" style="gap: 10px;">
-                            <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 8px 12px; border-radius: var(--radius-sm);">
-                                <span class="metric-badge badge-blue" style="font-size: 11px;">Pertemuan 1</span>
-                                <div style="font-weight: 700; font-size: 13px; margin: 3px 0;">Suhu & Termometer</div>
-                                <div style="font-size: 11.5px; color: var(--text-muted); line-height: 1.4;">Konversi skala termometer, kalibrasi zat cair, & kesetimbangan suhu.</div>
+                    <!-- Bottom Compact Flow: Alur Sintaks SSCS -->
+                    <div class="glass-card" style="padding: 10px 18px; background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); border-color: var(--blue-border);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                            <div style="font-size: 12.5px; font-weight: 800; color: var(--blue-primary);">
+                                <i class="fa-solid fa-diagram-project text-blue-accent"></i> Alur Pembelajaran SSCS:
                             </div>
-                            <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 8px 12px; border-radius: var(--radius-sm);">
-                                <span class="metric-badge badge-blue" style="font-size: 11px;">Pertemuan 2</span>
-                                <div style="font-weight: 700; font-size: 13px; margin: 3px 0;">Kalor & Perubahan Wujud</div>
-                                <div style="font-size: 11.5px; color: var(--text-muted); line-height: 1.4;">Kapasitas kalor, kalor jenis, kalor laten lebur/uap, & Asas Black ($Q_{lepas} = Q_{terima}$).</div>
-                            </div>
-                            <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 8px 12px; border-radius: var(--radius-sm);">
-                                <span class="metric-badge badge-blue" style="font-size: 11px;">Pertemuan 3</span>
-                                <div style="font-weight: 700; font-size: 13px; margin: 3px 0;">Perpindahan Kalor</div>
-                                <div style="font-size: 11.5px; color: var(--text-muted); line-height: 1.4;">Mekanisme konduksi logam majemuk, konveksi fluida, & radiasi termal.</div>
+                            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 12px; font-weight: 600;">
+                                <span class="metric-badge badge-blue">1. Search (Identifikasi Masalah)</span>
+                                <i class="fa-solid fa-arrow-right text-blue-accent"></i>
+                                <span class="metric-badge badge-blue">2. Solve (Konsep &amp; Strategi)</span>
+                                <i class="fa-solid fa-arrow-right text-blue-accent"></i>
+                                <span class="metric-badge badge-blue">3. Create (Eksekusi Solusi)</span>
+                                <i class="fa-solid fa-arrow-right text-blue-accent"></i>
+                                <span class="metric-badge badge-emerald">4. Share (Presentasi &amp; Evaluasi)</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- SLIDE 8: KETERLAKSANAAN PEMBELAJARAN -->
-            <section data-title="Keterlaksanaan Pembelajaran">
-                <div class="slide-header">
+            <!-- SLIDE 4: HASIL DAN PEMBAHASAN (TABBED: KETERLAKSANAAN, N-GAIN KESELURUHAN, & 5 INDIKATOR KPM) -->
+            <section data-title="Hasil dan Pembahasan">
+                <div class="slide-header" style="margin-bottom: 10px; padding-bottom: 8px;">
                     <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-clipboard-user"></i> Observasi Lapangan</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-users-viewfinder"></i> Keterlaksanaan Pembelajaran SSCS vs PBL</h2>
-                        <p class="slide-subtitle">Hasil lembar observasi keterlaksanaan aktivitas guru dan peserta didik oleh 3 observer independen</p>
+                        <span class="slide-tag"><i class="fa-solid fa-chart-column"></i> Temuan Empiris</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-square-poll-vertical"></i> Hasil dan Pembahasan</h2>
                     </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-eye"></i> 3 Observer Independen
+
+                    <!-- Interactive Tab Switcher (Memudahkan Presentasi 1-2 Menit Tanpa Penuh Sesak) -->
+                    <div class="result-tabs" role="tablist">
+                        <button class="result-tab-btn active" data-tab="tab-keterlaksanaan" onclick="switchResultTab('tab-keterlaksanaan', this)">
+                            <i class="fa-solid fa-clipboard-check"></i> 1. Keterlaksanaan
+                        </button>
+                        <button class="result-tab-btn" data-tab="tab-ngain" onclick="switchResultTab('tab-ngain', this)">
+                            <i class="fa-solid fa-chart-simple"></i> 2. N-Gain &amp; Grafik
+                        </button>
+                        <button class="result-tab-btn" data-tab="tab-indikator" onclick="switchResultTab('tab-indikator', this)">
+                            <i class="fa-solid fa-diagram-project"></i> 3. 5 Indikator KPM
+                        </button>
                     </div>
                 </div>
 
                 <div class="slide-body">
-                    <div class="grid-2">
-                        <div class="glass-card accent-bar-left">
-                            <div class="glass-card-header">
+                    <!-- TAB 1: KETERLAKSANAAN MODEL SSCS & PBL (PAGE 4 PDF) -->
+                    <div id="tab-keterlaksanaan" class="result-tab-panel active flex-1">
+                        <div class="grid-2 flex-1" style="gap: 18px;">
+                            <div class="glass-card accent-bar-left h-full justify-between">
                                 <div>
-                                    <strong style="font-size: 14.5px; color: var(--blue-primary);">Tabel 1. Keterlaksanaan Model SSCS</strong>
-                                    <div style="font-size: 12px; color: var(--text-muted);">Kelompok Eksperimen (Kelas XII MIPA 5)</div>
+                                    <div class="glass-card-header">
+                                        <div>
+                                            <strong style="font-size: 15px; color: var(--blue-primary);">Keterlaksanaan Model Pembelajaran SSCS</strong>
+                                            <div style="font-size: 12px; color: var(--text-muted);">Kelas Eksperimen (Berbantuan Flashcard)</div>
+                                        </div>
+                                        <span class="metric-badge badge-emerald">Rata-rata: 95% &amp; 93%</span>
+                                    </div>
+                                    <table class="modern-table">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Pertemuan</th>
+                                                <th>Aktivitas Guru</th>
+                                                <th>Interpretasi</th>
+                                                <th>Aktivitas Siswa</th>
+                                                <th>Kategori</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Pertama</td>
+                                                <td><strong>94%</strong></td>
+                                                <td>Sangat baik</td>
+                                                <td><strong>92%</strong></td>
+                                                <td>Sangat baik</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Kedua</td>
+                                                <td><strong>94%</strong></td>
+                                                <td>Sangat baik</td>
+                                                <td><strong>92%</strong></td>
+                                                <td>Sangat baik</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Ketiga</td>
+                                                <td><strong>96%</strong></td>
+                                                <td>Sangat baik</td>
+                                                <td><strong>96%</strong></td>
+                                                <td>Sangat baik</td>
+                                            </tr>
+                                            <tr style="background: #eff6ff; font-weight: 800; color: var(--blue-primary);">
+                                                <td colspan="2">Rata-rata</td>
+                                                <td>95%</td>
+                                                <td>Sangat baik</td>
+                                                <td>93%</td>
+                                                <td>Sangat baik</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <span class="metric-badge badge-emerald">Sangat Baik</span>
+                                <div class="callout-box" style="margin-top: 10px; background: #f0fdf4; border-color: #bbf7d0;">
+                                    <i class="fa-solid fa-circle-check" style="color: var(--emerald-accent);"></i>
+                                    <div style="font-size: 12.5px; color: #166534;">
+                                        <strong>Konsistensi Tertinggi:</strong> Pada pertemuan ke-3, aktivitas guru dan peserta didik mencapai <strong>96%</strong> (kategori <em>Sangat Baik</em>).
+                                    </div>
+                                </div>
                             </div>
-                            <table class="modern-table">
-                                <thead>
-                                    <tr>
-                                        <th>Pertemuan</th>
-                                        <th>Aktivitas Guru</th>
-                                        <th>Aktivitas Siswa</th>
-                                        <th>Kategori</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Pertama</td>
-                                        <td>94%</td>
-                                        <td>92%</td>
-                                        <td>Sangat Baik</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kedua</td>
-                                        <td>94%</td>
-                                        <td>92%</td>
-                                        <td>Sangat Baik</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ketiga</td>
-                                        <td>96%</td>
-                                        <td>96%</td>
-                                        <td>Sangat Baik</td>
-                                    </tr>
-                                    <tr class="highlight-row">
-                                        <td><strong>Rata-rata</strong></td>
-                                        <td><strong>95%</strong></td>
-                                        <td><strong>93%</strong></td>
-                                        <td><strong>Sangat Baik</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
 
-                        <div class="glass-card accent-bar-left">
-                            <div class="glass-card-header">
+                            <div class="glass-card accent-bar-amber h-full justify-between">
                                 <div>
-                                    <strong style="font-size: 14.5px; color: var(--text-heading);">Tabel 2. Keterlaksanaan Model PBL</strong>
-                                    <div style="font-size: 12px; color: var(--text-muted);">Kelompok Kontrol (Kelas XII MIPA 6)</div>
+                                    <div class="glass-card-header">
+                                        <div>
+                                            <strong style="font-size: 15px; color: var(--text-heading);">Keterlaksanaan Model Pembelajaran PBL</strong>
+                                            <div style="font-size: 12px; color: var(--text-muted);">Kelas Kontrol (Berbantuan Flashcard)</div>
+                                        </div>
+                                        <span class="metric-badge badge-blue">Rata-rata: 91% &amp; 89%</span>
+                                    </div>
+                                    <table class="modern-table">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Pertemuan</th>
+                                                <th>Aktivitas Guru</th>
+                                                <th>Interpretasi</th>
+                                                <th>Aktivitas Siswa</th>
+                                                <th>Kategori</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Pertama</td>
+                                                <td><strong>90%</strong></td>
+                                                <td>Sangat baik</td>
+                                                <td><strong>91%</strong></td>
+                                                <td>Sangat baik</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Kedua</td>
+                                                <td><strong>93%</strong></td>
+                                                <td>Sangat baik</td>
+                                                <td><strong>89%</strong></td>
+                                                <td>Sangat baik</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Ketiga</td>
+                                                <td><strong>91%</strong></td>
+                                                <td>Sangat baik</td>
+                                                <td><strong>89%</strong></td>
+                                                <td>Sangat baik</td>
+                                            </tr>
+                                            <tr style="background: #f8fafc; font-weight: 800; color: var(--text-heading);">
+                                                <td colspan="2">Rata-rata</td>
+                                                <td>91%</td>
+                                                <td>Sangat baik</td>
+                                                <td>89%</td>
+                                                <td>Sangat baik</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <span class="metric-badge badge-blue">Sangat Baik</span>
+                                <div class="callout-box" style="margin-top: 10px;">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                    <div style="font-size: 12.5px;">
+                                        <strong>Perbandingan Pelaksanaan:</strong> Kedua model terlaksana dalam kategori <em>Sangat Baik</em>, namun SSCS unggul <strong>+4%</strong> pada guru dan siswa.
+                                    </div>
+                                </div>
                             </div>
-                            <table class="modern-table">
-                                <thead>
-                                    <tr>
-                                        <th>Pertemuan</th>
-                                        <th>Aktivitas Guru</th>
-                                        <th>Aktivitas Siswa</th>
-                                        <th>Kategori</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Pertama</td>
-                                        <td>90%</td>
-                                        <td>91%</td>
-                                        <td>Sangat Baik</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kedua</td>
-                                        <td>93%</td>
-                                        <td>89%</td>
-                                        <td>Sangat Baik</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ketiga</td>
-                                        <td>91%</td>
-                                        <td>89%</td>
-                                        <td>Sangat Baik</td>
-                                    </tr>
-                                    <tr class="highlight-row">
-                                        <td><strong>Rata-rata</strong></td>
-                                        <td><strong>91%</strong></td>
-                                        <td><strong>89%</strong></td>
-                                        <td><strong>Sangat Baik</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
 
-                    <div class="grid-3">
-                        <div class="metric-card accent-bar-left">
-                            <div class="metric-label">Konsistensi Sintaks</div>
-                            <div class="metric-value" style="font-size: 32px;">100%</div>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Seluruh 4 siklus SSCS terlaksana sempurna</div>
-                        </div>
-                        <div class="metric-card accent-bar-emerald">
-                            <div class="metric-label">Keunggulan Partisipasi SSCS</div>
-                            <div class="metric-value emerald" style="font-size: 32px;">+4%</div>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Aktivitas siswa SSCS unggul (93% vs 89%)</div>
-                        </div>
-                        <div class="metric-card accent-bar-left">
-                            <div class="metric-label">Reliabilitas Antar-Observer</div>
-                            <div class="metric-value" style="font-size: 32px; color: var(--blue-accent);">Tinggi</div>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Koefisien kesepakatan 3 observer valid</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                    <!-- TAB 2: HASIL PRETEST, POSTTEST & N-GAIN KESELURUHAN + GRAFIK (PAGE 5 PDF) -->
+                    <div id="tab-ngain" class="result-tab-panel flex-1">
+                        <div class="grid-2-1 flex-1" style="gap: 18px;">
+                            <div class="glass-card h-full justify-between">
+                                <div>
+                                    <div class="glass-card-header" style="margin-bottom: 6px;">
+                                        <div>
+                                            <strong style="font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-chart-column text-blue-accent"></i> Grafik Pretest, Posttest &amp; N-Gain</strong>
+                                            <div style="font-size: 12px; color: var(--text-muted);">Perbandingan Kelas Eksperimen (SSCS) vs Kontrol (PBL)</div>
+                                        </div>
+                                        <span class="metric-badge badge-blue">Animasi Interaktif</span>
+                                    </div>
+                                    <div style="position: relative; height: 295px; width: 100%;">
+                                        <canvas id="macroComparisonChart"></canvas>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-around; align-items: center; background: #f8fafc; border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 8px 12px; font-size: 12px;">
+                                    <div><strong style="color: var(--blue-primary);">Pretest:</strong> 26 vs 21</div>
+                                    <div style="width: 1px; height: 16px; background: var(--border-light);"></div>
+                                    <div><strong style="color: var(--blue-primary);">Posttest:</strong> 91 vs 86</div>
+                                    <div style="width: 1px; height: 16px; background: var(--border-light);"></div>
+                                    <div><strong style="color: var(--emerald-accent);">N-Gain:</strong> 0,88 vs 0,82</div>
+                                </div>
+                            </div>
 
-            <!-- SLIDE 9: HASIL UTAMA: PRETEST, POSTTEST & N-GAIN (CHART.JS BAR) -->
-            <section data-title="Hasil N-Gain Makro">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-chart-column"></i> Data Temuan Utama</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-square-poll-vertical"></i> Peningkatan Keterampilan Pemecahan Masalah</h2>
-                        <p class="slide-subtitle">Perbandingan perolehan skor Pretest, Posttest, dan Normalized Gain (N-Gain) Hake</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-arrow-trend-up"></i> N-Gain Score Comparison
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-2">
-                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div>
-                                <div class="glass-card-header">
+                            <div style="display: flex; flex-direction: column; gap: 12px; height: 100%; justify-content: space-between;">
+                                <div class="glass-card accent-bar-left" style="flex: 1; justify-content: space-between;">
                                     <div>
-                                        <strong style="font-size: 15px; color: var(--blue-primary);">Tabel 3. Rekapitulasi Nilai Pretest, Posttest, & N-Gain</strong>
-                                        <div style="font-size: 12px; color: var(--text-muted);">Data Empiris Hasil Belajar (Kelas XII MIPA MAN 2 Bandung)</div>
+                                        <div class="glass-card-header" style="margin-bottom: 8px;">
+                                            <strong style="font-size: 14.5px; color: var(--blue-primary);">Rekapitulasi Keseluruhan</strong>
+                                            <span class="metric-badge badge-emerald">Tinggi</span>
+                                        </div>
+                                        <table class="modern-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Kelas</th>
+                                                    <th>Pre</th>
+                                                    <th>Post</th>
+                                                    <th>N-Gain</th>
+                                                    <th>Kategori</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr style="background: #eff6ff;">
+                                                    <td><strong>Eksperimen (SSCS)</strong></td>
+                                                    <td>26</td>
+                                                    <td><strong>91</strong></td>
+                                                    <td><strong style="color: var(--blue-primary);">0,88</strong></td>
+                                                    <td><span class="metric-badge badge-emerald">Tinggi</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Kontrol (PBL)</strong></td>
+                                                    <td>21</td>
+                                                    <td><strong>86</strong></td>
+                                                    <td><strong>0,82</strong></td>
+                                                    <td><span class="metric-badge badge-blue">Tinggi</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <span class="metric-badge badge-emerald">Hake (1999)</span>
+                                    <div class="callout-box" style="margin-top: 10px; padding: 10px 12px;">
+                                        <i class="fa-solid fa-square-root-variable"></i>
+                                        <div style="font-size: 12px; line-height: 1.45;">
+                                            <strong>Uji Mann-Whitney (N-Gain):</strong> Signifikansi <strong>$p &lt; 0,001$</strong> ($H_0$ ditolak) — terdapat perbedaan peningkatan KPM yang signifikan antara model SSCS dan PBL.
+                                        </div>
+                                    </div>
                                 </div>
-                                <table class="modern-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Kelas / Model</th>
-                                            <th style="text-align: center;">Pretest</th>
-                                            <th style="text-align: center;">Posttest</th>
-                                            <th style="text-align: center;">Kenaikan (Δ)</th>
-                                            <th style="text-align: center;">N-Gain</th>
-                                            <th style="text-align: center;">Kategori</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="highlight-row">
-                                            <td><strong>SSCS + Flashcard</strong></td>
-                                            <td style="text-align: center;">26</td>
-                                            <td style="text-align: center; font-weight: 800; color: var(--blue-primary);">91</td>
-                                            <td style="text-align: center; font-weight: 700; color: var(--emerald-accent);">+65</td>
-                                            <td style="text-align: center; font-size: 16px; font-weight: 800; color: var(--blue-primary);">0,88</td>
-                                            <td style="text-align: center;"><span class="metric-badge badge-emerald">Tinggi</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>PBL + Flashcard</strong></td>
-                                            <td style="text-align: center;">21</td>
-                                            <td style="text-align: center; font-weight: 700;">86</td>
-                                            <td style="text-align: center; font-weight: 700;">+65</td>
-                                            <td style="text-align: center; font-size: 16px; font-weight: 700;">0,82</td>
-                                            <td style="text-align: center;"><span class="metric-badge badge-blue">Tinggi</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div class="grid-2" style="gap: 12px; margin: 10px 0;">
-                                <div class="metric-card accent-bar-emerald" style="text-align: left; padding: 12px 16px;">
-                                    <div style="font-size: 11px; font-weight: 700; color: var(--emerald-accent); text-transform: uppercase;">Keunggulan N-Gain</div>
-                                    <div style="font-size: 24px; font-weight: 800; color: var(--text-heading);">+0,06 Poin</div>
-                                    <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">SSCS 7,3% lebih efektif dalam peningkatan</div>
-                                </div>
-                                <div class="metric-card accent-bar-left" style="text-align: left; padding: 12px 16px;">
-                                    <div style="font-size: 11px; font-weight: 700; color: var(--blue-accent); text-transform: uppercase;">Ketuntasan Klasikal</div>
-                                    <div style="font-size: 24px; font-weight: 800; color: var(--blue-primary);">100% Tuntas</div>
-                                    <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">Seluruh 32 siswa melampaui KKM 75</div>
-                                </div>
-                            </div>
-
-                            <div class="callout-box" style="padding: 10px 14px;">
-                                <i class="fa-solid fa-circle-check" style="color: var(--emerald-accent);"></i>
-                                <div style="font-size: 12.5px;">Keduanya masuk kategori <strong>Tinggi ($g > 0,70$)</strong>, namun model SSCS menghasilkan peningkatan yang secara signifikan lebih konsisten dan unggul ($p < 0,001$).</div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div class="glass-card-header">
+                    <!-- TAB 3: HASIL PRETEST, POSTTEST & N-GAIN PER INDIKATOR KPM (PAGE 5 PDF) -->
+                    <div id="tab-indikator" class="result-tab-panel flex-1">
+                        <div class="grid-2-1 flex-1" style="gap: 18px;">
+                            <div class="glass-card h-full justify-between" style="padding: 14px 16px;">
                                 <div>
-                                    <strong style="font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-chart-column text-blue-accent"></i> Grafik Komparasi Pretest, Posttest, & N-Gain</strong>
-                                    <div style="font-size: 12px; color: var(--text-muted);">Visualisasi Skor Skala 0-100 & N-Gain</div>
+                                    <div class="glass-card-header" style="margin-bottom: 8px;">
+                                        <strong style="font-size: 14.5px; color: var(--blue-primary);">Hasil Pretest, Posttest &amp; N-Gain per Indikator KPM</strong>
+                                        <span class="metric-badge badge-blue">5 Indikator</span>
+                                    </div>
+                                    <table class="modern-table" style="font-size: 11.5px;">
+                                        <thead>
+                                            <tr>
+                                                <th>Indikator KPM</th>
+                                                <th style="text-align: center;">Eksp (Pre→Post)</th>
+                                                <th style="text-align: center;">N-Gain (Kat.)</th>
+                                                <th style="text-align: center;">Kont (Pre→Post)</th>
+                                                <th style="text-align: center;">N-Gain (Kat.)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>1. Deskripsi Berguna</strong></td>
+                                                <td style="text-align: center;">51 → 94</td>
+                                                <td style="text-align: center;"><strong style="color: var(--blue-primary);">0,88</strong> (Tinggi)</td>
+                                                <td style="text-align: center;">44 → 91</td>
+                                                <td style="text-align: center;">0,84 (Tinggi)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>2. Pendekatan Fisika</strong></td>
+                                                <td style="text-align: center;">30 → 91</td>
+                                                <td style="text-align: center;"><strong style="color: var(--blue-primary);">0,87</strong> (Tinggi)</td>
+                                                <td style="text-align: center;">27 → 86</td>
+                                                <td style="text-align: center;">0,81 (Tinggi)</td>
+                                            </tr>
+                                            <tr style="background: #fffbeb;">
+                                                <td><strong>3. Aplikasi Fisika Spesifik</strong></td>
+                                                <td style="text-align: center;">10 → 87</td>
+                                                <td style="text-align: center;"><strong style="color: var(--blue-primary);">0,85</strong> (Tinggi)</td>
+                                                <td style="text-align: center;">7 → 81</td>
+                                                <td style="text-align: center;"><strong style="color: #b45309;">0,79 (Sedang)</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>4. Prosedur Matematika Tepat</strong></td>
+                                                <td style="text-align: center;">13 → 93</td>
+                                                <td style="text-align: center;"><strong style="color: var(--emerald-accent);">0,92</strong> (Tinggi)</td>
+                                                <td style="text-align: center;">11 → 88</td>
+                                                <td style="text-align: center;">0,87 (Tinggi)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>5. Progresi Logis</strong></td>
+                                                <td style="text-align: center;">28 → 91</td>
+                                                <td style="text-align: center;"><strong style="color: var(--blue-primary);">0,87</strong> (Tinggi)</td>
+                                                <td style="text-align: center;">17 → 84</td>
+                                                <td style="text-align: center;">0,80 (Tinggi)</td>
+                                            </tr>
+                                            <tr style="background: #eff6ff; font-weight: 800;">
+                                                <td>Rata-rata</td>
+                                                <td style="text-align: center;">26 → 91</td>
+                                                <td style="text-align: center; color: var(--blue-primary);">0,88 (Tinggi)</td>
+                                                <td style="text-align: center;">21 → 86</td>
+                                                <td style="text-align: center;">0,82 (Tinggi)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <span class="metric-badge badge-blue">Chart.js Live Data</span>
+                                <div class="callout-box" style="margin-top: 8px; padding: 8px 12px; background: #fffbeb; border-color: #fde68a;">
+                                    <i class="fa-solid fa-circle-exclamation" style="color: var(--amber-accent);"></i>
+                                    <div style="font-size: 11.5px; color: #92400e;">
+                                        <strong>Temuan Kunci:</strong> Seluruh indikator di kelas SSCS berkategori <em>Tinggi</em> (puncak <strong>0,92</strong>), sedangkan kelas PBL memiliki 1 indikator berkategori <em>Sedang</em> (Aplikasi Fisika Spesifik: <strong>0,79</strong>).
+                                    </div>
+                                </div>
                             </div>
 
-                            <div style="position: relative; flex: 1; min-height: 270px; width: 100%;">
-                                <canvas id="macroComparisonChart"></canvas>
-                            </div>
-
-                            <div style="display: flex; justify-content: space-around; align-items: center; background: #f8fafc; border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 8px 12px; margin-top: 10px; font-size: 12px;">
-                                <div><strong style="color: var(--blue-primary);">Baseline Pre:</strong> 26 vs 21</div>
-                                <div style="width: 1px; height: 16px; background: var(--border-light);"></div>
-                                <div><strong style="color: var(--blue-primary);">Posttest:</strong> 91 vs 86 (+5)</div>
-                                <div style="width: 1px; height: 16px; background: var(--border-light);"></div>
-                                <div><strong style="color: var(--emerald-accent);">N-Gain:</strong> 0,88 vs 0,82</div>
+                            <div class="glass-card h-full justify-between" style="padding: 14px 16px;">
+                                <div class="glass-card-header" style="margin-bottom: 4px;">
+                                    <strong style="font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-chart-pie text-blue-accent"></i> Radar 5 Indikator KPM</strong>
+                                    <span class="metric-badge badge-emerald">SSCS Unggul</span>
+                                </div>
+                                <div style="position: relative; flex: 1; min-height: 270px; width: 100%;">
+                                    <canvas id="hellerRadarChart"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- SLIDE 10: CAPAIAN PER SUBMATERI FISIKA (HORIZONTAL BAR CHART) -->
-            <section data-title="Capaian Submateri">
+            <!-- SLIDE 5: KESIMPULAN & THANK YOU -->
+            <section data-title="Kesimpulan & Penutup">
                 <div class="slide-header">
                     <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-temperature-arrow-up"></i> Tinjauan Materi Fisika</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-layer-group"></i> Analisis N-Gain Berdasarkan Submateri</h2>
-                        <p class="slide-subtitle">Dekomposisi efektivitas model pada Suhu-Termometer, Kalor-Wujud Zat, dan Perpindahan Kalor</p>
+                        <span class="slide-tag"><i class="fa-solid fa-flag-checkered"></i> Sintesis Akhir</span>
+                        <h2 class="slide-title-main"><i class="fa-solid fa-award"></i> Kesimpulan &amp; Penutup</h2>
+                        <p class="slide-subtitle">Ringkasan temuan utama penelitian SSCS berbantuan Flashcard pada materi Suhu dan Kalor</p>
                     </div>
                     <div class="slide-context-badge">
-                        <i class="fa-solid fa-fire-burner"></i> Suhu & Kalor Fisika SMA
+                        <i class="fa-solid fa-check-double"></i> $H_0$ Ditolak ($p &lt; 0,001$)
                     </div>
                 </div>
 
-                <div class="slide-body">
-                    <div class="grid-2">
-                        <div style="display: flex; flex-direction: column; gap: 10px; height: 100%; justify-content: space-between;">
-                            <div class="glass-card" style="border-left: 5px solid var(--emerald-accent); padding: 12px 18px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-temperature-low text-emerald-accent"></i> 1. Suhu & Termometer</strong>
-                                    <span class="metric-badge badge-emerald">Gap Tertinggi +0,11</span>
-                                </div>
-                                <div style="font-size: 13px; color: var(--text-body); margin-top: 4px;">
-                                    SSCS: <strong>0,94</strong> vs PBL: <strong>0,83</strong>. Tahap <em>Search</em> membimbing siswa memahami perbandingan skala Celcius, Reamur, Fahrenheit, dan Kelvin secara presisi.
-                                </div>
-                            </div>
-
-                            <div class="glass-card" style="border-left: 5px solid var(--amber-accent); padding: 12px 18px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-cubes-stacked text-amber-accent"></i> 2. Kalor & Perubahan Wujud Zat</strong>
-                                    <span class="metric-badge badge-amber">Gap +0,06</span>
-                                </div>
-                                <div style="font-size: 13px; color: var(--text-body); margin-top: 4px;">
-                                    SSCS: <strong>0,83</strong> vs PBL: <strong>0,77</strong>. Materi paling kompleks karena melibatkan simultanitas kalor laten ($Q=mL$), kapasitas kalor, dan Asas Black ($Q_{lepas} = Q_{terima}$).
-                                </div>
-                            </div>
-
-                            <div class="glass-card" style="border-left: 5px solid var(--cyan-accent); padding: 12px 18px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <strong style="font-size: 14.5px; color: var(--text-heading);"><i class="fa-solid fa-arrows-spin text-blue-accent"></i> 3. Perpindahan Kalor</strong>
-                                    <span class="metric-badge badge-blue">Gap +0,02</span>
-                                </div>
-                                <div style="font-size: 13px; color: var(--text-body); margin-top: 4px;">
-                                    SSCS: <strong>0,88</strong> vs PBL: <strong>0,86</strong>. Konduksi logam majemuk, konveksi, dan radiasi termal mudah divisualisasikan oleh kedua kelompok dengan flashcard.
-                                </div>
-                            </div>
-
-                            <div class="callout-box" style="padding: 10px 14px;">
-                                <i class="fa-solid fa-lightbulb"></i>
-                                <div style="font-size: 12.5px;"><strong>Temuan Pedagogis:</strong> Materi Kalor & Wujud Zat menuntut scaffolding ekstra karena banyaknya variabel ($m, c, L, \Delta T$) yang diproses secara simultan.</div>
-                            </div>
-                        </div>
-
-                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div class="glass-card-header">
-                                <div>
-                                    <strong style="font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-chart-bar text-blue-accent"></i> Grafik Batang Horizontal N-Gain per Submateri</strong>
-                                    <div style="font-size: 12px; color: var(--text-muted);">Perbandingan Efektivitas SSCS vs PBL di Tiap Topik</div>
-                                </div>
-                                <span class="metric-badge badge-emerald">SSCS Unggul 100%</span>
-                            </div>
-
-                            <div style="position: relative; flex: 1; min-height: 270px; width: 100%;">
-                                <canvas id="submateriChart"></canvas>
-                            </div>
-
-                            <div style="background: #eff6ff; border: 1px solid var(--blue-border); border-radius: var(--radius-sm); padding: 8px 14px; margin-top: 10px; font-size: 12px; color: var(--blue-primary);">
-                                <i class="fa-solid fa-circle-check"></i> <strong>Sintesis:</strong> Pada ketiga topik pokok bahasan suhu & kalor, model SSCS secara konsisten mengungguli kelas PBL dengan gap rentang +0,02 hingga +0,11.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 11: ANATOMI KOGNITIF: 5 INDIKATOR HELLER (RADAR CHART) -->
-            <section data-title="Indikator Heller">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-dna"></i> Anatomi Kognitif</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-chart-radar"></i> Evaluasi Mendalam Berdasarkan 5 Indikator Heller</h2>
-                        <p class="slide-subtitle">Membedah kekuatan dan kelemahan dimensi kognitif siswa pada kedua model pembelajaran</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-sliders"></i> Heller 5 Dimensions
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-2">
-                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="slide-body" style="gap: 14px;">
+                    <div class="grid-2 flex-1" style="gap: 18px;">
+                        <div class="glass-card highlight" style="border-top: 5px solid var(--blue-accent); justify-content: space-between;">
                             <div>
-                                <div class="glass-card-header">
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                    <div class="card-icon-badge" style="margin: 0;"><i class="fa-solid fa-chalkboard-user"></i></div>
                                     <div>
-                                        <strong style="font-size: 15px; color: var(--blue-primary);">Tabel 4 & 5. N-Gain per Indikator Heller</strong>
-                                        <div style="font-size: 12px; color: var(--text-muted);">Komparasi Capaian 5 Dimensi Kognitif (Heller et al., 1992)</div>
+                                        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--blue-accent);">Kesimpulan 1</div>
+                                        <div style="font-size: 17px; font-weight: 800; color: var(--text-heading);">Keterlaksanaan Model Pembelajaran</div>
                                     </div>
-                                    <span class="metric-badge badge-blue">Evaluasi Kognitif</span>
                                 </div>
-                                <table class="modern-table">
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 44%;">Indikator Heller (1992)</th>
-                                            <th style="width: 18%; text-align: center;">SSCS</th>
-                                            <th style="width: 18%; text-align: center;">PBL</th>
-                                            <th style="width: 20%; text-align: center;">$\Delta$ Gap</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="highlight-row">
-                                            <td>
-                                                <div style="font-weight: 700; color: var(--blue-primary);"><i class="fa-solid fa-calculator text-blue-accent"></i> Prosedur Matematika</div>
-                                                <div style="font-size: 11px; color: var(--text-muted);">Manipulasi aljabar & kalkulasi akurat</div>
-                                            </td>
-                                            <td style="text-align: center; font-size: 16px; font-weight: 800; color: var(--blue-primary);">0,92</td>
-                                            <td style="text-align: center; font-size: 15px; font-weight: 700;">0,87</td>
-                                            <td style="text-align: center;"><span class="metric-badge badge-emerald">+0,05</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div style="font-weight: 700;"><i class="fa-solid fa-eye text-blue-accent"></i> Deskripsi yang Berguna</div>
-                                                <div style="font-size: 11px; color: var(--text-muted);">Visualisasi masalah & diagram termal</div>
-                                            </td>
-                                            <td style="text-align: center; font-size: 15px; font-weight: 700;">0,88</td>
-                                            <td style="text-align: center; font-size: 15px;">0,84</td>
-                                            <td style="text-align: center;"><span class="metric-badge badge-blue">+0,04</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div style="font-weight: 700;"><i class="fa-solid fa-compass-drafting text-blue-accent"></i> Pendekatan Fisika</div>
-                                                <div style="font-size: 11px; color: var(--text-muted);">Pemilihan hukum & konsep fisis relevan</div>
-                                            </td>
-                                            <td style="text-align: center; font-size: 15px; font-weight: 700;">0,87</td>
-                                            <td style="text-align: center; font-size: 15px;">0,81</td>
-                                            <td style="text-align: center;"><span class="metric-badge badge-blue">+0,06</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div style="font-weight: 700;"><i class="fa-solid fa-arrow-down-1-9 text-blue-accent"></i> Progresi Logis</div>
-                                                <div style="font-size: 11px; color: var(--text-muted);">Konsistensi alur & evaluasi satuan SI</div>
-                                            </td>
-                                            <td style="text-align: center; font-size: 15px; font-weight: 700;">0,87</td>
-                                            <td style="text-align: center; font-size: 15px;">0,80</td>
-                                            <td style="text-align: center;"><span class="metric-badge badge-blue">+0,07</span></td>
-                                        </tr>
-                                        <tr style="background: #fffbeb;">
-                                            <td>
-                                                <div style="font-weight: 700; color: #b45309;"><i class="fa-solid fa-circle-exclamation text-amber-accent"></i> Aplikasi Fisika Spesifik</div>
-                                                <div style="font-size: 11px; color: #b45309;">Relasi matematis antar-variabel kondisi</div>
-                                            </td>
-                                            <td style="text-align: center; font-size: 15px; font-weight: 800; color: #b45309;">0,85</td>
-                                            <td style="text-align: center; font-size: 15px; font-weight: 800; color: var(--rose-accent);">0,79*</td>
-                                            <td style="text-align: center;"><span class="metric-badge badge-amber">+0,06</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <p style="font-size: 13.5px; line-height: 1.6; color: var(--text-body);">
+                                    Keterlaksanaan pembelajaran menggunakan model <strong>SSCS berbantuan Flashcard</strong> memperoleh rata-rata sebesar <strong>95%</strong> (aktivitas guru) dan <strong>93%</strong> (aktivitas peserta didik). Sementara pada model <strong>PBL berbantuan Flashcard</strong> memperoleh <strong>91%</strong> (guru) dan <strong>89%</strong> (peserta didik), dengan masing-masing model memperoleh kategori <strong>Sangat Baik</strong>.
+                                </p>
                             </div>
-                            <div class="callout-box" style="margin-top: 10px; padding: 10px 14px; background: #fffbeb; border-color: #fde68a;">
-                                <i class="fa-solid fa-triangle-exclamation" style="color: var(--amber-accent); font-size: 16px;"></i>
-                                <div style="font-size: 12px; color: #92400e;">
-                                    <strong>*Temuan Kritis:</strong> Skor <strong>0,79</strong> pada kelas PBL merupakan satu-satunya capaian yang masuk kategori <em>Sedang</em> ($g < 0,80$). Di kelas SSCS seluruh 5 indikator konsisten menembus kategori <em>Tinggi</em> ($g \ge 0,85$).
-                                </div>
+                            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                <span class="metric-badge badge-emerald">SSCS: 95% / 93%</span>
+                                <span class="metric-badge badge-blue">PBL: 91% / 89%</span>
                             </div>
                         </div>
 
-                        <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div class="glass-card-header" style="margin-bottom: 6px;">
-                                <div>
-                                    <strong style="font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-chart-radar text-blue-accent"></i> Poligon 5 Dimensi Kognitif</strong>
-                                    <div style="font-size: 12px; color: var(--text-muted);">Visualisasi Sebaran N-Gain SSCS vs PBL</div>
-                                </div>
-                                <span class="metric-badge badge-emerald">SSCS Dominan di 5 Aspek</span>
-                            </div>
-
-                            <div style="position: relative; flex: 1; min-height: 270px; width: 100%;">
-                                <canvas id="hellerRadarChart"></canvas>
-                            </div>
-
-                            <div class="grid-2" style="margin-top: 10px; gap: 10px; flex: 0 0 auto;">
-                                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-sm); padding: 8px 12px;">
-                                    <div style="font-size: 11px; font-weight: 700; color: #166534; text-transform: uppercase;"><i class="fa-solid fa-circle-check"></i> Puncak Capaian (SSCS)</div>
-                                    <div style="font-size: 16px; font-weight: 800; color: #15803d;">0,92 (Prosedur Matematika)</div>
-                                    <div style="font-size: 11px; color: #166534; margin-top: 2px;">Siswa sangat terampil mengeksekusi rumus kalor & wujud zat.</div>
-                                </div>
-                                <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-sm); padding: 8px 12px;">
-                                    <div style="font-size: 11px; font-weight: 700; color: #92400e; text-transform: uppercase;"><i class="fa-solid fa-circle-exclamation"></i> Titik Rentan (PBL)</div>
-                                    <div style="font-size: 16px; font-weight: 800; color: #b45309;">0,79 (Aplikasi Spesifik)</div>
-                                    <div style="font-size: 11px; color: #92400e; margin-top: 2px;">Kelemahan memetakan prinsip fisis sebelum berhitung.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 12: UJI HIPOTESIS & STATISTIK INFERENSIAL -->
-            <section data-title="Uji Hipotesis SPSS">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-square-root-variable"></i> Uji Statistik Inferensial</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-calculator"></i> Pengujian Prasyarat & Uji Hipotesis (SPSS v26)</h2>
-                        <p class="slide-subtitle">Bukti empiris signifikansi perbedaan peningkatan keterampilan pemecahan masalah</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-check"></i> $H_0$ Ditolak ($p < 0,001$)
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-3">
-                        <div class="glass-card" style="border-top: 4px solid var(--amber-accent);">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);">1. Uji Normalitas</span>
-                                <span class="metric-badge badge-amber">Shapiro-Wilk</span>
-                            </div>
-                            <ul class="custom-bullet-list" style="font-size: 13px; gap: 6px;">
-                                <li>Eksperimen: <strong>Sig. = 0,002</strong></li>
-                                <li>Kontrol: <strong>Sig. = 0,000</strong></li>
-                            </ul>
-                            <div style="margin-top: 10px; font-size: 12px; background: #fffbeb; padding: 8px; border-radius: 6px; color: #92400e;">
-                                Karena $p < 0,05$, data <strong>tidak berdistribusi normal</strong>.
-                            </div>
-                        </div>
-
-                        <div class="glass-card" style="border-top: 4px solid var(--blue-accent);">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);">2. Uji Homogenitas</span>
-                                <span class="metric-badge badge-blue">Levene Test</span>
-                            </div>
-                            <div style="font-size: 13px;">
-                                Nilai Signifikansi: <strong>Sig. = 0,283</strong>
-                            </div>
-                            <div style="margin-top: 10px; font-size: 12px; background: #eff6ff; padding: 8px; border-radius: 6px; color: #1e40af;">
-                                Karena $p > 0,05$, varians kedua kelompok dinyatakan <strong>homogen</strong>.
-                            </div>
-                        </div>
-
-                        <div class="glass-card" style="border-top: 4px solid var(--emerald-accent);">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 14px; color: var(--text-heading);">3. Uji Hipotesis</span>
-                                <span class="metric-badge badge-emerald">Mann-Whitney U</span>
-                            </div>
-                            <ul class="custom-bullet-list" style="font-size: 13px; gap: 6px;">
-                                <li>Mann-Whitney U: <strong>195,000</strong></li>
-                                <li>Derajat Bebas (df): <strong>65</strong></li>
-                            </ul>
-                            <div style="margin-top: 10px; font-size: 12px; background: #f0fdf4; padding: 8px; border-radius: 6px; color: #166534;">
-                                Asumsi parametrik gagal → Uji Nonparametrik dipilih.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card highlight" style="border: 2px solid #93c5fd; padding: 20px 26px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                        <div class="glass-card highlight" style="border-top: 5px solid var(--emerald-accent); justify-content: space-between;">
                             <div>
-                                <div style="font-size: 12px; font-weight: 700; color: var(--blue-accent); text-transform: uppercase;">Keputusan Uji Hipotesis Statistik</div>
-                                <div style="font-size: 24px; font-weight: 800; color: var(--blue-primary); margin-top: 2px;">
-                                    Sig. (2-tailed) = 0,000 &nbsp;•&nbsp; Nilai $p < 0,001$ &nbsp;•&nbsp; $H_0$ DITOLAK
-                                </div>
-                            </div>
-                            <div class="metric-badge badge-emerald" style="font-size: 14px; padding: 8px 16px;">
-                                <i class="fa-solid fa-certificate"></i> Signifikan secara Statistik
-                            </div>
-                        </div>
-                        <div style="font-size: 13.5px; color: var(--text-body); margin-top: 10px; border-top: 1px dashed var(--blue-border); padding-top: 10px;">
-                            <strong>Kesimpulan Inferensial:</strong> Terdapat perbedaan peningkatan keterampilan pemecahan masalah yang signifikan antara peserta didik yang belajar dengan model <strong>SSCS berbantuan flashcard</strong> dibanding <strong>PBL berbantuan flashcard</strong> pada materi suhu dan kalor.
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 13: PEMBAHASAN KRITIS I: KEUNGGULAN SSCS -->
-            <section data-title="Pembahasan Keunggulan SSCS">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-comments"></i> Analisis Diskusi I</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-code-compare"></i> Pembahasan I: Mengapa Model SSCS Lebih Unggul?</h2>
-                        <p class="slide-subtitle">Dekomposisi struktural beban kognitif dan intervensi flashcard pada sintaks pembelajaran</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-diagram-project"></i> Structural Superiority
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-2">
-                        <div class="glass-card accent-bar-left">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-circle-check text-blue-accent"></i> 1. Struktur Eksplisit & Terarah</span>
-                            </div>
-                            <p style="font-size: 13.5px; color: var(--text-body); margin-bottom: 10px;">
-                                Model SSCS mengorganisasikan proses kognitif secara terarah ke dalam 4 siklus berjenjang. Peserta didik tidak langsung berhadapan dengan masalah acak, tetapi dipandu mulai dari mengurai informasi (<em>Search</em>) hingga merencanakan strategi pemecahan (<em>Solve</em>).
-                            </p>
-                            <div class="callout-box" style="font-size: 12.5px; padding: 12px;">
-                                <i class="fa-solid fa-bolt"></i>
-                                <div>Sebaliknya, pada PBL orientasi investigasi yang terlalu terbuka sering menimbulkan kebingungan bagi siswa berdaya nalar sedang.</div>
-                            </div>
-                        </div>
-
-                        <div class="glass-card accent-bar-left">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 15px; color: var(--text-heading);"><i class="fa-solid fa-id-card-clip text-blue-accent"></i> 2. Peran Flashcard sebagai Scaffolding</span>
-                            </div>
-                            <p style="font-size: 13.5px; color: var(--text-body); margin-bottom: 10px;">
-                                Dalam kelas SSCS, flashcard diintegrasikan langsung pada setiap tahap sintaks:
-                            </p>
-                            <ul class="custom-bullet-list" style="font-size: 13px; gap: 6px;">
-                                <li>Kartu stimulus memantik identifikasi fenomena (Search).</li>
-                                <li>Kartu konsep membimbing pemilihan formula fisika (Solve).</li>
-                                <li>Kartu tantangan mengarahkan formulasi solusi matematis (Create).</li>
-                                <li>Kartu pemantik menuntut pertanggungjawaban logika (Share).</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="glass-card" style="background: linear-gradient(145deg, #ffffff 0%, #f0f7ff 100%);">
-                        <div style="display: flex; align-items: center; gap: 16px;">
-                            <div class="card-icon-badge" style="width: 48px; height: 48px; font-size: 22px;">
-                                <i class="fa-solid fa-graduation-cap"></i>
-                            </div>
-                            <div style="font-size: 13.5px;">
-                                <strong>Refleksi Komparasi Media:</strong> Mengingat kelas kontrol (PBL) juga menggunakan flashcard pendukung, maka keunggulan N-Gain (0,88 vs 0,82) membuktikan bahwa <strong>perbedaan karakteristik model pembelajarannyalah yang menjadi pemicu utama keunggulan</strong>, bukan semata-mata kehadiran kartu fisika tersebut.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 14: PEMBAHASAN KRITIS II: PARADOKS MEKANISASI HITUNGAN -->
-            <section data-title="Pembahasan Paradoks Kognitif">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag" style="background:#fff1f2; color:#be123c; border-color:#fecdd3;"><i class="fa-solid fa-triangle-exclamation"></i> Temuan Kritis Riset</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-bolt-lightning text-amber-accent"></i> Pembahasan II: Fenomena "Mekanisasi Hitungan"</h2>
-                        <p class="slide-subtitle">Mengapa skor prosedur matematika tinggi (0,92), namun aplikasi fisika spesifik terendah (0,85 / 0,79)?</p>
-                    </div>
-                    <div class="slide-context-badge" style="color: var(--rose-accent);">
-                        <i class="fa-solid fa-magnifying-glass"></i> Anomali Kognitif Siswa
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-2">
-                        <div class="glass-card" style="border-left: 5px solid var(--emerald-accent);">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 14.5px; color: var(--emerald-accent);"><i class="fa-solid fa-square-check"></i> Indikator Tertinggi: Prosedur Matematika</span>
-                                <span class="metric-badge badge-emerald">0,92 & 0,87</span>
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body);">
-                                Peserta didik sangat mahir melakukan substitusi angka, kalkulasi aritmatika, dan manipulasi persamaan aljabar setelah diberikan rumus yang sudah siap pakai.
-                            </p>
-                            <div style="background: #f0fdf4; padding: 10px 14px; border-radius: 6px; font-size: 12px; color: #166534; margin-top: auto;">
-                                <strong>Faktor Pemicu:</strong> Budaya latihan soal drilling rumus di sekolah membuat aspek komputasi matematis lebih cepat terasah.
-                            </div>
-                        </div>
-
-                        <div class="glass-card" style="border-left: 5px solid var(--rose-accent);">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 14.5px; color: var(--rose-accent);"><i class="fa-solid fa-circle-xmark"></i> Indikator Terendah: Aplikasi Fisika Spesifik</span>
-                                <span class="metric-badge badge-amber">0,85 & 0,79</span>
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body);">
-                                Peserta didik mengalami kebingungan menentukan prinsip fisika yang sesuai ketika berhadapan dengan situasi kontekstual yang baru atau multi-tahap (seperti es mencair bercampur air hangat).
-                            </p>
-                            <div style="background: #fff1f2; padding: 10px 14px; border-radius: 6px; font-size: 12px; color: #9f1239; margin-top: auto;">
-                                <strong>Faktor Pemicu:</strong> Pemahaman konsep fisis mikroskopis yang belum kuat serta beban memproses banyak variabel bersamaan.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="callout-box" style="background: #fffbeb; border-color: #fde68a;">
-                        <i class="fa-solid fa-triangle-exclamation" style="color: var(--amber-accent);"></i>
-                        <div style="font-size: 13px; color: #78350f;">
-                            <strong>Catatan Kritis Bagi Praktisi Pendidik (Pantaleon et al., 2026):</strong> Keberhasilan pembelajaran fisika tidak boleh diukur hanya dari kepiawaian siswa menyelesaikan hitungan matematis di kertas. Siswa memerlukan lebih banyak <em>latihan berbasis fenomena kontekstual</em> dan <em>pertanyaan penuntun (guiding questions)</em> sebelum mereka diperkenankan mengutak-atik angka dan formula.
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 15: KESIMPULAN PENELITIAN -->
-            <section data-title="Kesimpulan Riset">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-flag-checkered"></i> Simpulan Akhir</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-bullseye"></i> Kesimpulan Utama Penelitian</h2>
-                        <p class="slide-subtitle">Tiga simpulan kunci berdasarkan temuan observasi, analisis N-Gain, dan uji hipotesis inferensial</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-check-circle"></i> Jawaban Rumusan Masalah
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-3">
-                        <div class="glass-card highlight" style="border-top: 5px solid var(--blue-accent);">
-                            <div class="card-icon-badge" style="margin-bottom: 12px;">
-                                <i class="fa-solid fa-clipboard-check"></i>
-                            </div>
-                            <div style="font-weight: 700; font-size: 15px; color: var(--text-heading); margin-bottom: 6px;">
-                                1. Keterlaksanaan Sangat Baik
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body); margin: 0;">
-                                Penerapan model SSCS berbantuan flashcard terlaksana dengan persentase <strong>95% pada aktivitas guru</strong> dan <strong>93% pada aktivitas siswa</strong> (kategori Sangat Baik), lebih tinggi dibanding model PBL (91% dan 89%).
-                            </p>
-                        </div>
-
-                        <div class="glass-card highlight" style="border-top: 5px solid var(--emerald-accent);">
-                            <div class="card-icon-badge" style="margin-bottom: 12px; background: #d1fae5; color: #059669; border-color: #6ee7b7;">
-                                <i class="fa-solid fa-chart-line"></i>
-                            </div>
-                            <div style="font-weight: 700; font-size: 15px; color: var(--text-heading); margin-bottom: 6px;">
-                                2. Peningkatan N-Gain Tinggi
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body); margin: 0;">
-                                Keterampilan pemecahan masalah kelompok SSCS meningkat drastis dengan <strong>N-Gain 0,88 (kategori tinggi)</strong>, mengungguli perolehan kelompok PBL sebesar <strong>0,82 (kategori tinggi)</strong>.
-                            </p>
-                        </div>
-
-                        <div class="glass-card highlight" style="border-top: 5px solid #8b5cf6;">
-                            <div class="card-icon-badge" style="margin-bottom: 12px; background: #ede9fe; color: #7c3aed; border-color: #c4b5fd;">
-                                <i class="fa-solid fa-certificate"></i>
-                            </div>
-                            <div style="font-weight: 700; font-size: 15px; color: var(--text-heading); margin-bottom: 6px;">
-                                3. Perbedaan Signifikan
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body); margin: 0;">
-                                Uji Mann-Whitney membuktikan adanya <strong>perbedaan peningkatan keterampilan pemecahan masalah yang signifikan secara statistik ($p < 0,001$)</strong> antara kedua kelompok.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="callout-box">
-                        <i class="fa-solid fa-award"></i>
-                        <div style="font-size: 13.5px;">
-                            <strong>Pesan Penutup:</strong> Model pembelajaran SSCS berbantuan flashcard terbukti secara empiris efektif merekonstruksi pola pikir peserta didik dari penerima informasi pasif menjadi pemecah masalah yang aktif, sistematis, dan komunikatif pada materi suhu dan kalor.
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 16: REKOMENDASI PEDAGOGIS & AKSI NYATA -->
-            <section data-title="Rekomendasi Pedagogis">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-lightbulb"></i> Tindak Lanjut Riset</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-hand-holding-heart"></i> Rekomendasi Praktis & Aksi Nyata Guru</h2>
-                        <p class="slide-subtitle">Strategi tindak lanjut untuk guru fisika, pengembang kurikulum, dan agenda penelitian masa depan</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-arrow-right-arrow-left"></i> Aksi Nyata Kelas
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-3">
-                        <div class="glass-card accent-bar-left">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 14.5px; color: var(--text-heading);">1. Scaffolding Bertahap</span>
-                                <i class="fa-solid fa-stairs text-blue-accent"></i>
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body);">
-                                Guru wajib memberikan pertanyaan pengarah bertahap pada tahap <em>Solve</em>. Tanyakan <em>"Mengapa hukum fisika ini dipilih?"</em> sebelum mengizinkan siswa menyentuh kalkulasi angka.
-                            </p>
-                        </div>
-
-                        <div class="glass-card accent-bar-left">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 14.5px; color: var(--text-heading);">2. Redesain Flashcard</span>
-                                <i class="fa-solid fa-paint-roller text-blue-accent"></i>
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body);">
-                                Hindari mencetak flashcard sebagai "rangkuman rumus mati". Transformasikan menjadi stimulus studi kasus fenomena termal sehari-hari dengan diagram fisis multi-representasi.
-                            </p>
-                        </div>
-
-                        <div class="glass-card accent-bar-left">
-                            <div class="glass-card-header">
-                                <span style="font-weight: 700; font-size: 14.5px; color: var(--text-heading);">3. LKPD Terstruktur</span>
-                                <i class="fa-solid fa-file-lines text-blue-accent"></i>
-                            </div>
-                            <p style="font-size: 13px; color: var(--text-body);">
-                                Khusus materi multi-variabel seperti <em>Kalor dan Perubahan Wujud Zat</em>, sediakan tabel dekomposisi variabel (massa, kalor jenis, kalor laten) untuk mengurai kompleksitas kognitif siswa.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="glass-card" style="background: #ffffff; padding: 16px 22px;">
-                        <div style="font-weight: 700; font-size: 14px; color: var(--blue-primary); margin-bottom: 6px;">
-                            <i class="fa-solid fa-telescope text-blue-accent"></i> Agenda Penelitian Lanjutan (Future Research)
-                        </div>
-                        <div style="display: flex; gap: 20px; font-size: 13px;">
-                            <div><i class="fa-solid fa-check text-blue-accent"></i> Uji efektivitas SSCS berbantuan flashcard digital / gamified app.</div>
-                            <div><i class="fa-solid fa-check text-blue-accent"></i> Ekspansi pada topik fisika abstrak lain (misal Listrik Magnet, Fluida Dinamis).</div>
-                            <div><i class="fa-solid fa-check text-blue-accent"></i> Analisis retensi memori jangka panjang (delayed posttest).</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SLIDE 17: SESI TANYA JAWAB (Q&A) & PENUTUP -->
-            <section data-title="Sesi Tanya Jawab (Q&A)">
-                <div class="slide-header">
-                    <div class="title-area">
-                        <span class="slide-tag"><i class="fa-solid fa-circle-question"></i> Sesi Diskusi</span>
-                        <h2 class="slide-title-main"><i class="fa-solid fa-comments"></i> Sesi Tanya Jawab (Q&A) & Diskusi Ilmiah</h2>
-                        <p class="slide-subtitle">Terima kasih atas perhatian Dewan Penguji, Moderator, dan Bapak/Ibu Peserta Seminar SENTRA PENDIPA 2026</p>
-                    </div>
-                    <div class="slide-context-badge">
-                        <i class="fa-solid fa-handshake"></i> Open for Discussion
-                    </div>
-                </div>
-
-                <div class="slide-body">
-                    <div class="grid-2">
-                        <div class="glass-card highlight" style="text-align: center; justify-content: center; padding: 26px;">
-                            <div style="width: 58px; height: 58px; border-radius: 50%; background: var(--blue-subtle); color: var(--blue-accent); font-size: 26px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; border: 2px solid var(--blue-border);">
-                                <i class="fa-solid fa-handshake-angle"></i>
-                            </div>
-                            <h3 style="font-size: 23px; color: var(--blue-primary); margin-bottom: 6px;">Terima Kasih Banyak!</h3>
-                            <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">
-                                "Pendidikan fisika yang hebat tidak hanya menghasilkan penghafal rumus, melainkan pencetak pemikir analitis dan pemecah masalah bangsa."
-                            </p>
-                            
-                            <div style="background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 12px 16px; font-size: 12.5px; text-align: left;">
-                                <div style="font-weight: 700; color: var(--text-heading); margin-bottom: 4px;">Kontak Peneliti:</div>
-                                <div style="color: var(--text-body);"><i class="fa-solid fa-envelope text-blue-accent"></i> trissanggrahnirmaladesinta@gmail.com</div>
-                                <div style="color: var(--text-body);"><i class="fa-solid fa-building-columns text-blue-accent"></i> UIN Sunan Gunung Djati Bandung</div>
-                            </div>
-
-                            <button id="btnConfetti" style="margin-top: 14px; background: var(--blue-accent); color: #ffffff; border: none; padding: 8px 20px; border-radius: var(--radius-pill); font-weight: 700; font-size: 12px; cursor: pointer; transition: var(--transition-smooth);" onclick="fireConfetti()">
-                                <i class="fa-solid fa-sparkles"></i> Rayakan Penyelesaian Presentasi
-                            </button>
-                        </div>
-
-                        <div class="glass-card">
-                            <div style="font-weight: 700; font-size: 14px; color: var(--text-heading); margin-bottom: 8px;">
-                                <i class="fa-solid fa-shield-halved text-blue-accent"></i> Lembar Antisipasi Pertanyaan Kritis Dewan Penguji
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px;">
-                                <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 8px 12px; border-radius: 6px;">
-                                    <strong style="color: var(--blue-primary);">Q: Mengapa kelas kontrol (PBL) juga memakai flashcard?</strong>
-                                    <div style="color: var(--text-muted); margin-top: 2px;">
-                                        Agar variabel media konstan. Dengan demikian, keunggulan hasil dapat dipertanggungjawabkan murni dari sintaks model SSCS, bukan bias media baru.
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                    <div class="card-icon-badge" style="margin: 0; background: #dcfce7; color: #15803d; border-color: #86efac;"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                                    <div>
+                                        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--emerald-accent);">Kesimpulan 2</div>
+                                        <div style="font-size: 17px; font-weight: 800; color: var(--text-heading);">Peningkatan KPM Peserta Didik</div>
                                     </div>
                                 </div>
-
-                                <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 8px 12px; border-radius: 6px;">
-                                    <strong style="color: var(--blue-primary);">Q: Mengapa uji hipotesis menggunakan Mann-Whitney?</strong>
-                                    <div style="color: var(--text-muted); margin-top: 2px;">
-                                        Karena hasil uji normalitas Shapiro-Wilk menghasilkan $p < 0,05$ (data tidak normal), sehingga uji t parametrik tidak memenuhi syarat.
-                                    </div>
-                                </div>
-
-                                <div style="background: #f8fafc; border: 1px solid var(--border-light); padding: 8px 12px; border-radius: 6px;">
-                                    <strong style="color: var(--blue-primary);">Q: Apa kelemahan model SSCS yang ditemukan?</strong>
-                                    <div style="color: var(--text-muted); margin-top: 2px;">
-                                        Siswa masih rentan terpaku pada kecepatan berhitung daripada penguasaan aplikasi fisika spesifik pada soal multi-fase termal.
-                                    </div>
-                                </div>
+                                <p style="font-size: 13.5px; line-height: 1.6; color: var(--text-body);">
+                                    Analisis <strong>N-Gain</strong> menunjukkan keterampilan pemecahan masalah peserta didik meningkat sebesar <strong>0,88</strong> setelah penerapan model <strong>SSCS</strong> dan sebesar <strong>0,82</strong> setelah diterapkan model <strong>PBL</strong> (keduanya kategori <strong>Tinggi</strong>). Uji hipotesis nonparametrik <strong>Mann-Whitney</strong> menunjukkan <strong>$H_0$ ditolak</strong>, menyatakan terdapat perbedaan peningkatan keterampilan pemecahan masalah yang signifikan.
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                <span class="metric-badge badge-emerald">N-Gain SSCS: 0,88</span>
+                                <span class="metric-badge badge-purple">Mann-Whitney: Signifikan</span>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Thank You Banner (Page 7 PDF) -->
+                    <div class="glass-card" style="background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-accent) 100%); color: #ffffff; border: none; padding: 16px 26px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 20px;">
+                        <div>
+                            <div style="font-size: 24px; font-weight: 800; font-family: var(--font-heading); letter-spacing: -0.02em; color: #ffffff;">
+                                Terima Kasih &bull; Thank You
+                            </div>
+                            <div style="font-size: 13px; color: rgba(255, 255, 255, 0.9); margin-top: 2px;">
+                                Presentation by <strong>Trissanggrah Nirmala Desinta</strong> (NIM. 1222070076) &bull; UIN Sunan Gunung Djati Bandung
+                            </div>
+                        </div>
+                        <button onclick="fireConfetti()" style="background: rgba(255, 255, 255, 0.18); border: 1.5px solid rgba(255, 255, 255, 0.5); color: #ffffff; padding: 8px 18px; border-radius: var(--radius-pill); font-weight: 700; font-size: 12.5px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: var(--transition-smooth);">
+                            <i class="fa-solid fa-comments"></i> Sesi Diskusi &amp; Tanya Jawab
+                        </button>
                     </div>
                 </div>
             </section>
@@ -1531,17 +786,17 @@
          NORMAL VIEWPORT: BOTTOM STATUS BAR
          ========================================================================= -->
     <footer id="deck-bottom-bar">
-        <div class="bottom-bar-presenter" style="display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-user-pen text-blue-accent"></i>
-            <span>Presenter: <strong>Trissanggrah Nirmala Desinta</strong> (UIN SGD Bandung)</span>
+        <div class="bottom-bar-presenter">
+            <i class="fa-solid fa-user-graduate text-blue-accent"></i>
+            <span>Presenter: <strong>Trissanggrah Nirmala Desinta</strong> (NIM. 1222070076 • UIN SGD Bandung)</span>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 14px;">
+        <div class="bottom-bar-controls">
             <span class="bottom-bar-hint" style="font-size: 11.5px; color: var(--text-muted);">Gunakan panah [←] [→] atau spasi</span>
             <button class="control-arrow-btn" onclick="Reveal.prev()" title="Slide Sebelumnya (←)">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
-            <span class="slide-counter-badge" id="slideNumberBadge">01 / 17</span>
+            <span class="slide-counter-badge" id="slideNumberBadge">01 / 05</span>
             <button class="control-arrow-btn" onclick="Reveal.next()" title="Slide Berikutnya (→)">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
@@ -1552,6 +807,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
 
     <!-- Custom Presentation Logic -->
-    <script src="js/presentation.js?v=2.3"></script>
+    <script src="js/presentation.js?v=3.0"></script>
 </body>
 </html>
