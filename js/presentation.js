@@ -278,7 +278,7 @@ if (timerBox) {
 }
 
 // =========================================================================
-// 7. CELEBRATION CONFETTI (SLIDE 17)
+// 7. CELEBRATION CONFETTI (SLIDE 7)
 // =========================================================================
 function fireConfetti() {
     if (typeof confetti === 'function') {
@@ -286,7 +286,7 @@ function fireConfetti() {
             particleCount: 120,
             spread: 80,
             origin: { y: 0.6 },
-            colors: ['#2563eb', '#38bdf8', '#10b981', '#f59e0b']
+            colors: ['#1b5e3a', '#65c447', '#53a497', '#f59e0b']
         });
     }
 }
@@ -335,8 +335,8 @@ function switchResultTab(tabId, btnEl) {
 }
 
 function renderChartIfNeeded(slideIndex) {
-    // Slide 4 (0-indexed: 3) -> Hasil dan Pembahasan (Tabbed Charts)
-    if (slideIndex === 3) {
+    // Slide 5 (0-indexed: 4) -> Hasil Pretest, Posttest & N-Gain (Chart Tabs)
+    if (slideIndex === 4) {
         const activePanel = document.querySelector('.result-tab-panel.active');
         if (activePanel) {
             if (activePanel.id === 'tab-ngain') {
@@ -360,13 +360,13 @@ function renderChartIfNeeded(slideIndex) {
         if (hellerChart) hellerChart.reset();
     }
 
-    // Slide 5 (0-indexed: 4) -> Kesimpulan & Penutup Celebration
-    if (slideIndex === 4) {
+    // Slide 7 (0-indexed: 6) -> Penutup / Thank You Celebration
+    if (slideIndex === 6) {
         setTimeout(fireConfetti, 400);
     }
 }
 
-// Chart 1: Macro Comparison Bar Chart (Slide 9 - Grows Upwards from Base y=0)
+// Chart 1: Macro Comparison Bar Chart (Grows Upwards from Base y=0)
 function initMacroChart() {
     const ctx = document.getElementById('macroComparisonChart');
     if (!ctx) return;
@@ -379,7 +379,7 @@ function initMacroChart() {
                 {
                     label: 'SSCS + Flashcard (Eksperimen)',
                     data: [26, 91, 88], // 88 represents 0.88 normalized
-                    backgroundColor: '#2563eb',
+                    backgroundColor: '#1b5e3a',
                     borderRadius: 6,
                     barPercentage: 0.65,
                     categoryPercentage: 0.75
@@ -546,10 +546,10 @@ function initHellerChart() {
                 {
                     label: 'SSCS + Flashcard',
                     data: [0.88, 0.87, 0.85, 0.92, 0.87],
-                    backgroundColor: 'rgba(37, 99, 235, 0.18)',
-                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(27, 94, 58, 0.22)',
+                    borderColor: '#1b5e3a',
                     borderWidth: 2.5,
-                    pointBackgroundColor: '#2563eb',
+                    pointBackgroundColor: '#1b5e3a',
                     pointBorderColor: '#ffffff',
                     pointHoverRadius: 6,
                     pointRadius: 4
