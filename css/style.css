@@ -1233,16 +1233,27 @@ body.is-fullscreen #floating-presentation-bar {
    8B. UIN SGD BANDUNG TEMPLATE DECORATIVE & PHOTO COMPONENTS
    ========================================================================== */
 .template-uin-logo {
-    height: 62px;
+    height: 92px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.08));
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.template-uin-logo:hover {
+    transform: scale(1.06);
 }
 
 .template-uin-logo-sm {
-    height: 46px;
+    height: 66px;
     width: auto;
     object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+    transition: transform 0.3s ease;
+}
+
+.template-uin-logo-sm:hover {
+    transform: scale(1.06);
 }
 
 .template-seminar-pill {
@@ -1357,6 +1368,77 @@ body.is-fullscreen #floating-presentation-bar {
     font-family: var(--font-display) !important;
     color: var(--blue-primary) !important;
     font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   8C. MICRO-INTERACTIONS & STAGGERED ENTRANCE ANIMATIONS
+   ========================================================================== */
+@keyframes slideRevealUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes chevronPulse {
+    0%, 100% { opacity: 0.45; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(3px); }
+}
+
+.template-chevrons i {
+    animation: chevronPulse 1.8s ease-in-out infinite;
+}
+.template-chevrons i:nth-child(2) { animation-delay: 0.15s; }
+.template-chevrons i:nth-child(3) { animation-delay: 0.30s; }
+.template-chevrons i:nth-child(4) { animation-delay: 0.45s; }
+
+/* Replayable Staggered Entrance when slide becomes active (.present) */
+.reveal .slides section.present .anim-enter {
+    animation: slideRevealUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.reveal .slides section.present .anim-delay-1 { animation-delay: 0.08s; }
+.reveal .slides section.present .anim-delay-2 { animation-delay: 0.16s; }
+.reveal .slides section.present .anim-delay-3 { animation-delay: 0.24s; }
+.reveal .slides section.present .anim-delay-4 { animation-delay: 0.32s; }
+
+/* Interactive Hover Micro-Interactions */
+.glass-card:hover .card-icon-badge,
+.glass-card:hover .teal-circle-icon {
+    transform: scale(1.1) rotate(-4deg);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-icon-badge,
+.teal-circle-icon {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modern-table tbody tr {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.modern-table tbody tr:hover {
+    background-color: var(--blue-subtle) !important;
+}
+
+.nav-tool-btn:active,
+.result-tab-btn:active,
+.control-arrow-btn:active {
+    transform: scale(0.95);
+}
+
+/* Compact Interactive 3D Flashcards for Slide 3 */
+.flashcard-container.compact {
+    height: 190px;
+}
+
+.flashcard-container.compact .flashcard-front,
+.flashcard-container.compact .flashcard-back {
+    padding: 12px 14px;
 }
 
 /* ==========================================================================

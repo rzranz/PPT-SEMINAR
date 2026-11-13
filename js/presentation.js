@@ -44,6 +44,7 @@ Reveal.on('ready', event => {
     updateCustomUI(event.indexh);
     renderMathFormulas();
     renderChartIfNeeded(event.indexh);
+    animateCountersInSlide(event.currentSlide);
     startTimer();
 });
 
@@ -51,7 +52,35 @@ Reveal.on('ready', event => {
 Reveal.on('slidechanged', event => {
     updateCustomUI(event.indexh);
     renderChartIfNeeded(event.indexh);
+    animateCountersInSlide(event.currentSlide);
 });
+
+// Micro-Interaction: Animated Number Counter on Slide Enter
+function animateCountersInSlide(slideEl) {
+    if (!slideEl) return;
+    const counters = slideEl.querySelectorAll('.count-up');
+    counters.forEach(el => {
+        const target = parseFloat(el.getAttribute('data-target'));
+        const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const useComma = el.getAttribute('data-comma') === 'true';
+        if (isNaN(target)) return;
+
+        const duration = 900;
+        const startTime = performance.now();
+
+        function step(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+            const currentVal = (target * eased).toFixed(decimals);
+            el.textContent = (useComma ? currentVal.replace('.', ',') : currentVal) + suffix;
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            }
+        }
+        requestAnimationFrame(step);
+    });
+}
 
 // =========================================================================
 // 2. FULLSCREEN PRESENTATION MODE CONTROLLER (PPT / KEYNOTE STYLE)
